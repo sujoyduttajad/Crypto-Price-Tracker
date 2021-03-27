@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  /* background-color: #1a1a1c; */
+  background-color: #343a40;
+  color: #fff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
+}
+.coin-app {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 64px;
+  color: #fff;
+}
+
+.coin-search {
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.coin-text {
+  margin-bottom: 32px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.coin-input {
+  padding-left: 16px;
+  outline: none;
+  width: 300px;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  background-image: linear-gradient(
+    -225deg,
+    #ac32e4 0%,
+    #7918f2 48%,
+    #4801ff 100%
+  );
+
+  color: #e2e2e2;
 }
+
+.coin-input::placeholder {
+  color: #e2e2e2;
+}
+
+ @media (min-width: 768px) and (max-width: 1024px) {
+      .coin-app {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: auto;
+        margin: 5rem 6rem;
+        width: 80vw;
+      }
+   }
