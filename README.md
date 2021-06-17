@@ -7,6 +7,4 @@ This is a Cryptocurrency Price Tracker which shows the current price for all the
 
 Build with react hooks like useState and useEffect and used promises to get the request from the server via an api. 
 
-The api used for tracking crypto can be found here - coingecko.com
-
-[coingecko.com](https://coingecko.com/)
+The api used for tracking crypto can be found here - [coingecko.com](https://coingecko.com/)
