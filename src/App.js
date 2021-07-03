@@ -40,6 +40,7 @@ function App() {
           />
         </form>
       </div>
+      <div>
       {
         filteredCoins.map(coin => {
           return (
@@ -56,6 +57,7 @@ function App() {
           )
         })
       }
+      </div>
     </div>
   );
 }

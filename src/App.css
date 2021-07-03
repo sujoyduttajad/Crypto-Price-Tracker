@@ -27,6 +27,7 @@
 .coin-app {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top: 64px;
   color: #fff;
@@ -43,12 +44,15 @@
 .coin-text {
   margin-bottom: 32px;
   text-align: center;
+  letter-spacing: 3px;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .coin-input {
   padding-left: 16px;
   outline: none;
-  width: 300px;
+  width: 40rem;
   height: 50px;
   border-radius: 4px;
   border: none;
@@ -68,11 +72,20 @@
 
  @media (min-width: 768px) and (max-width: 1024px) {
       .coin-app {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         overflow-x: auto;
         margin: 5rem 6rem;
         width: 80vw;
       }
    }
+   @media (min-width: 360px) and (max-width: 768px) {
+    .coin-app {
+      margin: 2rem auto;
+      width: 100%;
+    }
+    .coin-input {
+      width: 90%;
+      height: 40px;
+      margin: 0 auto;
+      /* margin: 2rem; */
+    }
+ }
