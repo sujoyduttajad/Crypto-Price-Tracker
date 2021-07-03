@@ -54,6 +54,10 @@
   .coin-marketcap {
     width: 230px;
   }
+  .coin-marketcap span {
+    font-weight: 700;
+    color: #959799;
+  }
   
   .coin-percent {
     width: 100px;
