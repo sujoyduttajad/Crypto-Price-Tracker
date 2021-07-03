@@ -40,7 +40,7 @@ function App() {
           />
         </form>
       </div>
-      <div>
+      <div className="crypto-container">
       {
         filteredCoins.map(coin => {
           return (
