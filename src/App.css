@@ -103,9 +103,10 @@ form {
   }
 }
 /* ##############    iPad pro     ############ */
- @media (min-width: 1025px) and (max-width: 1366px) {
+ @media (min-width: 1024px) and (max-width: 1366px) {
   .coin-app {
-    margin: 5rem 2rem;
+    margin: 0;
+    margin-top: 64px;
     width: 100vw;
   }
   .crypto-container {

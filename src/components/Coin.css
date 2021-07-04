@@ -141,28 +141,20 @@
   }
   .coin-marketcap span {
     width: 2rem;
-  }
-  
+  }  
 }
 /* #############      iPad Screen       ############# */
   @media (min-width: 768px) and (max-width: 1023px) {
-    /* .coin-row {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin: 0.2rem;
-      width: 80vw;
-      height: 100%;
-    } */
+  
     .coin-row, .coin-data {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: flex-start;
       max-width: 100vw;
       width: 70vw;
       height: 100%;
+      font-size: 1.5rem;
     }
     .coin-container {
       width: 90vw;
@@ -183,22 +175,18 @@
     }
     .coin-price, .coin-volume, .coin-marketcap, .coin-percent {
       padding-left: 0rem;
-      width: 5rem;
-    }
-    .coin-marketcap  {
-      width: 10rem;
-      padding-left: 2rem;
-    }
-    .coin-percent {
-      width: 9rem;
-      padding-left: 1rem;
+      width: 25rem;
     }
     .coin-marketcap span {
-      width: 5rem;
+      width: 8rem;
     }
-    .coin-volume {
-      padding-left: 1rem;
-      width: 10rem;
+    .coin-marketcap p {
+      padding-left: 0rem;
+    }
+    .coin img {
+      height: 15%;
+      width: 15%;
+      margin-right: 10px;
     }
  }
 
