@@ -75,6 +75,7 @@ form {
 }
 
 
+
  @media (min-width: 768px) and (max-width: 1024px) {
       .coin-app {
         overflow-x: auto;
@@ -82,17 +83,26 @@ form {
         width: 80vw;
       }
    }
-   @media (min-width: 360px) and (max-width: 768px) {
-    .coin-app {
-      margin: 2rem auto;
-      width: 100%;
-      justify-content: space-evenly;
-    }
-    .coin-input {
-      width: 100%;
-      height: 40px;
-      margin: 0 auto;
-      justify-content: space-evenly;
-      /* margin: 2rem; */
-    }
- }
+
+  @media (min-width: 360px) and (max-width: 768px) {
+  .coin-app {
+    margin: 2rem auto;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .coin-input {
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    /* margin: 2rem; */
+  }
+}
+
+ @media (min-width: 1025px) and (max-width: 1366px) {
+  .coin-app {
+    /* overflow-x: auto; */
+    margin: 5rem auto;
+    width: 80vw;
+  }
+}

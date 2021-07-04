@@ -76,6 +76,10 @@
     color: #11d811;
   }
 
+  /* @media (min-width: 1024px) {
+
+  } */
+
   @media (min-width: 768px) and (max-width: 1024px) {
     .coin-row {
       display: flex;
