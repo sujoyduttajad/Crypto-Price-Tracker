@@ -81,7 +81,7 @@ form {
         width: 80vw;
       }
    }
-
+/* ##############    Mobile screens     ############ */
   @media (min-width: 320px) and (max-width: 768px) {
   .coin-app {
     margin: 2rem auto;
@@ -103,6 +103,10 @@ form {
  @media (min-width: 1025px) and (max-width: 1366px) {
   .coin-app {
     margin: 5rem auto;
-    width: 80vw;
+    width: 90vw;
+  }
+  .crypto-container {
+    width: 100vw;
+    height: 100%;
   }
 }
