@@ -98,7 +98,7 @@ form {
     /* margin: 2rem; */
   }
 }
-
+/* ##############    iPad pro     ############ */
  @media (min-width: 1025px) and (max-width: 1366px) {
   .coin-app {
     /* overflow-x: auto; */

@@ -15,10 +15,11 @@
     height: 80px;
     width: 70vw;
   }
-  .container {
+  .container-1, .container-2, .container-3, .container-4 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    width: 80%;
   }
   .coin {
     display: flex;
@@ -50,17 +51,10 @@
     width: 100%;
   }
   
-  .coin-price {
-    width: 12rem;
+  .coin-price, .coin-volume {
+    padding-left: 5rem;
   }
   
-  .coin-volume {
-    width: 10rem;
-  }
-  
-  .coin-marketcap {
-    width: 230px;
-  }
   .coin-marketcap span {
     font-weight: 700;
     color: #959799;
@@ -81,25 +75,51 @@
   /* @media (min-width: 1024px) {
 
   } */
-
-  @media (min-width: 768px) and (max-width: 1024px) {
+/* ##############    iPad pro     ############ */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .coin-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 100px;
+    width: 70vw;
+  }
+  .coin {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 5rem;
+  }
+  .coin-price, .coin-volume {
+    padding-left: 0rem;
+  }
+  .container-4 {
+    width: 15rem;
+    display: flex;
+  }
+}
+/* #############      iPad        ############# */
+  @media (min-width: 768px) and (max-width: 1023px) {
     .coin-row {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      overflow-x: auto;
-      /* margin: 5rem 6rem; */
-      width: 80vw;
+      align-items: flex-start;
+      justify-content: space-between;
+     
+      width: 70vw;
     }
     .coin-container {
         display: flex;
-      flex-direction: column;
+      
       align-items: center;
       justify-content: space-evenly;
     }
+    .coin-price, .coin-volume {
+      padding-left: 0rem;
+    }
  }
- @media (min-width: 360px) and (max-width: 823px) {
+ @media (min-width: 360px) and (max-width: 767px) {
     .coin-row, .coin-data {
       display: flex;
       flex-direction: column;
