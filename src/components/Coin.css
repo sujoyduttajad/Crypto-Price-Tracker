@@ -1,6 +1,6 @@
 .coin-container {
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     border: 1.8px solid #e2e2e2;
     border-radius: 20px;
     padding: 1rem;
@@ -10,14 +10,16 @@
   
   .coin-row {
     display: flex;
-    flex-direction: row;
-    justify-content: start;
     align-items: center;
+    justify-content: space-between;
     height: 80px;
-    /* border-bottom: 1px solid #d7d7d7; */
     width: 70vw;
   }
-  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
   .coin {
     display: flex;
     align-items: center;
@@ -49,11 +51,11 @@
   }
   
   .coin-price {
-    width: 110px;
+    width: 12rem;
   }
   
   .coin-volume {
-    width: 155px;
+    width: 10rem;
   }
   
   .coin-marketcap {
