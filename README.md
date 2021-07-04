@@ -2,7 +2,7 @@
 
 [Live Demo](https://frosty-lichterman-0c0a0e.netlify.app/)
 
-<img src="./Screenshot (19).png" alt="the screenshot of the app large screen"/>
+<img src="./Screenshot (20).png" alt="the screenshot of the app large screen"/>
 A Cryptocurrency Price Tracker which shows the current price for all the cryptocurrency in the world. Price is shown in USD. All the relevant details are also displayed including price, volume, coin-percentage & market capital.
 
 # What goes into building this app
