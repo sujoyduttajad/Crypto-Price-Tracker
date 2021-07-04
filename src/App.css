@@ -5,7 +5,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  /* background-color: #1a1a1c; */
   background-color: #343a40;
   color: #fff;
 }
@@ -74,8 +73,7 @@ form {
   color: #e2e2e2;
 }
 
-
-
+/* ##############    iPad     ############ */
  @media (min-width: 768px) and (max-width: 1024px) {
       .coin-app {
         overflow-x: auto;
@@ -84,7 +82,7 @@ form {
       }
    }
 
-  @media (min-width: 360px) and (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 768px) {
   .coin-app {
     margin: 2rem auto;
     width: 100%;
@@ -95,13 +93,15 @@ form {
     height: 40px;
     margin: 0 auto;
     justify-content: space-evenly;
-    /* margin: 2rem; */
+  }
+  .crypto-container {
+    width: 90vw;
+    height: 100%;
   }
 }
 /* ##############    iPad pro     ############ */
  @media (min-width: 1025px) and (max-width: 1366px) {
   .coin-app {
-    /* overflow-x: auto; */
     margin: 5rem auto;
     width: 80vw;
   }
