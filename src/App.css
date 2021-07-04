@@ -76,9 +76,12 @@ form {
 /* ##############    iPad     ############ */
  @media (min-width: 768px) and (max-width: 1024px) {
       .coin-app {
-        overflow-x: auto;
         margin: 5rem 6rem;
-        width: 80vw;
+        width: 60vw;
+      }
+      .crypto-container {
+        width: 70vw;
+        height: 100%;
       }
    }
 /* ##############    Mobile screens     ############ */
@@ -102,11 +105,11 @@ form {
 /* ##############    iPad pro     ############ */
  @media (min-width: 1025px) and (max-width: 1366px) {
   .coin-app {
-    margin: 5rem auto;
-    width: 90vw;
+    margin: 5rem 2rem;
+    width: 100vw;
   }
   .crypto-container {
-    width: 100vw;
+    width: 90vw;
     height: 100%;
   }
 }
