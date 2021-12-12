@@ -31,12 +31,12 @@
     display: flex;
     align-items: center;
     padding-right: 24px;
-    min-width: 20rem;
+    width: 25rem;
   }
   
   .coin h1 {
     font-size: 16px;
-    width: 15.5rem;
+    /* width: 100%; */
     letter-spacing: 2.5px;
   }
   
@@ -48,6 +48,9 @@
   
   .coin-symbol {
     text-transform: uppercase;
+    font-weight: 600;
+    color: #999999;
+    padding-left: 1em;
   }
   
   .coin-data {

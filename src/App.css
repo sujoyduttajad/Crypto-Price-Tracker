@@ -33,6 +33,8 @@
   align-items: center;
   margin-top: 64px;
   color: #fff;
+  width: 100vw;
+  height: 100vh;
 }
 form {
   margin: 0 2rem;
