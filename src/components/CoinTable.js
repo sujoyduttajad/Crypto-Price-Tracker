@@ -200,14 +200,6 @@ const EnhancedTableToolbar = (props) => {
           Nutrition
         </Typography>
       )}
-
-      {/* {numSelected > 0 ? (
-        <Tooltip title="Delete">
-          <IconButton>
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>
-      ) : ( */}
         <Tooltip title="Filter list">
           <IconButton>
             <FilterListIcon />
@@ -222,7 +214,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable() {
+export default function CoinTable({ filteredCoins }) {
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');
   const [selected, setSelected] = React.useState([]);
