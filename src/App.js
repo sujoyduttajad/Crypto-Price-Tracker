@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
 import Coin from './components/Coin'
-
+import CoinTable from './components/CoinTable'
 
 function App() {
 
@@ -41,23 +41,24 @@ function App() {
         </form>
       </div>
       <div className="crypto-container">
-      {
-        filteredCoins.map(coin => {
-          return (
-            <Coin 
-              key={coin.id}
-              name={coin.name}
-              image={coin.image}
-              symbol={coin.symbol}
-              marketcap={coin.market_cap}
-              price={coin.current_price}
-              priceChange={coin.price_change_percentage_24h}
-              volume={coin.total_volume}
-            />
-          )
-        })
-      }
+        {
+          filteredCoins.map(coin => {
+            return (
+              <Coin 
+                key={coin.id}
+                name={coin.name}
+                image={coin.image}
+                symbol={coin.symbol}
+                marketcap={coin.market_cap}
+                price={coin.current_price}
+                priceChange={coin.price_change_percentage_24h}
+                volume={coin.total_volume}
+              />
+            )
+          })
+        }
       </div>
+      <CoinTable />
     </div>
   );
 }
