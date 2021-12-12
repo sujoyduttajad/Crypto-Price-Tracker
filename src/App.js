@@ -58,7 +58,12 @@ function App() {
           })
         }
       </div>
-      <CoinTable />
+      <div className="crypto-container">
+        <CoinTable
+          filteredCoins={filteredCoins}
+        />
+      </div>
+      
     </div>
   );
 }
