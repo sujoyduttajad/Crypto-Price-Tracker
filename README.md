@@ -11,6 +11,8 @@ This app is build with React, React-hooks like useState and useEffect and for co
 # Why I build this
 I build this app as cryptocurrency is booming in todays world and it's really important to monitor the real data before start mining. The goal was to help data-miners to keep a track of the cryptocurrency prices
 
-# Resources
+# Future Scope
+Using D3.js to create a line graph or bar chart or both based on the data from the API
 
+# Resources
 The api used for tracking crypto can be found here - [coingecko.com](https://coingecko.com/)
