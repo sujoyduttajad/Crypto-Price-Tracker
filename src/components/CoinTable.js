@@ -194,8 +194,8 @@ export default function CoinTable({ filteredCoins }) {
     };
   }
   
-  const rows = 
-    filteredCoins.map((coin) => {
+  const rows = [];
+    rows = filteredCoins.map((coin) => {
       createData(
         coin.name, 
         coin.current_price, 
