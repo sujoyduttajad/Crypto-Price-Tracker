@@ -159,7 +159,8 @@ EnhancedTableToolbar.propTypes = {
 };
 
 export default function CoinTable({ filteredCoins }) {
-  const classes = useStyles(props);
+  // const classes = useStyles(props);
+  const classes = useStyles();
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
