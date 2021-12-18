@@ -274,10 +274,10 @@ export default function CoinTable({ filteredCoins }) {
                         {row.name}
                       </TableCell>
                       {console.log(row.name)}
-                      <TableCell align="right">{row.price}</TableCell>
-                      <TableCell align="right">{row.volume}</TableCell>
-                      <TableCell align="right">{row.coinPercent}</TableCell>
-                      <TableCell align="right">{row.mktCap}</TableCell>
+                      <TableCell align="right">{row.current_price}</TableCell>
+                      <TableCell align="right">{row.total_volume}</TableCell>
+                      <TableCell align="right">{row.price_change_percentage_24h}</TableCell>
+                      <TableCell align="right">{row.market_cap}</TableCell>
                     </TableRow>
                   );
                 })}
