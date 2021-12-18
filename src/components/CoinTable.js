@@ -217,7 +217,7 @@ export default function CoinTable({ filteredCoins }) {
   const handleChangeDense = (event) => {
     setDense(event.target.checked);
   };
-  console.log(rows)
+  // console.log(rows)
   const isSelected = (name) => selected.indexOf(name) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
@@ -273,6 +273,7 @@ export default function CoinTable({ filteredCoins }) {
                       >
                         {row.name}
                       </TableCell>
+                      {console.log(row.name)}
                       <TableCell align="right">{row.price}</TableCell>
                       <TableCell align="right">{row.volume}</TableCell>
                       <TableCell align="right">{row.coinPercent}</TableCell>
@@ -293,7 +294,7 @@ export default function CoinTable({ filteredCoins }) {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[25, 50, 100]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}
