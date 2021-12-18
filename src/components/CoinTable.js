@@ -18,9 +18,18 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-// import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
+import { makeStyles } from '@mui/styles';
+
+
+
+const useStyles = makeStyles({
+  tableContent: {
+    fontFamily: 'inherit'
+    // color: (props) => props.color,
+  },
+});
 
 
 const headCells = [
@@ -150,7 +159,7 @@ EnhancedTableToolbar.propTypes = {
 };
 
 export default function CoinTable({ filteredCoins }) {
-
+  const classes = useStyles(props);
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -255,6 +264,7 @@ export default function CoinTable({ filteredCoins }) {
                       tabIndex={-1}
                       key={row.name}
                       selected={isItemSelected}
+                      className={classes.tableContent}
                     >
                       <TableCell padding="checkbox">
                         <Checkbox
