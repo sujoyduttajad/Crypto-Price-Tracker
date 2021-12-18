@@ -40,7 +40,7 @@ function App() {
           />
         </form>
       </div>
-      {/* <div className="crypto-container">
+      <div className="crypto-container">
         {
           filteredCoins.map(coin => {
             return (
@@ -57,7 +57,7 @@ function App() {
             )
           })
         }
-      </div> */}
+      </div>
       <div className="crypto-container">
         <CoinTable
           filteredCoins={filteredCoins}
