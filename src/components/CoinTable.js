@@ -23,24 +23,6 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 
 
-
-
-
-// This method is created for cross-browser compatibility, if you don't
-// need to support IE11, you can use Array.prototype.sort() directly
-
-// function stableSort(array, comparator) {
-//   const stabilizedThis = array.map((el, index) => [el, index]);
-//   stabilizedThis.sort((a, b) => {
-//     const order = comparator(a[0], b[0]);
-//     if (order !== 0) {
-//       return order;
-//     }
-//     return a[1] - b[1];
-//   });
-//   return stabilizedThis.map((el) => el[0]);
-// }
-
 const headCells = [
   {
     id: 'name',
@@ -75,11 +57,7 @@ const headCells = [
 ];
 
 function EnhancedTableHead(props) {
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
-    props;
-  // const createSortHandler = (property) => (event) => {
-  //   onRequestSort(event, property);
-  // };
+  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
 
   return (
     <TableHead>
@@ -101,18 +79,14 @@ function EnhancedTableHead(props) {
             key={headCell.id}
             align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
-            // sortDirection={orderBy === headCell.id ? order : false}
+            
           >
             <TableSortLabel
-              // active={orderBy === headCell.id}
               direction={orderBy === headCell.id ? order : 'asc'}
-              // onClick={createSortHandler(headCell.id)}
             >
               {headCell.label}
               {orderBy === headCell.id ? (
-                <Box component="span" sx={visuallyHidden}>
-                  {/* {order === 'desc' ? 'sorted descending' : 'sorted ascending'} */}
-                </Box>
+                <Box component="span" sx={visuallyHidden}></Box>
               ) : null}
             </TableSortLabel>
           </TableCell>
@@ -124,10 +98,7 @@ function EnhancedTableHead(props) {
 
 EnhancedTableHead.propTypes = {
   numSelected: PropTypes.number.isRequired,
-  // onRequestSort: PropTypes.func.isRequired,
   onSelectAllClick: PropTypes.func.isRequired,
-  // order: PropTypes.oneOf(['asc', 'desc']).isRequired,
-  // orderBy: PropTypes.string.isRequired,
   rowCount: PropTypes.number.isRequired,
 };
 
@@ -179,8 +150,7 @@ EnhancedTableToolbar.propTypes = {
 };
 
 export default function CoinTable({ filteredCoins }) {
-  // const [order, setOrder] = React.useState('asc');
-  // const [orderBy, setOrderBy] = React.useState('price');
+
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -266,15 +236,10 @@ export default function CoinTable({ filteredCoins }) {
           >
             <EnhancedTableHead
               numSelected={selected.length}
-              // order={order}
-              // orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
-              // onRequestSort={handleRequestSort}
               rowCount={rows.length}
             />
             <TableBody>
-              {/* if you don't need to support IE11, you can replace the `stableSort` call with:
-                 rows.slice().sort(getComparator(order, orderBy)) */}
               {
                 rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
