@@ -26,9 +26,12 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const useStyles = makeStyles({
   tableContent: {
-    fontFamily: 'inherit'
+    fontFamily: 'Montserrat',
     // color: (props) => props.color,
   },
+  tableRows: {
+    fontFamily: 'Montserrat',
+  }
 });
 const theme = createTheme({
   components: {
@@ -36,7 +39,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: 'Montserrat',
-          fontWeight: 900,
+          fontWeight: 700,
           fontSize: '2.4em'
         },
       },
@@ -295,14 +298,15 @@ export default function CoinTable({ filteredCoins }) {
                         id={labelId}
                         scope="row"
                         padding="none"
+                        className={classes.tableRows}
                       >
                         {row.name}
                       </TableCell>
                       {console.log(row.name)}
-                      <TableCell align="right">{row.current_price}</TableCell>
-                      <TableCell align="right">{row.total_volume}</TableCell>
-                      <TableCell align="right">{row.price_change_percentage_24h}</TableCell>
-                      <TableCell align="right">{row.market_cap}</TableCell>
+                      <TableCell align="right" className={classes.tableRows}>{row.current_price}</TableCell>
+                      <TableCell align="right" className={classes.tableRows}>{row.total_volume}</TableCell>
+                      <TableCell align="right" className={classes.tableRows}>{row.price_change_percentage_24h}</TableCell>
+                      <TableCell align="right" className={classes.tableRows}>{row.market_cap}</TableCell>
                     </TableRow>
                   );
                 })}
