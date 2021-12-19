@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
-import Coin from './components/Coin'
 import CoinTable from './components/CoinTable'
 
 function App() {
