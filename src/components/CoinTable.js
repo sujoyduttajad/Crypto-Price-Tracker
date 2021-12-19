@@ -51,7 +51,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: 'Montserrat',
-          fontWeight: 600,
+          fontWeight: 500,
           // fontSize: '2.4em'
         },
       },
@@ -68,10 +68,11 @@ const theme = createTheme({
     MuiPaper: { 
       styleOverrides: {
         root: {
-          filter: 'invert(1)',
+          // filter: 'invert(1)',
           border: '1px solid #eee',
           // backgroundColor: '#101010',
           color: '#101010',
+          palette: { mode: 'dark' },
         },
       },
     }
