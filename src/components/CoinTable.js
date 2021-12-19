@@ -34,8 +34,13 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'flex-start',
     margin: 0,
+  },
+  pagination: {
+    fontFamily: 'Montserrat',
+    fontWeight: 700,
   }
 });
+
 const theme = createTheme({
   components: {
     MuiTypography: {
@@ -65,6 +70,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiTablePagination: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Montserrat',
+          fontWeight: 700,
+        },
+    }},
     MuiPaper: { 
       styleOverrides: {
         root: {
@@ -72,7 +84,7 @@ const theme = createTheme({
           border: '1px solid #eee',
           // backgroundColor: '#101010',
           color: '#101010',
-          palette: { mode: 'dark' },
+          // createTheme({palette: { mode: 'dark' }}),
         },
       },
     }
@@ -300,6 +312,8 @@ export default function CoinTable({ filteredCoins }) {
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
           <Table
+            stickyHeader 
+            aria-label="sticky table"
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
             size={dense ? 'small' : 'medium'}
@@ -372,18 +386,10 @@ export default function CoinTable({ filteredCoins }) {
                     </ThemeProvider>
                   );
                 })}
-              {emptyRows > 0 && (
-                <TableRow
-                  style={{
-                    height: (dense ? 33 : 53) * emptyRows,
-                  }}
-                >
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
             </TableBody>
           </Table>
         </TableContainer>
+        <ThemeProvider theme={theme}>
         <TablePagination
           rowsPerPageOptions={[10, 25, 50]}
           component="div"
@@ -392,7 +398,8 @@ export default function CoinTable({ filteredCoins }) {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
-        />
+          className={classes.pagination}
+        /></ThemeProvider>
       </Paper>
       </ThemeProvider>
     // </Box>
