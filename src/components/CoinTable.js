@@ -319,6 +319,7 @@ export default function CoinTable({ filteredCoins }) {
                         padding="none"
                         className={classes.tableRows}
                       >
+                        <img className='coin__image' src={row.image} alt={row.name} />
                         {row.name}
                       </TableCell>
                       {console.log(row.name)}
