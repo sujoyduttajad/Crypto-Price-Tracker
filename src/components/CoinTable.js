@@ -111,12 +111,9 @@ function EnhancedTableHead(props) {
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? 'right' : 'left'}
-            padding={headCell.disablePadding ? 'none' : 'normal'}
-            
+            padding={headCell.disablePadding ? 'none' : 'normal'}            
           >
-            <TableSortLabel
-              direction={orderBy === headCell.id ? order : 'asc'}
-            >
+            <TableSortLabel>
               {headCell.label}
               {orderBy === headCell.id ? (
                 <Box component="span" sx={visuallyHidden}></Box>
