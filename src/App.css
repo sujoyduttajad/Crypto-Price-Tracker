@@ -83,7 +83,7 @@ form {
 
 
 /* ##############    Mobile screens     ############ */
-  @media (min-width: 320px) and (max-width: 768px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
   .coin-app {
     margin: 2rem auto;
     width: 100%;
@@ -96,23 +96,38 @@ form {
     justify-content: space-evenly;
   }
   .crypto-container {
-    width: 10vw;
+    width: 90vw;
     height: 100%;
   }
 }
 /* ##############    iPad     ############ */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .coin-app {
-    margin: 5rem 6rem;
-    width: 60vw;
+    /* margin: 5rem 6rem; */
+    width: 100vw;
   }
   .crypto-container {
-    width: 70vw;
+    width: 90vw;
     height: 100%;
   }
 }
 /* ##############    iPad pro     ############ */
- @media (min-width: 1024px) and (max-width: 1366px) {
+ @media screen and (min-width: 1024px) and (max-width: 1366px) {
+  .coin-app {
+    margin: 0;
+    margin-top: 64px;
+    max-width: 100vw;
+    width: 100%;
+  }
+  .crypto-container {
+    width: 90vw;
+    height: 100%;
+    /* margin: 0 auto; */
+  }
+}
+
+/* ##############    Large monitors     ############ */
+@media screen and (min-width: 1367px) {
   .coin-app {
     margin: 0;
     margin-top: 64px;
