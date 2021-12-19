@@ -44,6 +44,15 @@ const theme = createTheme({
         },
       },
     },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Montserrat',
+          // fontWeight: 500,
+          // fontSize: '2.4em'
+        },
+      },
+    }
   },
 });
 
@@ -181,7 +190,7 @@ export default function CoinTable({ filteredCoins }) {
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   function createData(name, price, volume, coinPercent, mktCap) {
     return {
@@ -274,6 +283,7 @@ export default function CoinTable({ filteredCoins }) {
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
+                    <ThemeProvider theme={theme}>
                     <TableRow
                       hover
                       onClick={(event) => handleClick(event, row.name)}
@@ -308,6 +318,7 @@ export default function CoinTable({ filteredCoins }) {
                       <TableCell align="right" className={classes.tableRows}>{row.price_change_percentage_24h}</TableCell>
                       <TableCell align="right" className={classes.tableRows}>{row.market_cap}</TableCell>
                     </TableRow>
+                    </ThemeProvider>
                   );
                 })}
               {emptyRows > 0 && (
@@ -323,7 +334,7 @@ export default function CoinTable({ filteredCoins }) {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[25, 50, 100]}
+          rowsPerPageOptions={[10, 25, 50]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}
