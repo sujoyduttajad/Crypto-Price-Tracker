@@ -30,7 +30,10 @@ const useStyles = makeStyles({
     // color: (props) => props.color,
   },
   tableRows: {
-    fontFamily: 'Montserrat',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    margin: 0,
   }
 });
 const theme = createTheme({
@@ -66,6 +69,12 @@ const theme = createTheme({
 });
 
 const headCells = [
+  {
+    id: 'image',
+    numeric: false,
+    disablePadding: true,
+    label: '',
+  },
   {
     id: 'name',
     numeric: false,
@@ -317,10 +326,18 @@ export default function CoinTable({ filteredCoins }) {
                         id={labelId}
                         scope="row"
                         padding="none"
-                        className={classes.tableRows}
+                        align='right'
                       >
                         <img className='coin__image' src={row.image} alt={row.name} />
-                        {row.name}
+                      </TableCell>
+                      <TableCell
+                        component="th"
+                        id={labelId}
+                        scope="row"
+                        padding="none"
+                        className={classes.tableRows}
+                      >
+                        {row.name}                      
                       </TableCell>
                       {console.log(row.name)}
                       <TableCell align="right" className={classes.tableRows}>
