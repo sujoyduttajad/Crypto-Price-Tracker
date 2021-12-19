@@ -112,7 +112,7 @@ const headCells = [
     id: 'coinPercent',
     numeric: true,
     disablePadding: false,
-    label: 'Coin Percent',
+    label: '24h Change',
   },
   {
     id: 'mktCap',
@@ -368,8 +368,21 @@ export default function CoinTable({ filteredCoins }) {
                       <TableCell align="right" className={classes.tableRows}>
                         ${row.total_volume}
                       </TableCell>
-                      <TableCell align="right" className={classes.tableRows}>
-                        {row.price_change_percentage_24h}
+                      <TableCell 
+                        align="right" 
+                        className={classes.tableRows}
+                        
+                      >
+                        <span 
+                          style={{
+                            color: `${row.price_change_percentage_24h > 0 ? '#1dd15a' : '#ef5959'}`,
+                            backgroundColor: `${row.price_change_percentage_24h > 0 ? 'rgba(29, 209, 90, 0.2)' : 'rgba(239, 89, 89, 0.2)'}`,
+                            padding: '5px',
+                            borderRadius: '3.5px',
+                          }}
+                        >
+                          {row.price_change_percentage_24h}
+                        </span>
                       </TableCell>
                       <TableCell align="right" className={classes.tableRows}>
                         ${row.market_cap}
