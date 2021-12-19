@@ -82,6 +82,12 @@ form {
   color: #e2e2e2;
 }
 
+.coin__image {
+  width: 25px;
+  height: 25px;
+  margin: auto 1em;
+}
+
 
 /* ##############    Mobile screens     ############ */
   @media screen and (min-width: 320px) and (max-width: 767px) {
