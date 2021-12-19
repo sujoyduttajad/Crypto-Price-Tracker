@@ -16,8 +16,6 @@ import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import { makeStyles } from '@mui/styles';
@@ -296,8 +294,8 @@ export default function CoinTable({ filteredCoins }) {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-    // <Box sx={{ width: '100%' }}>
-      <ThemeProvider theme={theme}>
+    
+    <ThemeProvider theme={theme}>
       <Paper 
         sx={{ width: '100%', mb: 2 }}
         // variant='elevation'
@@ -395,7 +393,6 @@ export default function CoinTable({ filteredCoins }) {
           />
         </ThemeProvider>
       </Paper>
-      </ThemeProvider>
-    // </Box>
+    </ThemeProvider>
   );
 }
