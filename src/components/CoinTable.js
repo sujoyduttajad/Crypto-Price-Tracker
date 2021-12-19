@@ -52,6 +52,15 @@ const theme = createTheme({
           // fontSize: '2.4em'
         },
       },
+    },
+    MuiTableSortLabel: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Montserrat',
+          fontWeight: 700,
+          fontSize: '1.3em'
+        },
+      },
     }
   },
 });
@@ -73,7 +82,7 @@ const headCells = [
     id: 'volume',
     numeric: true,
     disablePadding: false,
-    label: 'Volume',
+    label: 'Volume(USD)',
   },
   {
     id: 'coinPercent',
@@ -85,7 +94,7 @@ const headCells = [
     id: 'mktCap',
     numeric: true,
     disablePadding: false,
-    label: 'Market Cap',
+    label: 'Market Cap(USD)',
   },
 ];
 
@@ -108,19 +117,22 @@ function EnhancedTableHead(props) {
         </TableCell>
         {
           headCells.map((headCell) => (
-          <TableCell
-            key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
-            padding={headCell.disablePadding ? 'none' : 'normal'}            
-          >
-            <TableSortLabel>
-              {headCell.label}
-              {orderBy === headCell.id ? (
-                <Box component="span" sx={visuallyHidden}></Box>
-              ) : null}
-            </TableSortLabel>
-          </TableCell>
-        ))}
+            <ThemeProvider theme={theme}>
+              <TableCell
+                key={headCell.id}
+                align={headCell.numeric ? 'right' : 'left'}
+                padding={headCell.disablePadding ? 'none' : 'normal'}            
+              >
+                <TableSortLabel>
+                  {headCell.label}
+                  {orderBy === headCell.id ? (
+                    <Box component="span" sx={visuallyHidden}></Box>
+                  ) : null}
+                </TableSortLabel>
+              </TableCell>
+            </ThemeProvider>
+          ))
+        }
       </TableRow>
     </TableHead>
   );
@@ -314,13 +326,13 @@ export default function CoinTable({ filteredCoins }) {
                         ${row.current_price}
                       </TableCell>
                       <TableCell align="right" className={classes.tableRows}>
-                        {row.total_volume}
+                        ${row.total_volume}
                       </TableCell>
                       <TableCell align="right" className={classes.tableRows}>
                         {row.price_change_percentage_24h}
                       </TableCell>
                       <TableCell align="right" className={classes.tableRows}>
-                        {row.market_cap}
+                        ${row.market_cap}
                       </TableCell>
                     </TableRow>
                     </ThemeProvider>
