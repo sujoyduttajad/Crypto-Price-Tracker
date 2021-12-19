@@ -67,7 +67,7 @@ const headCells = [
     id: 'price',
     numeric: true,
     disablePadding: false,
-    label: 'Price',
+    label: 'Price(USD)',
   },
   {
     id: 'volume',
@@ -313,10 +313,18 @@ export default function CoinTable({ filteredCoins }) {
                         {row.name}
                       </TableCell>
                       {console.log(row.name)}
-                      <TableCell align="right" className={classes.tableRows}>{row.current_price}</TableCell>
-                      <TableCell align="right" className={classes.tableRows}>{row.total_volume}</TableCell>
-                      <TableCell align="right" className={classes.tableRows}>{row.price_change_percentage_24h}</TableCell>
-                      <TableCell align="right" className={classes.tableRows}>{row.market_cap}</TableCell>
+                      <TableCell align="right" className={classes.tableRows}>
+                        ${row.current_price}
+                      </TableCell>
+                      <TableCell align="right" className={classes.tableRows}>
+                        {row.total_volume}
+                      </TableCell>
+                      <TableCell align="right" className={classes.tableRows}>
+                        {row.price_change_percentage_24h}
+                      </TableCell>
+                      <TableCell align="right" className={classes.tableRows}>
+                        {row.market_cap}
+                      </TableCell>
                     </TableRow>
                     </ThemeProvider>
                   );
