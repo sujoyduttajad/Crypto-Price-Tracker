@@ -35,20 +35,18 @@ const useStyles = makeStyles({
     justifyContent: 'flex-start',
     margin: 0,
   },
-  pagination: {
-    fontFamily: 'Montserrat',
-    fontWeight: 700,
-  }
 });
 
 const theme = createTheme({
+  palette: { mode: 'dark' },
   components: {
     MuiTypography: {
       styleOverrides: {
         root: {
           fontFamily: 'Montserrat',
-          fontWeight: 700,
-          fontSize: '2.4em'
+          fontWeight: 600,
+          fontSize: '2.1em',
+          color: '#eee'
         },
       },
     },
@@ -56,8 +54,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: 'Montserrat',
-          fontWeight: 500,
-          // fontSize: '2.4em'
+          fontWeight: 400,
         },
       },
     },
@@ -65,8 +62,8 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: 'Montserrat',
-          fontWeight: 700,
-          fontSize: '1.3em'
+          fontWeight: 500,
+          fontSize: '1.2em'
         },
       },
     },
@@ -75,16 +72,13 @@ const theme = createTheme({
         root: {
           fontFamily: 'Montserrat',
           fontWeight: 700,
+          color: '#fff'
         },
     }},
     MuiPaper: { 
       styleOverrides: {
         root: {
-          // filter: 'invert(1)',
-          border: '1px solid #eee',
-          // backgroundColor: '#101010',
-          color: '#101010',
-          // createTheme({palette: { mode: 'dark' }}),
+          border: '0.1px solid #333333',
         },
       },
     }
@@ -306,8 +300,8 @@ export default function CoinTable({ filteredCoins }) {
       <ThemeProvider theme={theme}>
       <Paper 
         sx={{ width: '100%', mb: 2 }}
-        variant='elevation'
-        elevation={4}
+        // variant='elevation'
+        elevation={1}
       >
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
@@ -390,16 +384,16 @@ export default function CoinTable({ filteredCoins }) {
           </Table>
         </TableContainer>
         <ThemeProvider theme={theme}>
-        <TablePagination
-          rowsPerPageOptions={[10, 25, 50]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-          className={classes.pagination}
-        /></ThemeProvider>
+          <TablePagination
+            rowsPerPageOptions={[10, 25, 50]}
+            component="div"
+            count={rows.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
+        </ThemeProvider>
       </Paper>
       </ThemeProvider>
     // </Box>
