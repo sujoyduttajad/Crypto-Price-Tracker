@@ -51,7 +51,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: 'Montserrat',
-          // fontWeight: 500,
+          fontWeight: 600,
           // fontSize: '2.4em'
         },
       },
@@ -62,6 +62,16 @@ const theme = createTheme({
           fontFamily: 'Montserrat',
           fontWeight: 700,
           fontSize: '1.3em'
+        },
+      },
+    },
+    MuiPaper: { 
+      styleOverrides: {
+        root: {
+          filter: 'invert(1)',
+          border: '1px solid #eee',
+          // backgroundColor: '#101010',
+          color: '#101010',
         },
       },
     }
@@ -279,8 +289,13 @@ export default function CoinTable({ filteredCoins }) {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Paper sx={{ width: '100%', mb: 2 }}>
+    // <Box sx={{ width: '100%' }}>
+      <ThemeProvider theme={theme}>
+      <Paper 
+        sx={{ width: '100%', mb: 2 }}
+        variant='elevation'
+        elevation={4}
+      >
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
           <Table
@@ -378,10 +393,7 @@ export default function CoinTable({ filteredCoins }) {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
-      {/* <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      /> */}
-    </Box>
+      </ThemeProvider>
+    // </Box>
   );
 }
