@@ -370,8 +370,7 @@ export default function CoinTable({ filteredCoins }) {
                       </TableCell>
                       <TableCell 
                         align="right" 
-                        className={classes.tableRows}
-                        
+                        className={classes.tableRows}                       
                       >
                         <span 
                           style={{
