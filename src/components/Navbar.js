@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../images/coinize.svg'
+import Logo from '../images/coinize2.svg'
 
 const Navbar = ({
     handleChange
