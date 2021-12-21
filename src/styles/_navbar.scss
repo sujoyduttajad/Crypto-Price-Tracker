@@ -1,9 +1,15 @@
 
+
+@mixin flex($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
   /* --------   Logo styles --------- */
   .coin-logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex(row, center, flex-start);
   }
   .coin-logo {
     width: 100%;
@@ -13,11 +19,10 @@
   /* --------   Form Input styles --------- */
   .coin-input-container {
     margin: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex(row, center, flex-start);
   }
   .coin-search {
+    // @include flex(row, center, space-between);
     margin-bottom: 64px;
     display: flex;
     justify-content: space-between;
@@ -56,8 +61,10 @@
   
   /* ----------  Pages styles ------------ */
   .coin-pages-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex(row, center, flex-start);
+    h3 {
+        font-weight: 300;
+        font-size: 1em;
+    }
   }
   
