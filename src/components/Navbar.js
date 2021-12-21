@@ -6,7 +6,7 @@ const Navbar = ({
 }) => {
     return (
         <div className='coin-search'>
-            <div>
+            <div className='coin-logo-container'>
                 <img className='coin-logo' src={Logo} alt="logo" />
             </div>
             <form>
