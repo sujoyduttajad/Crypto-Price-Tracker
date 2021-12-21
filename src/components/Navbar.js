@@ -9,6 +9,15 @@ const Navbar = ({
             <div className='coin-logo-container'>
                 <img className='coin-logo' src={Logo} alt="logo" />
             </div>
+            <div className='coin-pages-container'>
+                <h3>Market</h3>
+            </div>
+            <div className='coin-pages-container'>
+                <h3>Exchange</h3>
+            </div>
+            <div className='coin-pages-container'>
+                <h3>Categories</h3>
+            </div>
             <form className='coin-input-container'>
                 <input 
                     type="text" 
