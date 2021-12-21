@@ -63,8 +63,18 @@
   .coin-pages-container {
     @include flex(row, center, flex-start);
     h3 {
-        font-weight: 300;
+        font-weight: 500;
         font-size: 1em;
+        margin: 0 1em;
+        color: #707070;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            color: #fff;
+            font-weight: 500;
+        }
     }
+    
   }
   
