@@ -43,8 +43,9 @@ form {
 .coin-search {
   margin-bottom: 64px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
+  width: 100%;
 }
 .coin-logo-container {
   display: flex;
@@ -53,7 +54,7 @@ form {
 }
 .coin-logo {
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
 
 /* .coin-text {
