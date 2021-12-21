@@ -30,7 +30,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   /* margin-bottom: 64px; */
   color: #fff;
   max-width: 100vw;
@@ -41,7 +41,7 @@
 /* --------   Logo styles --------- */
 .coin-logo-container {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: flex-start;
 }
 .coin-logo {
@@ -53,7 +53,7 @@
 .coin-input-container {
   margin: 1rem 2rem;
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: flex-start;
 }
 .coin-search {
@@ -93,6 +93,13 @@
   margin: auto 1em;
 }
 
+/* ----------  Pages styles ------------ */
+.coin-pages-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 
 /* ##############    Mobile screens     ############ */
   @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -127,7 +134,7 @@
  @media screen and (min-width: 1024px) and (max-width: 1366px) {
   .coin-app {
     margin: 0;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     max-width: 100vw;
     width: 100%;
   }
@@ -142,7 +149,6 @@
 @media screen and (min-width: 1367px) {
   .coin-app {
     margin: 0;
-    margin-top: 50px;
     max-width: 100vw;
     width: 100%;
   }
