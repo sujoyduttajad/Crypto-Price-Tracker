@@ -1,11 +1,14 @@
 import React from 'react'
+import Logo from '../images/coinize.svg'
 
 const Navbar = ({
     handleChange
 }) => {
     return (
         <div className='coin-search'>
-            <h1 className="coin-text">Crypto Price Tracker</h1>
+            <div>
+                <img className='coin-logo' src={Logo} alt="logo" />
+            </div>
             <form>
                 <input 
                     type="text" 
