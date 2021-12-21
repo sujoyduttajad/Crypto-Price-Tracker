@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import './App.css';
+import './styles/global.scss';
 import CoinTable from './components/CoinTable'
 import Navbar from './components/Navbar'
 
