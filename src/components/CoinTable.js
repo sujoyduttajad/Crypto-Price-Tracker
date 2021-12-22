@@ -20,7 +20,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import { makeStyles } from '@mui/styles';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-
+import Avatar from '@mui/material/Avatar';
 
 const useStyles = makeStyles({
   tableContent: {
@@ -33,6 +33,9 @@ const useStyles = makeStyles({
     justifyContent: 'flex-start',
     margin: 0,
   },
+  avatar: {
+    colorDefault: 'purple'
+  }
 });
 
 const theme = createTheme({
@@ -183,31 +186,19 @@ const EnhancedTableToolbar = (props) => {
           }),
         }}
       >
-        {numSelected > 0 ? (
-          <Typography
-            sx={{ flex: '1 1 100%' }}
-            color="inherit"
-            variant="h1"
-            component="div"
-          >
-            {numSelected} selected
-          </Typography>
-        ) : (
-          <Typography
-            sx={{ flex: '1 1 100%' }}
-            variant="h4"
-            id="tableTitle"
-            component="div"
-          >
-            Market Report
-          </Typography>
-        )}
-          <Tooltip title="Filter list">
-            <IconButton>
-              <FilterListIcon />
-            </IconButton>
-          </Tooltip>
-        
+      <Typography
+        sx={{ flex: '1 1 100%' }}
+        variant="h4"
+        id="tableTitle"
+        component="div"
+      >
+        Market Report
+      </Typography> 
+      <Tooltip title="Filter list">
+        <IconButton>
+          <FilterListIcon />
+        </IconButton>
+      </Tooltip>       
       </Toolbar>
     </ThemeProvider>
   );
@@ -286,10 +277,6 @@ export default function CoinTable({ filteredCoins }) {
     setPage(0);
   };
 
-  const handleChangeDense = (event) => {
-    setDense(event.target.checked);
-  };
-  // console.log(rows)
   const isSelected = (name) => selected.indexOf(name) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
@@ -338,13 +325,28 @@ export default function CoinTable({ filteredCoins }) {
                       className={classes.tableContent}
                     >
                       <TableCell padding="checkbox">
-                        <Checkbox
+                        {/* <Checkbox
                           color="primary"
                           checked={isItemSelected}
                           inputProps={{
                             'aria-labelledby': labelId,
                           }}
-                        />
+                        /> */}
+                        <Avatar 
+                          className={classes.avatar} 
+                          sx={{ width: 30, height: 30 }}
+                          // variant='rounded'
+                          style={{ colorDefault: '#000'}}
+                        >
+                          <p style={{ 
+                            fontSize: '15px', 
+                            fontWeight: 500,
+                            color: '#fff'
+                            }}
+                          >
+                              {row.market_cap_rank}
+                          </p>
+                        </Avatar>
                       </TableCell>
                       <TableCell
                         component="th"
