@@ -141,7 +141,7 @@ function EnhancedTableHead(props) {
         </TableCell>
         {
           headCells.map((headCell) => (
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={theme} key={headCell.id}>
               <TableCell
                 key={headCell.id}
                 align={headCell.numeric ? 'right' : 'left'}
@@ -326,7 +326,7 @@ export default function CoinTable({ filteredCoins }) {
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
-                    <ThemeProvider theme={theme}>
+                    <ThemeProvider theme={theme} key={row.id}>
                     <TableRow
                       hover
                       onClick={(event) => handleClick(event, row.name)}
