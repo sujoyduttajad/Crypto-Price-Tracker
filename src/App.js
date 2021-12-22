@@ -25,7 +25,7 @@ function App() {
   const filteredCoins = coins.filter(coin => (
     coin.name.toLowerCase().includes(search.toLowerCase())
   ))
-  console.log(filteredCoins);
+  // console.log(filteredCoins);
 
   return (
     <div className="coin-app">
