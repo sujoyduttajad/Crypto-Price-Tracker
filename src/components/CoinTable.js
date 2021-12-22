@@ -218,7 +218,10 @@ EnhancedTableToolbar.propTypes = {
 };
 
 export default function CoinTable({ filteredCoins }) {
-  // const classes = useStyles(props);
+  /* 
+  const classes = useStyles(props); 
+  --------- If you needto use props use 👆  -----------
+  */
   const classes = useStyles();
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
@@ -330,7 +333,7 @@ export default function CoinTable({ filteredCoins }) {
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.id}
                       selected={isItemSelected}
                       className={classes.tableContent}
                     >
