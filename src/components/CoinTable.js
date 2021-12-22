@@ -88,6 +88,12 @@ const theme = createTheme({
 
 const headCells = [
   {
+    id: 'rank',
+    numeric: true,
+    disablePadding: true,
+    label: '#Rank',
+  },
+  {
     id: 'image',
     numeric: false,
     disablePadding: true,
@@ -131,17 +137,6 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox">
-          <Checkbox
-            color="primary"
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-            inputProps={{
-              'aria-label': 'select all desserts',
-            }}
-          />
-        </TableCell>
         {
           headCells.map((headCell) => (
             <ThemeProvider theme={theme} key={headCell.id}>
@@ -316,22 +311,13 @@ export default function CoinTable({ filteredCoins }) {
                     <ThemeProvider theme={theme} key={row.id}>
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
-                      role="checkbox"
-                      aria-checked={isItemSelected}
+                      onClick={(event) => handleClick(event, row.name)}                    
                       tabIndex={-1}
                       key={row.id}
-                      selected={isItemSelected}
+                      
                       className={classes.tableContent}
                     >
                       <TableCell padding="checkbox">
-                        {/* <Checkbox
-                          color="primary"
-                          checked={isItemSelected}
-                          inputProps={{
-                            'aria-labelledby': labelId,
-                          }}
-                        /> */}
                         <Avatar 
                           className={classes.avatar} 
                           sx={{ width: 30, height: 30 }}
@@ -344,7 +330,7 @@ export default function CoinTable({ filteredCoins }) {
                             color: '#fff'
                             }}
                           >
-                              {row.market_cap_rank}
+                            {row.market_cap_rank}
                           </p>
                         </Avatar>
                       </TableCell>
