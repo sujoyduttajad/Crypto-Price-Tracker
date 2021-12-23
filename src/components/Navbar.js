@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../images/coinize2.svg'
+import { Link } from "react-router-dom"
 
 const Navbar = ({
     handleChange
@@ -7,16 +8,26 @@ const Navbar = ({
     return (
         <nav className='coin-search'>
             <div className='coin-logo-container'>
-                <img className='coin-logo' src={Logo} alt="logo" />
-                <div className='coin-pages-container'>
-                    <h3>Market</h3>
-                </div>
-                <div className='coin-pages-container'>
-                    <h3>Exchange</h3>
-                </div>
-                <div className='coin-pages-container'>
-                    <h3>Categories</h3>
-                </div>
+                <Link to="/">
+                    <div className='coin-image-container'>
+                        <img className='coin-logo' src={Logo} alt="logo" />
+                    </div>
+                </Link>
+                <Link to="/">
+                    <div className='coin-pages-container'>
+                        <h3>Market</h3>
+                    </div>
+                </Link>
+                <Link to="/exchange">
+                    <div className='coin-pages-container'>
+                        <h3>Exchange</h3>
+                    </div>
+                </Link>
+                <Link to="/categories">
+                    <div className='coin-pages-container'>
+                        <h3>Categories</h3>
+                    </div>
+                </Link>
             </div>
             
             <form className='coin-input-container'>
