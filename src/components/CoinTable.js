@@ -13,7 +13,7 @@ import TableSortLabel from '@mui/material/TableSortLabel';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import Checkbox from '@mui/material/Checkbox';
+import RefreshIcon from '@mui/icons-material/Refresh';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import FilterListIcon from '@mui/icons-material/FilterList';
@@ -188,12 +188,20 @@ const EnhancedTableToolbar = (props) => {
         component="div"
       >
         Market Report
+        
       </Typography> 
+      <IconButton>     
+        <RefreshIcon 
+          fontSize='medium'
+          onClick={() => window.location.reload()}
+        />
+      </IconButton>
       <Tooltip title="Filter list">
         <IconButton>
           <FilterListIcon />
         </IconButton>
       </Tooltip>       
+      
       </Toolbar>
     </ThemeProvider>
   );
@@ -211,7 +219,6 @@ export default function CoinTable({ filteredCoins }) {
   const classes = useStyles();
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
-  const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   function createData(name, price, volume, coinPercent, mktCap) {
@@ -293,7 +300,7 @@ export default function CoinTable({ filteredCoins }) {
             aria-label="sticky table"
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
-            size={dense ? 'small' : 'medium'}
+            size={'medium'}
           >
             <EnhancedTableHead
               numSelected={selected.length}
