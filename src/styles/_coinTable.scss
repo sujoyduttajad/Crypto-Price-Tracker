@@ -1,0 +1,19 @@
+
+@mixin flex($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+  .coin-refresh {
+    // @include flex(column, end, flex-start);
+    margin: auto 1em;
+    // margin-left: 1em;
+}
+
+  /*     ######   MUI Override styles    ######     */
+.MuiAvatar-root {
+  margin-left: 1.5em !important;
+  background-color: #3B3B3B !important;
+}
