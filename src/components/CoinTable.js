@@ -352,7 +352,6 @@ export default function CoinTable({ filteredCoins }) {
                       >
                         {row.name}                      
                       </TableCell>
-                      {console.log(row.name)}
                       <TableCell align="right" className={classes.tableRows}>
                         ${row.current_price}
                       </TableCell>
