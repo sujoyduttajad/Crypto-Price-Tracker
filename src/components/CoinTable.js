@@ -187,10 +187,9 @@ const EnhancedTableToolbar = (props) => {
         id="tableTitle"
         component="div"
       >
-        Market Report
-        
+        Market Report       
       </Typography> 
-      <IconButton>     
+      <IconButton style={{ marginRight: '1em'}}>     
         <RefreshIcon 
           fontSize='medium'
           onClick={() => window.location.reload()}
