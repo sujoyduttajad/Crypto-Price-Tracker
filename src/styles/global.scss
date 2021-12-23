@@ -1,6 +1,8 @@
 
-
 @import "./navbar";
+@import "./coinTable";
+
+
 
 * {
     box-sizing: border-box;
@@ -47,11 +49,6 @@
     width: 100%;
   }
 
-    /*     ######   MUI Override styles    ######     */
-  .MuiAvatar-root {
-    margin-left: 1.5em !important;
-    background-color: #3B3B3B !important;
-  }
   
   /* ##############    Mobile screens     ############ */
     @media screen and (min-width: 320px) and (max-width: 767px) {
