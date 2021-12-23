@@ -3,6 +3,10 @@ import axios from 'axios';
 import './styles/global.scss';
 import CoinTable from './components/CoinTable'
 import Navbar from './components/Navbar'
+import {
+    Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
 
@@ -18,13 +22,6 @@ function App() {
     .catch(error => console.log(error))
   }, []);
 
-  // const getCryptoCoinData = async () => {
-  //   const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'); 
-  //   const coinData = await response.json();
-  //   setCoins(coinData.data);
-  //   console.log(coins);
-  // }
-
   const handleChange = e => {
     setSearch(e.target.value)
   }
@@ -35,17 +32,14 @@ function App() {
   // console.log(filteredCoins);
 
   return (
-    <div className="coin-app">
-      <Navbar
-        handleChange={handleChange} 
-      />
-      <div className="crypto-container">
-        <CoinTable
-          filteredCoins={filteredCoins}
-        />
-      </div>
-      
-    </div>
+          <div className="coin-app">
+            <Navbar
+              handleChange={handleChange} 
+            />
+            <Routes>
+                <Route path="/" element={<CoinTable filteredCoins={filteredCoins} />} />
+            </Routes>
+          </div>
   );
 }
 
