@@ -279,7 +279,7 @@ export default function CoinTable({ filteredCoins }) {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-    
+    <div className="crypto-container">
     <ThemeProvider theme={theme}>
       <Paper 
         sx={{ width: '100%', mb: 2 }}
@@ -397,5 +397,6 @@ export default function CoinTable({ filteredCoins }) {
         </ThemeProvider>
       </Paper>
     </ThemeProvider>
+    </div>
   );
 }
