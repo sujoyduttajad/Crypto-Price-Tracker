@@ -231,7 +231,7 @@ export default function CoinTable({ filteredCoins }) {
   }
   const rows = filteredCoins;
     rows.map((coin) => {
-      createData(
+      return createData(
         coin.name, 
         coin.current_price, 
         coin.total_volume, 
@@ -310,7 +310,7 @@ export default function CoinTable({ filteredCoins }) {
               {
                 rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
