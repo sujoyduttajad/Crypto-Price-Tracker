@@ -2,9 +2,7 @@ import React from 'react'
 import Logo from '../images/coinize2.svg'
 import { Link } from "react-router-dom"
 
-const Navbar = ({
-    handleChange
-}) => {
+const Navbar = ({ handleChange }) => {
     return (
         <nav className='coin-search'>
             <div className='coin-logo-container'>
