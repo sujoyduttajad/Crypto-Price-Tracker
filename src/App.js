@@ -3,10 +3,7 @@ import axios from 'axios';
 import './styles/global.scss';
 import CoinTable from './components/CoinTable'
 import Navbar from './components/Navbar'
-import {
-    Routes,
-  Route
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 
