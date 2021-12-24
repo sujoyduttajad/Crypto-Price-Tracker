@@ -36,7 +36,11 @@ function App() {
               handleChange={handleChange} 
             />
             <Routes>
-                <Route path="/" element={<CoinTable filteredCoins={filteredCoins} />} />
+                <Route path="/" element={
+                  !loading ? 
+                  <CoinTable filteredCoins={filteredCoins} />
+                   : <p>Loading...</p> } 
+                />
             </Routes>
           </div>
   );
