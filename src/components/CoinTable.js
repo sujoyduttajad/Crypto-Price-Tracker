@@ -220,6 +220,9 @@ export default function CoinTable({ filteredCoins }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
+  const [coinId, setCoinId] = React.useState();
+  
+
   function createData(name, price, volume, coinPercent, mktCap) {
     return {
       name,
@@ -249,7 +252,7 @@ export default function CoinTable({ filteredCoins }) {
     setSelected([]);
   };
 
-  const handleClick = (event, name) => {
+  const handleClick = (event, name, id) => {
     const selectedIndex = selected.indexOf(name);
     let newSelected = [];
 
@@ -267,6 +270,8 @@ export default function CoinTable({ filteredCoins }) {
     }
 
     setSelected(newSelected);
+    setCoinId(id);
+    console.log(coinId);
   };
 
   const handleChangePage = (event, newPage) => {
@@ -317,10 +322,9 @@ export default function CoinTable({ filteredCoins }) {
                     <ThemeProvider theme={theme} key={row.id}>
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}                    
+                      onClick={(event) => handleClick(event, row.name, row.id)}                    
                       tabIndex={-1}
                       key={row.id}
-                      
                       className={classes.tableContent}
                     >
                       <TableCell padding="checkbox">
