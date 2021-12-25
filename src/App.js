@@ -4,17 +4,28 @@ import './styles/global.scss';
 import CoinTable from './components/CoinTable'
 import Navbar from './components/Navbar'
 import { Routes, Route } from "react-router-dom";
+import EachCoin from './components/EachCoin';
 
 function App() {
 
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
+  const [coin, setCoin] = useState({});
 
   useEffect(() => {
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
     .then(res => {
       setCoins(res.data);
+      setLoading(false);
+    })
+    .catch(error => console.log(error))
+  }, []);
+
+  useEffect(() => {
+    axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin`)
+    .then(res => {
+      setCoin(res.data);
       setLoading(false);
     })
     .catch(error => console.log(error))
@@ -39,6 +50,11 @@ function App() {
                 <Route path="/" element={
                   !loading ? 
                   <CoinTable filteredCoins={filteredCoins} />
+                   : <p>Loading...</p> } 
+                />
+                <Route path="/:ID" element={
+                  !loading ? 
+                  <EachCoin coin={coin} />
                    : <p>Loading...</p> } 
                 />
             </Routes>
