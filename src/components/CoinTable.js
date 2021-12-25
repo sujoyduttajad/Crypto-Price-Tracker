@@ -56,6 +56,7 @@ const theme = createTheme({
         root: {
           fontFamily: 'Montserrat',
           fontWeight: 400,
+          cursor: 'pointer',
         },
       },
     },
@@ -175,10 +176,6 @@ const EnhancedTableToolbar = (props) => {
         sx={{
           pl: { sm: 2 },
           pr: { xs: 1, sm: 1 },
-          ...(numSelected > 0 && {
-            bgcolor: (theme) =>
-              alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
-          }),
         }}
       >
       <Typography
@@ -192,7 +189,7 @@ const EnhancedTableToolbar = (props) => {
       <IconButton style={{ marginRight: '1em'}}>     
         <RefreshIcon 
           fontSize='medium'
-          onClick={() => window.location.reload()}
+          onClick={() => window.location.reload()} // custom refresh button 
         />
       </IconButton>
       <Tooltip title="Filter list">
@@ -252,7 +249,7 @@ export default function CoinTable({ filteredCoins }) {
     setSelected([]);
   };
 
-  const handleClick = (event, name, id) => {
+  const handleClick =  async (event, name, id) => {
     const selectedIndex = selected.indexOf(name);
     let newSelected = [];
 
@@ -270,7 +267,7 @@ export default function CoinTable({ filteredCoins }) {
     }
 
     setSelected(newSelected);
-    setCoinId(id);
+    await setCoinId(id);
     console.log(coinId);
   };
 
@@ -325,6 +322,7 @@ export default function CoinTable({ filteredCoins }) {
                       onClick={(event) => handleClick(event, row.name, row.id)}                    
                       tabIndex={-1}
                       key={row.id}
+                      value={row.id}
                       className={classes.tableContent}
                     >
                       <TableCell padding="checkbox">
