@@ -52,7 +52,7 @@ function App() {
                   <CoinTable filteredCoins={filteredCoins} />
                    : <p>Loading...</p> } 
                 />
-                <Route path="/:ID" element={
+                <Route path="/market/:ID" element={
                   !loading ? 
                   <EachCoin coin={coin} />
                    : <p>Loading...</p> } 
