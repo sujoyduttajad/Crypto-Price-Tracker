@@ -8,7 +8,7 @@ A Cryptocurrency Price Tracker which shows the current price for all the cryptoc
 <img src="./Screenshot (20).png" alt="the screenshot of the app large screen"/>
 
 # Version 2.0.0
-In developement. Coming soon!
+Full app is still In developement. Features like navigation to different pages and dynamic routes are build into this tracker. 
 
 <img src="./Coinnize 2.0.png" alt="the screenshot of the app large screen"/>
 
