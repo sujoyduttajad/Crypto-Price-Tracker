@@ -211,7 +211,7 @@ EnhancedTableToolbar.propTypes = {
 export default function CoinTable({ filteredCoins }) {
   /* 
   const classes = useStyles(props); 
-  --------- If you needto use props use 👆  -----------
+  --------- If you need to use props use 👆  -----------
   */
   const classes = useStyles();
   const [selected, setSelected] = useState([]);
@@ -272,7 +272,7 @@ export default function CoinTable({ filteredCoins }) {
 
   // const isSelected = (name) => selected.indexOf(name) !== -1;
 
-  // Avoid a layout jump when reaching the last page with empty rows.
+  /* ------- Avoid a layout jump when reaching the last page with empty rows. -------- */
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
