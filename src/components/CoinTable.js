@@ -273,7 +273,6 @@ export default function CoinTable({ filteredCoins }) {
     <ThemeProvider theme={theme}>
       <Paper 
         sx={{ width: '100%', mb: 2 }}
-        // variant='elevation'
         elevation={1}
       >
         <EnhancedTableToolbar numSelected={selected.length} />
