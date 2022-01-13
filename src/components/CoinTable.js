@@ -20,6 +20,8 @@ import { visuallyHidden } from '@mui/utils';
 import { makeStyles } from '@mui/styles';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Avatar from '@mui/material/Avatar';
+import { useDispatch } from 'react-redux';
+import { update } from '../features/eachCoinSlice'
 
 const useStyles = makeStyles({
   tableContent: {
@@ -217,7 +219,7 @@ export default function CoinTable({ filteredCoins }) {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const [coinId, setCoinId] = useState('');
-  
+  const dispatch = useDispatch();
 
   function createData(name, price, volume, coinPercent, mktCap) {
     return {
@@ -248,8 +250,9 @@ export default function CoinTable({ filteredCoins }) {
     setSelected([]);
   };
   
-  const handleClick =  async (id) => {
-    await setCoinId(id);
+  const handleClick =  async (e, id) => {
+    // await setCoinId(id);
+    await dispatch(update({coinId}))
    };
 
    console.log(coinId);
@@ -305,7 +308,7 @@ export default function CoinTable({ filteredCoins }) {
                     <ThemeProvider theme={theme} key={row.id}>
                     <TableRow
                       hover
-                      onClick={() => handleClick(row.id)}                    
+                      onClick={(e) => handleClick(e, row.id)}                    
                       tabIndex={-1}
                       key={row.id}
                       value={row.id}
