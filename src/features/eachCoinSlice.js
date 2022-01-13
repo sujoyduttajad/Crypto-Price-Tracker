@@ -13,5 +13,7 @@ export const eachCoinSlice = createSlice({
   }
 });
 
+
 export const { update } = eachCoinSlice.actions;
+export default eachCoinSlice.reducer;
 
