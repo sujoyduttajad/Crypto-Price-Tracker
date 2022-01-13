@@ -11,7 +11,7 @@ function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
-  const [coin, setCoin] = useState({});
+  // const [coin, setCoin] = useState({});
 
   useEffect(() => {
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
@@ -22,14 +22,14 @@ function App() {
     .catch(error => console.log(error))
   }, []);
 
-  useEffect(() => {
-    axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin`)
-    .then(res => {
-      setCoin(res.data);
-      setLoading(false);
-    })
-    .catch(error => console.log(error))
-  }, []);
+  // useEffect(() => {
+  //   axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin`)
+  //   .then(res => {
+  //     setCoin(res.data);
+  //     setLoading(false);
+  //   })
+  //   .catch(error => console.log(error))
+  // }, []);
 
   const handleChange = e => {
     setSearch(e.target.value)
@@ -52,11 +52,11 @@ function App() {
                   <CoinTable filteredCoins={filteredCoins} />
                    : <p>Loading...</p> } 
                 />
-                <Route path="/market/:ID" element={
+                {/* <Route path="/market/:ID" element={
                   !loading ? 
                   <EachCoin coin={coin} />
                    : <p>Loading...</p> } 
-                />
+                /> */}
             </Routes>
           </div>
   );
