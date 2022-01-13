@@ -1,15 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { ARTICLES } from '../../app/data';
+
 
 export const eachCoinSlice = createSlice({
   name: 'eachCoin',
   initialState: {
-    articles: ARTICLES,
+    coinId: ""
   },
-  reducers: {}
+  reducers: {
+    update: (state, action) => {
+      state.coinId = action.payload.coinId
+    }
+  }
 });
 
-export const selectArticles = (state) => state.articles.articles;
+export const { update } = eachCoinSlice.actions;
 
-
-export default articlesSlice.reducer;
