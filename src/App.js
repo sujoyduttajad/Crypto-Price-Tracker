@@ -5,13 +5,17 @@ import CoinTable from './components/CoinTable'
 import Navbar from './components/Navbar'
 import { Routes, Route } from "react-router-dom";
 import EachCoin from './components/EachCoin';
+import { useSelector } from 'react-redux';
 
 function App() {
 
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
-  // const [coin, setCoin] = useState({});
+  const [coin, setCoin] = useState({});
+
+  const eachCoinId = useSelector((state) => state.eachCoin);
+  console.log(eachCoinId)
 
   useEffect(() => {
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
@@ -23,7 +27,7 @@ function App() {
   }, []);
 
   // useEffect(() => {
-  //   axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin`)
+  //   axios.get(`https://api.coingecko.com/api/v3/coins/${eachCoinId}`)
   //   .then(res => {
   //     setCoin(res.data);
   //     setLoading(false);
