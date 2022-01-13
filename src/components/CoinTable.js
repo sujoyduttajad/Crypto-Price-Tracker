@@ -216,7 +216,7 @@ export default function CoinTable({ filteredCoins }) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const [coinId, setCoinId] = useState();
+  const [coinId, setCoinId] = useState('');
   
 
   function createData(name, price, volume, coinPercent, mktCap) {
@@ -247,11 +247,16 @@ export default function CoinTable({ filteredCoins }) {
     }
     setSelected([]);
   };
-
-  const handleClick =  async (event, name, id) => {
+  
+  const handleClick =  async (id) => {
     await setCoinId(id);
-    console.log(coinId);
-  };
+   };
+
+   console.log(coinId);
+   
+   useEffect(() => {
+    return () => handleClick();
+  }, [])
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -262,7 +267,7 @@ export default function CoinTable({ filteredCoins }) {
     setPage(0);
   };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
+  // const isSelected = (name) => selected.indexOf(name) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -300,7 +305,7 @@ export default function CoinTable({ filteredCoins }) {
                     <ThemeProvider theme={theme} key={row.id}>
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name, row.id)}                    
+                      onClick={() => handleClick(row.id)}                    
                       tabIndex={-1}
                       key={row.id}
                       value={row.id}
