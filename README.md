@@ -10,7 +10,7 @@ A Cryptocurrency Price Tracker which shows the current price for all the cryptoc
 Full app is still In developement. Features like navigation to different pages and dynamic routes are build into this tracker. 
 
 <img src="./Coinize2.0.png" alt="the screenshot of the app large screen"/>
-[Live Demo](https://crypto-price-tracker.pages.dev)
+(https://crypto-price-tracker.pages.dev)
 
 # What goes into building this app
 This app is build with React, React-hooks like useState and useEffect and for content I used the coingecko API, fetched the data and used promises to get the request from the server. 
