@@ -15,7 +15,7 @@ function App() {
   const [coin, setCoin] = useState({});
 
   const eachCoinId = useSelector((state) => state.eachCoin);
-  console.log(eachCoinId);
+  // console.log(eachCoinId);
 
   useEffect(() => {
     axios
@@ -46,7 +46,7 @@ function App() {
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
   // console.log(filteredCoins);
-  console.log(loading);
+  // console.log(loading);
 
   return (
     <div className="coin-app">
