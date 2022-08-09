@@ -5,6 +5,8 @@ import CoinTable from "./pages/CoinTable";
 import { Routes, Route } from "react-router-dom";
 import EachCoin from "./components/EachCoin";
 import { useSelector } from "react-redux";
+import Exchange from "./pages/Exchange";
+import CoinCategories from "./pages/CoinCategories";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -61,6 +63,14 @@ function App() {
               <p>Loading...</p>
             )
           }
+        />
+        <Route
+          path="/exchange"
+          element={<Exchange handleChange={handleChange} />}
+        />
+        <Route
+          path="/categories"
+          element={<CoinCategories handleChange={handleChange} />}
         />
         {/* <Route path="/market/:ID" element={
                   !loading ? 
