@@ -254,7 +254,7 @@ export default function CoinTable({ filteredCoins, handleChange }) {
     await dispatch(update({ coinId }));
   };
 
-  console.log(coinId);
+  // console.log(coinId);
 
   useEffect(() => {
     return () => handleClick();
