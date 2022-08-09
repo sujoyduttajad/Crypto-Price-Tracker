@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from "../components/Navbar"
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
@@ -206,7 +207,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function CoinTable({ filteredCoins }) {
+export default function CoinTable({ filteredCoins, handleChange }) {
   /* 
   const classes = useStyles(props); 
   --------- If you need to use props use 👆  -----------
@@ -275,6 +276,8 @@ export default function CoinTable({ filteredCoins }) {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
+    <>
+    <Navbar handleChange={handleChange} />
     <div className="crypto-container">
       <ThemeProvider theme={theme}>
         <Paper sx={{ width: "100%", mb: 2 }} elevation={1}>
@@ -410,5 +413,6 @@ export default function CoinTable({ filteredCoins }) {
         </Paper>
       </ThemeProvider>
     </div>
+    </>
   );
 }
