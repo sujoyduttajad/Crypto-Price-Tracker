@@ -267,8 +267,9 @@ export default function CoinTable({ filteredCoins, handleChange }) {
     await dispatch(update({ coinId: '' }));
   };
 
-  const handleChangeRowsPerPage = (event) => {
+  const handleChangeRowsPerPage = async (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
+    await dispatch(update({ coinId: '' }));
     setPage(0);
   };
 
