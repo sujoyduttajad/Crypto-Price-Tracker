@@ -5,7 +5,6 @@ import { NavLink, useLocation } from "react-router-dom";
 const Navbar = ({ handleChange }) => {
   let activeClassName = "nav-active";
   const location = useLocation();
-  console.log(location.pathname);
   const isActive = location.pathname;
 
   return (
@@ -16,10 +15,7 @@ const Navbar = ({ handleChange }) => {
             <img className="coin-logo" src={Logo} alt="logo" />
           </div>
         </NavLink>
-        <NavLink
-          to="/"
-          //   className={isActive === '/' ? activeClassName : undefined}
-        >
+        <NavLink to="/">
           <div
             className={`coin-pages-container ${
               isActive === "/" ? activeClassName : undefined
@@ -28,10 +24,7 @@ const Navbar = ({ handleChange }) => {
             <h3>Market</h3>
           </div>
         </NavLink>
-        <NavLink
-          to="/exchange"
-          //   className={isActive === "/exchange" ? activeClassName : undefined}
-        >
+        <NavLink to="/exchange">
           <div
             className={`coin-pages-container ${
               isActive === "/exchange" ? activeClassName : undefined
@@ -40,10 +33,7 @@ const Navbar = ({ handleChange }) => {
             <h3>Exchange</h3>
           </div>
         </NavLink>
-        <NavLink
-          to="/categories"
-          //   className={isActive === "/categories" ? activeClassName : undefined}
-        >
+        <NavLink to="/categories">
           <div
             className={`coin-pages-container ${
               isActive === "/categories" ? activeClassName : undefined
