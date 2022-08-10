@@ -12,9 +12,9 @@ function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
-  const [coin, setCoin] = useState({});
+  // const [coin, setCoin] = useState({});
 
-  const eachCoinId = useSelector((state) => state.eachCoin);
+  // const eachCoinId = useSelector((state) => state.eachCoin);
   // console.log(eachCoinId);
 
   useEffect(() => {
@@ -56,6 +56,7 @@ function App() {
               <CoinTable
                 filteredCoins={filteredCoins}
                 handleChange={handleChange}
+                setLoading={setLoading}
               />
             ) : (
               <p>Loading...</p>
@@ -72,7 +73,7 @@ function App() {
         />
         <Route
           path="/market/:ID"
-          element={!loading ? <EachCoin coin={coin} /> : <p>Loading...</p>}
+          element={!loading ? <EachCoin /> : <p>Loading...</p>}
         />
       </Routes>
     </div>
