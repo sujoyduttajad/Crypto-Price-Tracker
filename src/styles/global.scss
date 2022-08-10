@@ -49,6 +49,10 @@
     width: 100%;
   }
 
+  .nav-active {
+    color: #fff !important;
+    opacity: 1;
+  }
   
   /* ##############    Mobile screens     ############ */
     @media screen and (min-width: 320px) and (max-width: 767px) {
