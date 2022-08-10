@@ -73,7 +73,7 @@ function App() {
         />
         <Route
           path="/:ID"
-          element={!loading ? <EachCoin /> : <p>Loading...</p>}
+          element={!loading ? <EachCoin setLoading={setLoading} /> : <p>Loading...</p>}
         />
       </Routes>
     </div>
