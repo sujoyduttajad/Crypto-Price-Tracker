@@ -75,10 +75,14 @@
         color: #707070;
         transition: all 0.2s ease-in-out;
         cursor: pointer;
-
         &:hover, &:focus {
             color: #fff;
             font-weight: 500;
+        }
+        .active {
+          color: #fff;
+          opacity: 1;
+          font-weight: 500;
         }
     }
     
