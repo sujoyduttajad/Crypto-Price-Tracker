@@ -251,14 +251,14 @@ export default function CoinTable({ filteredCoins, handleChange }) {
 
   const handleClick = async (e, id) => {
     // await setCoinId(id);
-    await dispatch(update({ coinId }));
+    await dispatch(update({ coinId: id }));
   };
 
   // console.log(coinId);
 
-  // useEffect(() => {
-  //   return () => handleClick();
-  // }, []);
+  useEffect(() => {
+    return () => handleClick();
+  }, []);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -304,7 +304,7 @@ export default function CoinTable({ filteredCoins, handleChange }) {
                       // <ThemeProvider theme={theme} key={row.id}>
                         <TableRow
                           hover
-                          // onClick={(e) => handleClick(e, row.id)}
+                          onClick={(e) => handleClick(e, row.id)}
                           tabIndex={-1}
                           key={row.id}
                           value={row.id}
@@ -314,7 +314,6 @@ export default function CoinTable({ filteredCoins, handleChange }) {
                             <Avatar
                               className={classes.avatar}
                               sx={{ width: 30, height: 30 }}
-                              // variant='rounded'
                               style={{ colorDefault: "#000" }}
                             >
                               <p
