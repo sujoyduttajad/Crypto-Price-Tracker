@@ -258,7 +258,6 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   const handleClick = async (e, id) => {
     // await setCoinId(id);
     await dispatch(update({ coinId: id }));
-    return <Navigate to={`${path}${coinState}`} replace={true} />;
   };
 
   // console.log(coinId);
@@ -346,6 +345,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                                 alt={row.name}
                               />
                             </TableCell>
+
                             <TableCell
                               component="th"
                               id={labelId}
@@ -353,7 +353,9 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                               padding="none"
                               className={classes.tableRows}
                             >
-                              {row.name}
+                              <NavLink to={`${path}${coinState}`}>
+                                {row.name}
+                              </NavLink>
                             </TableCell>
                             <TableCell
                               align="right"
