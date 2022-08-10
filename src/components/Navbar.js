@@ -3,7 +3,7 @@ import Logo from "../images/coinize2.svg";
 import { NavLink } from "react-router-dom";
 
 const Navbar = ({ handleChange }) => {
-  let activeClassName = "active";
+  let activeClassName = "nav-active";
 
   return (
     <nav className="coin-search">
@@ -13,26 +13,26 @@ const Navbar = ({ handleChange }) => {
             <img className="coin-logo" src={Logo} alt="logo" />
           </div>
         </NavLink>
-        <NavLink 
-            to="/"
-            className={({ isActive }) =>
-              isActive ? activeClassName : undefined
-            }
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? activeClassName : undefined)}
         >
-          <div
-            className={`coin-pages-container ${({isActive}) => 
-              isActive ? activeClassName : undefined
-            }`}
-          >
+          <div className="coin-pages-container">
             <h3>Market</h3>
           </div>
         </NavLink>
-        <NavLink to="/exchange">
+        <NavLink
+          to="/exchange"
+          className={({ isActive }) => (isActive ? activeClassName : undefined)}
+        >
           <div className="coin-pages-container">
             <h3>Exchange</h3>
           </div>
         </NavLink>
-        <NavLink to="/categories">
+        <NavLink
+          to="/categories"
+          className={({ isActive }) => (isActive ? activeClassName : undefined)}
+        >
           <div className="coin-pages-container">
             <h3>Categories</h3>
           </div>
