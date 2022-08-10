@@ -72,7 +72,7 @@ function App() {
           element={<CoinCategories handleChange={handleChange} />}
         />
         <Route
-          path="/market/:ID"
+          path="/:ID"
           element={!loading ? <EachCoin /> : <p>Loading...</p>}
         />
       </Routes>
