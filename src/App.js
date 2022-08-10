@@ -70,11 +70,10 @@ function App() {
           path="/categories"
           element={<CoinCategories handleChange={handleChange} />}
         />
-        {/* <Route path="/market/:ID" element={
-                  !loading ? 
-                  <EachCoin coin={coin} />
-                   : <p>Loading...</p> } 
-                /> */}
+        <Route
+          path="/market/:ID"
+          element={!loading ? <EachCoin coin={coin} /> : <p>Loading...</p>}
+        />
       </Routes>
     </div>
   );
