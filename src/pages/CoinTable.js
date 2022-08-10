@@ -300,9 +300,8 @@ export default function CoinTable({ filteredCoins, handleChange }) {
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row, index) => {
                     const labelId = `enhanced-table-checkbox-${index}`;
-
                     return (
-                      <ThemeProvider theme={theme} key={row.id}>
+                      // <ThemeProvider theme={theme} key={row.id}>
                         <TableRow
                           hover
                           // onClick={(e) => handleClick(e, row.id)}
@@ -393,7 +392,7 @@ export default function CoinTable({ filteredCoins, handleChange }) {
                             ${row.market_cap}
                           </TableCell>
                         </TableRow>
-                      </ThemeProvider>
+                      // </ThemeProvider>
                     );
                   })}
               </TableBody>
