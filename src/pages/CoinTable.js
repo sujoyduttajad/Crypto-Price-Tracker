@@ -256,9 +256,9 @@ export default function CoinTable({ filteredCoins, handleChange }) {
 
   // console.log(coinId);
 
-  useEffect(() => {
-    return () => handleClick();
-  }, []);
+  // useEffect(() => {
+  //   return () => handleClick();
+  // }, []);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -305,7 +305,7 @@ export default function CoinTable({ filteredCoins, handleChange }) {
                       <ThemeProvider theme={theme} key={row.id}>
                         <TableRow
                           hover
-                          onClick={(e) => handleClick(e, row.id)}
+                          // onClick={(e) => handleClick(e, row.id)}
                           tabIndex={-1}
                           key={row.id}
                           value={row.id}
