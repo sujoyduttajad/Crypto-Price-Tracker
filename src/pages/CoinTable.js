@@ -264,27 +264,18 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
 
   useEffect(() => {
     return () => handleClick();
-  }, []);
+  }, [handleClick]);
 
-  useEffect(() => {
-    axios
-      .get(`https://api.coingecko.com/api/v3/coins/${coinState}`)
-      .then((res) => {
-        dispatch(add({ coin: res.data }));
-        setLoading(false);
-        console.log(res)
-      })
-      .catch((error) => console.log(error));
-  }, []);
+
 
   const handleChangePage = async (event, newPage) => {
     setPage(newPage);
-    await dispatch(update({ coinId: "" }));
+    // await dispatch(update({ coinId: "" }));
   };
 
   const handleChangeRowsPerPage = async (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
-    await dispatch(update({ coinId: "" }));
+    // await dispatch(update({ coinId: "" }));
     setPage(0);
   };
 
@@ -320,7 +311,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                     .map((row, index) => {
                       const labelId = `enhanced-table-checkbox-${index}`;
                       return (
-                        <Link to={`${path}${coinState ? coinState : undefined}`}>
+                        <Link to={`${path}${coinState}`}>
                           <TableRow
                             hover
                             onClick={(e) => handleClick(e, row.id)}
