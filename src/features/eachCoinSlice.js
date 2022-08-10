@@ -7,6 +7,9 @@ export const eachCoinSlice = createSlice({
     coinId: ""
   },
   reducers: {
+    add: (state, action) => {
+      state.coin = action.payload.coin
+    },
     update: (state, action) => {
       state.coinId = action.payload.coinId
     }
@@ -14,6 +17,6 @@ export const eachCoinSlice = createSlice({
 });
 
 
-export const { update } = eachCoinSlice.actions;
+export const { update, add } = eachCoinSlice.actions;
 export default eachCoinSlice.reducer;
 
