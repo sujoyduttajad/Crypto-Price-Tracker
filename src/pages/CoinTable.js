@@ -24,7 +24,7 @@ import Avatar from "@mui/material/Avatar";
 import { useDispatch, useSelector } from "react-redux";
 import { update, add } from "../features/eachCoinSlice";
 import axios from "axios";
-import { Link, useLocation } from "react-router-dom";
+import { Navigate, NavLink, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles({
   tableContent: {
@@ -258,6 +258,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   const handleClick = async (e, id) => {
     // await setCoinId(id);
     await dispatch(update({ coinId: id }));
+    return <Navigate to={`${path}${coinState}`} replace={true} />;
   };
 
   // console.log(coinId);
@@ -265,8 +266,6 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   useEffect(() => {
     return () => handleClick();
   }, [handleClick]);
-
-
 
   const handleChangePage = async (event, newPage) => {
     setPage(newPage);
@@ -280,10 +279,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   };
 
   // const isSelected = (name) => selected.indexOf(name) !== -1;
-
-  /* ------- Avoid a layout jump when reaching the last page with empty rows. -------- */
-  const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+  // <NavLink to={`${path}${coinState}`}>
 
   return (
     <>
@@ -311,7 +307,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                     .map((row, index) => {
                       const labelId = `enhanced-table-checkbox-${index}`;
                       return (
-                        <Link to={`${path}${coinState}`}>
+                        <ThemeProvider theme={theme} key={row.id}>
                           <TableRow
                             hover
                             onClick={(e) => handleClick(e, row.id)}
@@ -401,7 +397,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                               ${row.market_cap}
                             </TableCell>
                           </TableRow>
-                        </Link>
+                        </ThemeProvider>
                       );
                     })}
                 </TableBody>
