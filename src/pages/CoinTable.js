@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
@@ -219,7 +219,7 @@ export default function CoinTable({ filteredCoins, handleChange }) {
 
   const [coinId, setCoinId] = useState("");
   const dispatch = useDispatch();
-  const coinState = useSelector(state => state.eachCoin);
+  const coinState = useSelector((state) => state.eachCoin);
   console.log(coinState);
 
   function createData(name, price, volume, coinPercent, mktCap) {
@@ -262,8 +262,9 @@ export default function CoinTable({ filteredCoins, handleChange }) {
     return () => handleClick();
   }, []);
 
-  const handleChangePage = (event, newPage) => {
+  const handleChangePage = async (event, newPage) => {
     setPage(newPage);
+    await dispatch(update({ coinId: '' }));
   };
 
   const handleChangeRowsPerPage = (event) => {
@@ -279,31 +280,31 @@ export default function CoinTable({ filteredCoins, handleChange }) {
 
   return (
     <>
-    <Navbar handleChange={handleChange} />
-    <div className="crypto-container">
-      <ThemeProvider theme={theme}>
-        <Paper sx={{ width: "100%", mb: 2 }} elevation={1}>
-          <EnhancedTableToolbar numSelected={selected.length} />
-          <TableContainer>
-            <Table
-              stickyHeader
-              aria-label="sticky table"
-              sx={{ minWidth: 750 }}
-              aria-labelledby="tableTitle"
-              size={"medium"}
-            >
-              <EnhancedTableHead
-                numSelected={selected.length}
-                onSelectAllClick={handleSelectAllClick}
-                rowCount={rows.length}
-              />
-              <TableBody>
-                {rows
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row, index) => {
-                    const labelId = `enhanced-table-checkbox-${index}`;
-                    return (
-                      // <ThemeProvider theme={theme} key={row.id}>
+      <Navbar handleChange={handleChange} />
+      <div className="crypto-container">
+        <ThemeProvider theme={theme}>
+          <Paper sx={{ width: "100%", mb: 2 }} elevation={1}>
+            <EnhancedTableToolbar numSelected={selected.length} />
+            <TableContainer>
+              <Table
+                stickyHeader
+                aria-label="sticky table"
+                sx={{ minWidth: 750 }}
+                aria-labelledby="tableTitle"
+                size={"medium"}
+              >
+                <EnhancedTableHead
+                  numSelected={selected.length}
+                  onSelectAllClick={handleSelectAllClick}
+                  rowCount={rows.length}
+                />
+                <TableBody>
+                  {rows
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map((row, index) => {
+                      const labelId = `enhanced-table-checkbox-${index}`;
+                      return (
+                        // <ThemeProvider theme={theme} key={row.id}>
                         <TableRow
                           hover
                           onClick={(e) => handleClick(e, row.id)}
@@ -393,26 +394,26 @@ export default function CoinTable({ filteredCoins, handleChange }) {
                             ${row.market_cap}
                           </TableCell>
                         </TableRow>
-                      // </ThemeProvider>
-                    );
-                  })}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <ThemeProvider theme={theme}>
-            <TablePagination
-              rowsPerPageOptions={[10, 25, 50]}
-              component="div"
-              count={rows.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-            />
-          </ThemeProvider>
-        </Paper>
-      </ThemeProvider>
-    </div>
+                        // </ThemeProvider>
+                      );
+                    })}
+                </TableBody>
+              </Table>
+            </TableContainer>
+            <ThemeProvider theme={theme}>
+              <TablePagination
+                rowsPerPageOptions={[10, 25, 50]}
+                component="div"
+                count={rows.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+              />
+            </ThemeProvider>
+          </Paper>
+        </ThemeProvider>
+      </div>
     </>
   );
 }
