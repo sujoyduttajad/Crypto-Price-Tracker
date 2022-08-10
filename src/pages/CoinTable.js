@@ -22,7 +22,9 @@ import { makeStyles } from "@mui/styles";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import { useDispatch, useSelector } from "react-redux";
-import { update } from "../features/eachCoinSlice";
+import { update, add } from "../features/eachCoinSlice";
+import axios from "axios";
+import { Link, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles({
   tableContent: {
@@ -207,7 +209,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function CoinTable({ filteredCoins, handleChange }) {
+export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   /* 
   const classes = useStyles(props); 
   --------- If you need to use props use 👆  -----------
@@ -221,6 +223,8 @@ export default function CoinTable({ filteredCoins, handleChange }) {
   const dispatch = useDispatch();
   const coinState = useSelector((state) => state.eachCoin);
   console.log(coinState);
+  const location = useLocation();
+  const path = location.pathname;
 
   function createData(name, price, volume, coinPercent, mktCap) {
     return {
@@ -262,14 +266,25 @@ export default function CoinTable({ filteredCoins, handleChange }) {
     return () => handleClick();
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(`https://api.coingecko.com/api/v3/coins/${coinState}`)
+      .then((res) => {
+        dispatch(add({ coin: res.data }));
+        setLoading(false);
+        console.log(res)
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   const handleChangePage = async (event, newPage) => {
     setPage(newPage);
-    await dispatch(update({ coinId: '' }));
+    await dispatch(update({ coinId: "" }));
   };
 
   const handleChangeRowsPerPage = async (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
-    await dispatch(update({ coinId: '' }));
+    await dispatch(update({ coinId: "" }));
     setPage(0);
   };
 
@@ -305,97 +320,97 @@ export default function CoinTable({ filteredCoins, handleChange }) {
                     .map((row, index) => {
                       const labelId = `enhanced-table-checkbox-${index}`;
                       return (
-                        // <ThemeProvider theme={theme} key={row.id}>
-                        <TableRow
-                          hover
-                          onClick={(e) => handleClick(e, row.id)}
-                          tabIndex={-1}
-                          key={row.id}
-                          value={row.id}
-                          className={classes.tableContent}
-                        >
-                          <TableCell padding="checkbox">
-                            <Avatar
-                              className={classes.avatar}
-                              sx={{ width: 30, height: 30 }}
-                              style={{ colorDefault: "#000" }}
+                        <Link to={`${path}${coinState ? coinState : undefined}`}>
+                          <TableRow
+                            hover
+                            onClick={(e) => handleClick(e, row.id)}
+                            tabIndex={-1}
+                            key={row.id}
+                            value={row.id}
+                            className={classes.tableContent}
+                          >
+                            <TableCell padding="checkbox">
+                              <Avatar
+                                className={classes.avatar}
+                                sx={{ width: 30, height: 30 }}
+                                style={{ colorDefault: "#000" }}
+                              >
+                                <p
+                                  style={{
+                                    fontSize: "15px",
+                                    fontWeight: 500,
+                                    color: "#fff",
+                                  }}
+                                >
+                                  {row.market_cap_rank}
+                                </p>
+                              </Avatar>
+                            </TableCell>
+                            <TableCell
+                              component="th"
+                              id={labelId}
+                              scope="row"
+                              padding="none"
+                              align="right"
                             >
-                              <p
+                              <img
+                                className="coin__image"
+                                src={row.image}
+                                alt={row.name}
+                              />
+                            </TableCell>
+                            <TableCell
+                              component="th"
+                              id={labelId}
+                              scope="row"
+                              padding="none"
+                              className={classes.tableRows}
+                            >
+                              {row.name}
+                            </TableCell>
+                            <TableCell
+                              align="right"
+                              className={classes.tableRows}
+                            >
+                              ${row.current_price}
+                            </TableCell>
+                            <TableCell
+                              align="right"
+                              className={classes.tableRows}
+                            >
+                              ${row.total_volume}
+                            </TableCell>
+                            <TableCell
+                              align="right"
+                              className={classes.tableRows}
+                            >
+                              <span
                                 style={{
-                                  fontSize: "15px",
-                                  fontWeight: 500,
-                                  color: "#fff",
+                                  color: `${
+                                    row.price_change_percentage_24h > 0
+                                      ? "#1dd15a"
+                                      : "#ef5959"
+                                  }`,
+                                  backgroundColor: `${
+                                    row.price_change_percentage_24h > 0
+                                      ? "rgba(29, 209, 90, 0.2)"
+                                      : "rgba(239, 89, 89, 0.2)"
+                                  }`,
+                                  padding: "5px",
+                                  borderRadius: "3.5px",
                                 }}
                               >
-                                {row.market_cap_rank}
-                              </p>
-                            </Avatar>
-                          </TableCell>
-                          <TableCell
-                            component="th"
-                            id={labelId}
-                            scope="row"
-                            padding="none"
-                            align="right"
-                          >
-                            <img
-                              className="coin__image"
-                              src={row.image}
-                              alt={row.name}
-                            />
-                          </TableCell>
-                          <TableCell
-                            component="th"
-                            id={labelId}
-                            scope="row"
-                            padding="none"
-                            className={classes.tableRows}
-                          >
-                            {row.name}
-                          </TableCell>
-                          <TableCell
-                            align="right"
-                            className={classes.tableRows}
-                          >
-                            ${row.current_price}
-                          </TableCell>
-                          <TableCell
-                            align="right"
-                            className={classes.tableRows}
-                          >
-                            ${row.total_volume}
-                          </TableCell>
-                          <TableCell
-                            align="right"
-                            className={classes.tableRows}
-                          >
-                            <span
-                              style={{
-                                color: `${
-                                  row.price_change_percentage_24h > 0
-                                    ? "#1dd15a"
-                                    : "#ef5959"
-                                }`,
-                                backgroundColor: `${
-                                  row.price_change_percentage_24h > 0
-                                    ? "rgba(29, 209, 90, 0.2)"
-                                    : "rgba(239, 89, 89, 0.2)"
-                                }`,
-                                padding: "5px",
-                                borderRadius: "3.5px",
-                              }}
+                                {row.price_change_percentage_24h}
+                              </span>
+                            </TableCell>
+                            <TableCell
+                              align="right"
+                              className={classes.tableRows}
                             >
-                              {row.price_change_percentage_24h}
-                            </span>
-                          </TableCell>
-                          <TableCell
-                            align="right"
-                            className={classes.tableRows}
-                          >
-                            ${row.market_cap}
-                          </TableCell>
-                        </TableRow>
-                        // </ThemeProvider>
+                              ${row.market_cap}
+                            </TableCell>
+                          </TableRow>
+                        </Link>
                       );
                     })}
                 </TableBody>
