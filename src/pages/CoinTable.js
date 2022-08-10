@@ -21,7 +21,7 @@ import { visuallyHidden } from "@mui/utils";
 import { makeStyles } from "@mui/styles";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { update } from "../features/eachCoinSlice";
 
 const useStyles = makeStyles({
@@ -219,6 +219,8 @@ export default function CoinTable({ filteredCoins, handleChange }) {
 
   const [coinId, setCoinId] = useState("");
   const dispatch = useDispatch();
+  const coinState = useSelector(state => state.eachCoin);
+  console.log(coinState);
 
   function createData(name, price, volume, coinPercent, mktCap) {
     return {
