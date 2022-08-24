@@ -1,30 +1,32 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import PropTypes from "prop-types";
-import Box from "@mui/material/Box";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
-import TableRow from "@mui/material/TableRow";
-import TableSortLabel from "@mui/material/TableSortLabel";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
+import {
+  Box,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+  TableSortLabel,
+  Toolbar,
+  Typography,
+  Paper,
+  Tooltip,
+} from "@mui/material";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { makeStyles } from "@mui/styles";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import { useDispatch, useSelector } from "react-redux";
-import { update, add } from "../features/eachCoinSlice";
-import axios from "axios";
-import { Navigate, NavLink, useLocation } from "react-router-dom";
+import { update } from "../features/eachCoinSlice";
+// import axios from "axios";
+import { NavLink, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles({
   tableContent: {
@@ -214,7 +216,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   const classes = useStyles(props); 
   --------- If you need to use props use 👆  -----------
   */
-  
+
   const [selected, setSelected] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -261,7 +263,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
 
   const handleClick = async (e, id) => {
     // await setCoinId(id);
-    await dispatch(update(state => ({ ...state, coinId: id })));
+    await dispatch(update((state) => ({ ...state, coinId: id })));
   };
 
   // console.log(coinId);
