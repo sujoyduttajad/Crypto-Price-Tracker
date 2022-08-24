@@ -219,7 +219,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const [coinId, setCoinId] = useState("");
+  // const [coinId, setCoinId] = useState("");
   const dispatch = useDispatch();
   const coinState = useSelector((state) => state.eachCoin);
   console.log(coinState);
@@ -357,6 +357,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                                 {row.name}
                               </NavLink>
                             </TableCell>
+
                             <TableCell
                               align="right"
                               className={classes.tableRows}
