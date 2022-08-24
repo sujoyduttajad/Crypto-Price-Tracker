@@ -214,17 +214,21 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   const classes = useStyles(props); 
   --------- If you need to use props use 👆  -----------
   */
-  const classes = useStyles();
+  
   const [selected, setSelected] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-
   // const [coinId, setCoinId] = useState("");
+
+  // Redux functions
   const dispatch = useDispatch();
   const coinState = useSelector((state) => state.eachCoin);
   console.log(coinState);
+
+  // React-router and other utilities
   const location = useLocation();
   const path = location.pathname;
+  const classes = useStyles();
 
   function createData(name, price, volume, coinPercent, mktCap) {
     return {
@@ -257,7 +261,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
 
   const handleClick = async (e, id) => {
     // await setCoinId(id);
-    await dispatch(update({ coinId: id }));
+    await dispatch(update(state => ({ ...state, coinId: id })));
   };
 
   // console.log(coinId);
