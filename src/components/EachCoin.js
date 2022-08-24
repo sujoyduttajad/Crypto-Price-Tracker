@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { update, add } from "../features/eachCoinSlice";
 
-const EachCoin = ({ setLoading }) => {
+const EachCoin = ({ setLoading, coinId }) => {
   const dispatch = useDispatch();
   const coinState = useSelector((state) => state.eachCoin);
   console.log(coinState);
@@ -22,6 +22,7 @@ const EachCoin = ({ setLoading }) => {
   return (
     <div>
       <h1>Cpoiny</h1>
+      <h2>{coinId}</h2>
     </div>
   );
 };
