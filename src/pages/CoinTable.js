@@ -27,6 +27,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { update } from "../features/eachCoinSlice";
 // import axios from "axios";
 import { NavLink, useLocation } from "react-router-dom";
+import EachCoin from "../components/EachCoin";
 
 const useStyles = makeStyles({
   tableContent: {
@@ -241,6 +242,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
       mktCap,
     };
   }
+
   const rows = filteredCoins;
   rows.map((coin) => {
     return createData(
@@ -261,12 +263,10 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
     setSelected([]);
   };
 
-  const handleClick = async (e, id) => {
-    // await setCoinId(id);
-    await dispatch(update((state) => ({ ...state, coinId: id })));
+  const handleClick = async (e, _id) => {
+    await dispatch(update((state) => ({ ...state, coinId: _id })));
+    return <EachCoin coinId={_id} />
   };
-
-  // console.log(coinId);
 
   useEffect(() => {
     return () => handleClick();
@@ -274,12 +274,10 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
 
   const handleChangePage = async (event, newPage) => {
     setPage(newPage);
-    // await dispatch(update({ coinId: "" }));
   };
 
   const handleChangeRowsPerPage = async (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
-    // await dispatch(update({ coinId: "" }));
     setPage(0);
   };
 
@@ -315,7 +313,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                         <ThemeProvider theme={theme} key={row.id}>
                           <TableRow
                             hover
-                            onClick={(e) => handleClick(e, row.id)}
+                            
                             tabIndex={-1}
                             key={row.id}
                             value={row.id}
@@ -358,6 +356,8 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                               scope="row"
                               padding="none"
                               className={classes.tableRows}
+                              // onClick={() => <EachCoin coinState={coinState} />}
+                              onClick={(e) => handleClick(e, row.id)}
                             >
                               <NavLink to={`${path}${coinState}`}>
                                 {row.name}
