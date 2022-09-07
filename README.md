@@ -23,3 +23,5 @@ Using D3.js to create a line graph or bar chart or both based on the data from t
 
 # Resources
 The api used for tracking crypto can be found here - [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
+
+# Why need Redux when this can be a Context API use-case
