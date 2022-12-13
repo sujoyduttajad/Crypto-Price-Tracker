@@ -66,14 +66,17 @@ function App() {
         />
         <Route
           path="/exchange"
+          exact
           element={<Exchange handleChange={handleChange} />}
         />
         <Route
           path="/categories"
+          exact
           element={<CoinCategories handleChange={handleChange} />}
         />
         <Route
           path="/:ID"
+          exact
           element={!loading ? <EachCoin setLoading={setLoading} /> : <p>Loading...</p>}
         />
       </Routes>
