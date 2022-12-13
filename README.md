@@ -1,6 +1,6 @@
 # Cryptocurrency Price Tracker React App
 
-A Cryptocurrency Price Tracker which shows the current price for all the cryptocurrency in the world. Price is shown in USD. All the relevant details are also displayed including price, volume, coin-percentage & market capital.
+A Cryptocurrency Price Tracker shows the current prices, market cap, 24h change, and volume for all the cryptocurrencies in the world. The price is USD, and all the relevant details are shown in a custom-built Material-UI table.
 
 # Version 1.0.4
 
@@ -23,3 +23,5 @@ Using D3.js to create a line graph or bar chart or both based on the data from t
 
 # Resources
 The api used for tracking crypto can be found here - [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
+
+# Why need Redux when this can be a Context API use-case
