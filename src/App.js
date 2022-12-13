@@ -51,6 +51,7 @@ function App() {
       <Routes>
         <Route
           path="/"
+          exact
           element={
             !loading ? (
               <CoinTable
