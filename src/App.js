@@ -76,7 +76,6 @@ function App() {
         />
         <Route
           path="/:ID"
-          exact
           element={!loading ? <EachCoin setLoading={setLoading} /> : <p>Loading...</p>}
         />
       </Routes>
