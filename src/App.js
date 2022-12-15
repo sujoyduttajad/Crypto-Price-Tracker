@@ -17,6 +17,8 @@ function App() {
   // const eachCoinId = useSelector((state) => state.eachCoin);
   // console.log(eachCoinId);
 
+  // This might be a problem and needs to be changed
+  // useQuery could be a good option
   useEffect(() => {
     axios
       .get(
