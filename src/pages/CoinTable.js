@@ -313,7 +313,6 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                         <ThemeProvider theme={theme} key={row.id}>
                           <TableRow
                             hover
-                            
                             tabIndex={-1}
                             key={row.id}
                             value={row.id}
