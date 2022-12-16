@@ -32,11 +32,16 @@ function App() {
   const { data, error } = useQuery("data", () =>
     fetch(
       `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`
-    ).then((res) => {
-      res.json();
-      setCoins(data);
-      setLoading(false);
-    })
+    )
+      .then((res) => {
+        const dataRes = res.json();
+        console.log(dataRes);
+        setCoins(dataRes.data);
+        setLoading(false);
+
+        return dataRes.data;
+      })
+      .catch((error) => console.log(error))
   );
 
   if (loading) return <LoadingSpinner />;
@@ -47,18 +52,22 @@ function App() {
     setSearch(e.target.value);
   };
 
-  const filteredCoins = coins.filter((coin) =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredCoins = () =>
+    data?.filter((coin) =>
+      coin.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+  console.log(data);
 
   return (
+    <section className="coin-app">
     <Routes>
       <Route
         path="/"
         exact
         element={
           <CoinTable
-            filteredCoins={filteredCoins}
+            filteredCoins={filteredCoins()}
             handleChange={handleChange}
             setLoading={setLoading}
           />
@@ -76,6 +85,7 @@ function App() {
       />
       <Route path="/:ID" element={<EachCoin setLoading={setLoading} />} />
     </Routes>
+    </section>
   );
 }
 
