@@ -172,7 +172,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                               // onClick={() => <EachCoin coinState={coinState} />}
                               // onClick={(e) => handleClick(e, row.id)}
                             >
-                              <NavLink to={`${path}${coinState}`}>
+                              <NavLink to={`/${row.id}`}>
                                 <Chip
                                   label={row.name}
                                   variant="outlined"
