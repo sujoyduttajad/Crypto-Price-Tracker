@@ -60,7 +60,6 @@ function App() {
   console.log(data);
 
   return (
-    <div className="coin-app">
       <Routes>
         <Route
           path="/"
@@ -85,7 +84,6 @@ function App() {
         />
         <Route path="/:ID" element={<EachCoin setLoading={setLoading} />} />
       </Routes>
-    </div>
   );
 }
 
