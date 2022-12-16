@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import PropTypes from "prop-types";
 import {
-  Box,
   Table,
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TablePagination,
   TableRow,
-  TableSortLabel,
-  Toolbar,
-  Typography,
   Paper,
-  Tooltip,
   Chip,
 } from "@mui/material";
-import RefreshIcon from "@mui/icons-material/Refresh";
-import IconButton from "@mui/material/IconButton";
-import FilterListIcon from "@mui/icons-material/FilterList";
-import { visuallyHidden } from "@mui/utils";
 import { makeStyles } from "@mui/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
@@ -31,6 +20,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import EachCoin from "../components/EachCoin";
 import { theme } from "../materialUi/theme";
 import EnhancedTableHead from "../components/TableHead";
+import EnhancedTableToolbar from "../components/EnhancedTollbar";
 
 const useStyles = makeStyles({
   tableContent: {
@@ -47,51 +37,6 @@ const useStyles = makeStyles({
     colorDefault: "purple",
   },
 });
-
-
-
-
-
-
-
-const EnhancedTableToolbar = (props) => {
-  const { numSelected } = props;
-
-  return (
-    <ThemeProvider theme={theme}>
-      <Toolbar
-        sx={{
-          pl: { sm: 2 },
-          pr: { xs: 1, sm: 1 },
-        }}
-      >
-        <Typography
-          sx={{ flex: "1 1 100%" }}
-          variant="h4"
-          id="tableTitle"
-          component="div"
-        >
-          Market Report
-        </Typography>
-        <IconButton
-          style={{ marginRight: "1em" }}
-          onClick={() => window.location.reload()} // custom refresh button
-        >
-          <RefreshIcon fontSize="medium" />
-        </IconButton>
-        <Tooltip title="Filter list">
-          <IconButton>
-            <FilterListIcon />
-          </IconButton>
-        </Tooltip>
-      </Toolbar>
-    </ThemeProvider>
-  );
-};
-
-EnhancedTableToolbar.propTypes = {
-  numSelected: PropTypes.number.isRequired,
-};
 
 export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   /* 
