@@ -57,7 +57,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   // React-router and other utilities
   const location = useLocation();
   const path = location.pathname;
-  console.log(path)
+  console.log(path);
   const classes = useStyles();
 
   function createData(name, price, volume, coinPercent, mktCap) {
