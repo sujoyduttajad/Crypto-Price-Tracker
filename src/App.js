@@ -7,6 +7,7 @@ import EachCoin from "./components/EachCoin";
 import { useSelector } from "react-redux";
 import Exchange from "./pages/Exchange";
 import CoinCategories from "./pages/CoinCategories";
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -48,7 +49,10 @@ function App() {
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
 
+  const queryClient = new QueryClient();
+
   return (
+    <QueryClientProvider client={queryClient}>
     <div className="coin-app">
       <Routes>
         <Route
@@ -82,6 +86,7 @@ function App() {
         />
       </Routes>
     </div>
+    </QueryClientProvider>
   );
 }
 
