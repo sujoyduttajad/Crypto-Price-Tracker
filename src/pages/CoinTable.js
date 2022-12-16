@@ -112,6 +112,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   // React-router and other utilities
   const location = useLocation();
   const path = location.pathname;
+  console.log(path)
   const classes = useStyles();
 
   function createData(name, price, volume, coinPercent, mktCap) {
@@ -144,14 +145,14 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
     setSelected([]);
   };
 
-  const handleClick = async (e, _id) => {
-    await dispatch(update((state) => ({ ...state, coinId: _id })));
-    return <EachCoin coinId={_id} />;
-  };
+  // const handleClick = async (e, _id) => {
+  //   await dispatch(update((state) => ({ ...state, coinId: _id })));
+  //   return <EachCoin coinId={_id} />;
+  // };
 
-  useEffect(() => {
-    return () => handleClick();
-  }, [handleClick]);
+  // useEffect(() => {
+  //   return () => handleClick();
+  // }, [handleClick]);
 
   const handleChangePage = async (event, newPage) => {
     setPage(newPage);
