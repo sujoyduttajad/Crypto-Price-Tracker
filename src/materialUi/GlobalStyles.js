@@ -8,6 +8,9 @@ export const useStyles = makeStyles({
     fontFamily: "Montserrat",
     
   },
+  tablehHead: {
+    cursor: "context-menu",
+  },
   tableRows: {
     display: "flex",
     alignItems: "center",
