@@ -15,6 +15,7 @@ import {
   Typography,
   Paper,
   Tooltip,
+  Chip,
 } from "@mui/material";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import IconButton from "@mui/material/IconButton";
@@ -26,7 +27,7 @@ import Avatar from "@mui/material/Avatar";
 import { useDispatch, useSelector } from "react-redux";
 import { update } from "../features/eachCoinSlice";
 // import axios from "axios";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import EachCoin from "../components/EachCoin";
 
 const useStyles = makeStyles({
@@ -265,7 +266,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
 
   const handleClick = async (e, _id) => {
     await dispatch(update((state) => ({ ...state, coinId: _id })));
-    return <EachCoin coinId={_id} />
+    return <EachCoin coinId={_id} />;
   };
 
   useEffect(() => {
@@ -348,7 +349,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                                 alt={row.name}
                               />
                             </TableCell>
-
+                            {/* Coin Name */}
                             <TableCell
                               component="th"
                               id={labelId}
@@ -356,13 +357,13 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                               padding="none"
                               className={classes.tableRows}
                               // onClick={() => <EachCoin coinState={coinState} />}
-                              onClick={(e) => handleClick(e, row.id)}
+                              // onClick={(e) => handleClick(e, row.id)}
                             >
                               <NavLink to={`${path}${coinState}`}>
-                                {row.name}
+                                <Chip label={row.name} variant="outlined" />
                               </NavLink>
                             </TableCell>
-
+                            {/* --------- */}
                             <TableCell
                               align="right"
                               className={classes.tableRows}
