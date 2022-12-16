@@ -38,7 +38,11 @@ function App() {
       coin.name.toLowerCase().includes(search.toLowerCase())
     );
 
-  if (loading) return <LoadingSpinner />;
+  // **** Very IMPORTANT - DO NOT DELETE **** 
+  // isLoading is a Boolean value that comes from react-query
+  // It's True - when Promise is pending; False when Promise is fulfilled
+  
+  if (isLoading) return <LoadingSpinner />;
 
   if (error) return "An error has occurred: " + error.message;
 
