@@ -29,22 +29,22 @@ function App() {
   //     .catch((error) => console.log(error));
   // }, []);
 
-  const { data, error } = useQuery("data", () =>
+  const { data, isLoading, error } = useQuery("data", () =>
     fetch(
       `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`
     )
       .then((res) => {
         const dataRes = res.json();
         console.log(dataRes);
-        setCoins(dataRes.data);
+        setCoins(dataRes);
         setLoading(false);
 
-        return dataRes.data;
+        return dataRes;
       })
       .catch((error) => console.log(error))
   );
 
-  if (loading) return <LoadingSpinner />;
+  if (isLoading) return <LoadingSpinner />;
 
   if (error) return "An error has occurred: " + error.message;
 
@@ -60,32 +60,32 @@ function App() {
   console.log(data);
 
   return (
-    <section className="coin-app">
-    <Routes>
-      <Route
-        path="/"
-        exact
-        element={
-          <CoinTable
-            filteredCoins={filteredCoins()}
-            handleChange={handleChange}
-            setLoading={setLoading}
-          />
-        }
-      />
-      <Route
-        path="/exchange"
-        exact
-        element={<Exchange handleChange={handleChange} />}
-      />
-      <Route
-        path="/categories"
-        exact
-        element={<CoinCategories handleChange={handleChange} />}
-      />
-      <Route path="/:ID" element={<EachCoin setLoading={setLoading} />} />
-    </Routes>
-    </section>
+    <div className="coin-app">
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={
+            <CoinTable
+              filteredCoins={filteredCoins()}
+              handleChange={handleChange}
+              setLoading={setLoading}
+            />
+          }
+        />
+        <Route
+          path="/exchange"
+          exact
+          element={<Exchange handleChange={handleChange} />}
+        />
+        <Route
+          path="/categories"
+          exact
+          element={<CoinCategories handleChange={handleChange} />}
+        />
+        <Route path="/:ID" element={<EachCoin setLoading={setLoading} />} />
+      </Routes>
+    </div>
   );
 }
 
