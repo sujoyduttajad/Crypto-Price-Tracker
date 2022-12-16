@@ -12,9 +12,7 @@ const EachCoin = ({ setLoading, coinId }) => {
     axios
       .get(`https://api.coingecko.com/api/v3/coins/${coinState}`)
       .then((res) => {
-        dispatch(add({ coin: res.data }));
         setLoading(false);
-        // console.log(res);
       })
       .catch((error) => console.log(error));
   }, []);
