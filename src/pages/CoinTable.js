@@ -21,22 +21,9 @@ import EachCoin from "../components/EachCoin";
 import { theme } from "../materialUi/theme";
 import EnhancedTableHead from "../components/TableHead";
 import EnhancedTableToolbar from "../components/EnhancedTollbar";
+import { useStyles } from "../materialUi/GlobalStyles";
 
-const useStyles = makeStyles({
-  tableContent: {
-    fontFamily: "Montserrat",
-    // color: (props) => props.color,
-  },
-  tableRows: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    margin: 0,
-  },
-  avatar: {
-    colorDefault: "purple",
-  },
-});
+
 
 export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   /* 
