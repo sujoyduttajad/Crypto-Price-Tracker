@@ -1,9 +1,11 @@
 import { makeStyles } from "@mui/styles";
 
 export const useStyles = makeStyles({
+  root: {
+    fontFamily: "Montserrat",
+  },
   tableContent: {
     fontFamily: "Montserrat",
-    // color: (props) => props.color,
   },
   tableRows: {
     display: "flex",
@@ -13,5 +15,8 @@ export const useStyles = makeStyles({
   },
   avatar: {
     colorDefault: "purple",
+  },
+  coinChip: {
+    cursor: "pointer",
   },
 });
