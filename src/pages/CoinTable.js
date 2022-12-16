@@ -10,22 +10,16 @@ import {
   Paper,
   Chip,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import { useDispatch, useSelector } from "react-redux";
-import { update } from "../features/eachCoinSlice";
-// import axios from "axios";
 import { NavLink, useLocation } from "react-router-dom";
-import EachCoin from "./EachCoin";
 import { theme } from "../materialUi/theme";
 import EnhancedTableHead from "../components/EnhancedTableHead";
 import EnhancedTableToolbar from "../components/EnhancedTollbar";
 import { useStyles } from "../materialUi/GlobalStyles";
 
-
-
-export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
+export default function CoinTable({ filteredCoins, handleChange, setCoinId }) {
   /* 
   const classes = useStyles(props); 
   --------- If you need to use props use 👆  -----------
@@ -34,12 +28,6 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   const [selected, setSelected] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  // const [coinId, setCoinId] = useState("");
-
-  // Redux functions
-  const dispatch = useDispatch();
-  const coinState = useSelector((state) => state.eachCoin);
-  // console.log(coinState);
 
   // React-router and other utilities
   const location = useLocation();
@@ -76,14 +64,9 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
     setSelected([]);
   };
 
-  // const handleClick = async (e, _id) => {
-  //   await dispatch(update((state) => ({ ...state, coinId: _id })));
-  //   return <EachCoin coinId={_id} />;
-  // };
-
-  // useEffect(() => {
-  //   return () => handleClick();
-  // }, [handleClick]);
+  const handleClick = (_id) => {
+    setCoinId(_id);
+  };
 
   const handleChangePage = async (event, newPage) => {
     setPage(newPage);
@@ -93,9 +76,6 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
-  // const isSelected = (name) => selected.indexOf(name) !== -1;
-  // <NavLink to={`${path}${coinState}`}>
 
   return (
     <>
@@ -161,26 +141,23 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                                 alt={row.name}
                               />
                             </TableCell>
-                            {/* Coin Name */}
                             <TableCell
                               component="th"
                               id={labelId}
                               scope="row"
                               padding="none"
                               className={classes.tableRows}
-                              // onClick={() => <EachCoin coinState={coinState} />}
-                              // onClick={(e) => handleClick(e, row.id)}
                             >
                               <NavLink to={`/${row.id}`}>
                                 <Chip
                                   label={row.name}
                                   variant="outlined"
                                   clickable
+                                  onClick={() => handleClick(row.id)}
                                   className={classes.coinChip}
                                 />
                               </NavLink>
                             </TableCell>
-                            {/* --------- */}
                             <TableCell
                               align="right"
                               className={classes.tableRows}
