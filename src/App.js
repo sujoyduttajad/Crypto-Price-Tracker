@@ -15,27 +15,12 @@ function App() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
 
-  // This might be a problem and needs to be changed
-  // useQuery could be a good option
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-  //     )
-  //     .then((res) => {
-  //       setCoins(res.data);
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
-
   const { data, isLoading, error } = useQuery("data", () =>
     fetch(
       `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`
     )
       .then((res) => {
         const dataRes = res.json();
-        console.log(dataRes);
         setCoins(dataRes);
         setLoading(false);
 
@@ -43,10 +28,6 @@ function App() {
       })
       .catch((error) => console.log(error))
   );
-
-  if (isLoading) return <LoadingSpinner />;
-
-  if (error) return "An error has occurred: " + error.message;
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -57,33 +38,35 @@ function App() {
       coin.name.toLowerCase().includes(search.toLowerCase())
     );
 
-  console.log(data);
+  if (loading) return <LoadingSpinner />;
+
+  if (error) return "An error has occurred: " + error.message;
 
   return (
-      <Routes>
-        <Route
-          path="/"
-          exact
-          element={
-            <CoinTable
-              filteredCoins={filteredCoins()}
-              handleChange={handleChange}
-              setLoading={setLoading}
-            />
-          }
-        />
-        <Route
-          path="/exchange"
-          exact
-          element={<Exchange handleChange={handleChange} />}
-        />
-        <Route
-          path="/categories"
-          exact
-          element={<CoinCategories handleChange={handleChange} />}
-        />
-        <Route path="/:ID" element={<EachCoin setLoading={setLoading} />} />
-      </Routes>
+    <Routes>
+      <Route
+        path="/"
+        exact
+        element={
+          <CoinTable
+            filteredCoins={filteredCoins()}
+            handleChange={handleChange}
+            setLoading={setLoading}
+          />
+        }
+      />
+      <Route
+        path="/exchange"
+        exact
+        element={<Exchange handleChange={handleChange} />}
+      />
+      <Route
+        path="/categories"
+        exact
+        element={<CoinCategories handleChange={handleChange} />}
+      />
+      <Route path="/:ID" element={<EachCoin setLoading={setLoading} />} />
+    </Routes>
   );
 }
 
