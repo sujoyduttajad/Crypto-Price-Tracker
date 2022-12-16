@@ -3,17 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { update, add } from "../features/eachCoinSlice";
 import { useQuery } from "react-query";
+import LoadingSpinner from "../components/LoadingSpinner";
 
-const EachCoin = ({ setLoading, coinId }) => {
+const EachCoin = () => {
   const dispatch = useDispatch();
   const coinState = useSelector((state) => state.eachCoin);
   console.log(coinState);
 
-  const { data, error } = useQuery("repoData", () =>
+  const { data, isLoading, error } = useQuery("repoData", () =>
     fetch(`https://api.coingecko.com/api/v3/coins/bitcoin`).then((res) =>
       res.json()
     )
   );
+
+  if (isLoading) return <LoadingSpinner />;
 
   if (error) return 'An error has occurred: ' + error.message;
 
