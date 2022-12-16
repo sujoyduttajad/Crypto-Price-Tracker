@@ -57,7 +57,6 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   }
 
   const rows = filteredCoins;
-  console.log(rows)
   rows?.map((coin) => {
     return createData(
       coin.name,
