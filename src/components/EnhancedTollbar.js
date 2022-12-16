@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from "prop-types";
-import { IconButton, ThemeProvider, Tooltip, Typography } from '@mui/material';
+import { IconButton, ThemeProvider, Tooltip, Typography, Toolbar } from '@mui/material';
 import RefreshIcon from "@mui/icons-material/Refresh";
 import FilterListIcon from "@mui/icons-material/FilterList";
+import { theme } from '../materialUi/theme';
 
 const EnhancedTableToolbar = (props) => {
     const { numSelected } = props;
@@ -42,3 +43,5 @@ const EnhancedTableToolbar = (props) => {
   EnhancedTableToolbar.propTypes = {
     numSelected: PropTypes.number.isRequired,
   };
+
+  export default EnhancedTableToolbar;
