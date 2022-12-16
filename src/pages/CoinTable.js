@@ -39,12 +39,11 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   // Redux functions
   const dispatch = useDispatch();
   const coinState = useSelector((state) => state.eachCoin);
-  console.log(coinState);
+  // console.log(coinState);
 
   // React-router and other utilities
   const location = useLocation();
   const path = location.pathname;
-  console.log(path);
   const classes = useStyles();
 
   function createData(name, price, volume, coinPercent, mktCap) {
@@ -58,7 +57,6 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   }
 
   const rows = filteredCoins;
-  console.log(rows)
   rows?.map((coin) => {
     return createData(
       coin.name,
