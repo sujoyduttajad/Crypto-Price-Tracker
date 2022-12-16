@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import "./styles/global.scss";
 import CoinTable from "./pages/CoinTable";
 import { Routes, Route } from "react-router-dom";
 import EachCoin from "./pages/EachCoin";
-import { useSelector } from "react-redux";
 import Exchange from "./pages/Exchange";
 import CoinCategories from "./pages/CoinCategories";
 import { useQuery } from "react-query";
@@ -13,7 +11,6 @@ import LoadingSpinner from "./components/LoadingSpinner";
 function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(true);
 
   const { data, isLoading, error } = useQuery("data", () =>
     fetch(
@@ -22,8 +19,6 @@ function App() {
       .then((res) => {
         const dataRes = res.json();
         setCoins(dataRes);
-        setLoading(false);
-
         return dataRes;
       })
       .catch((error) => console.log(error))
@@ -55,7 +50,6 @@ function App() {
           <CoinTable
             filteredCoins={filteredCoins()}
             handleChange={handleChange}
-            setLoading={setLoading}
           />
         }
       />
@@ -69,7 +63,7 @@ function App() {
         exact
         element={<CoinCategories handleChange={handleChange} />}
       />
-      <Route path="/:ID" element={<EachCoin setLoading={setLoading} />} />
+      <Route path="/:ID" element={<EachCoin />} />
     </Routes>
   );
 }
