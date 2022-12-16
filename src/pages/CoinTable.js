@@ -100,7 +100,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   // <NavLink to={`${path}${coinState}`}>
 
   return (
-    <section className="coin-app">
+    <>
       <Navbar handleChange={handleChange} />
       <div className="crypto-container">
         <ThemeProvider theme={theme}>
@@ -245,6 +245,6 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
           </Paper>
         </ThemeProvider>
       </div>
-    </section>
+    </>
   );
 }
