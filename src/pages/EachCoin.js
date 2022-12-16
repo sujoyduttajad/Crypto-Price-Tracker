@@ -29,9 +29,9 @@ const EachCoin = ({ setLoading, coinId }) => {
   console.log(data)
 
   return (
-    <section className="coin-app">
+    <div>
       <h1>Cpoiny</h1>
-    </section>
+    </div>
   );
 };
 
