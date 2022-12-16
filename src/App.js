@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles/global.scss";
 import CoinTable from "./pages/CoinTable";
 import { Routes, Route } from "react-router-dom";
-import EachCoin from "./pages/EachCoin";
+import EachCoin from "./pages/Coin";
 import Exchange from "./pages/Exchange";
 import CoinCategories from "./pages/CoinCategories";
 import { useQuery } from "react-query";
@@ -11,6 +11,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
+   const [coinId, setCoinId] = useState();
 
   const { data, isLoading, error } = useQuery("data", () =>
     fetch(
@@ -50,6 +51,7 @@ function App() {
           <CoinTable
             filteredCoins={filteredCoins()}
             handleChange={handleChange}
+            setCoinId={setCoinId}
           />
         }
       />
@@ -63,7 +65,7 @@ function App() {
         exact
         element={<CoinCategories handleChange={handleChange} />}
       />
-      <Route path="/:ID" element={<EachCoin />} />
+      <Route path="/:ID" element={<EachCoin coinId={coinId} />} />
     </Routes>
   );
 }
