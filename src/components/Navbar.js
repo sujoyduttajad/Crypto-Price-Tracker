@@ -11,7 +11,7 @@ const Navbar = ({ handleChange }) => {
     <nav className="coin-search">
       <div className="coin-logo-container">
         <NavLink to="/">
-          <div className="coin-image-container">
+          <div className="coin-image-container" style={{ userSelect: "none" }}>
             <img className="coin-logo" src={Logo} alt="logo" />
           </div>
         </NavLink>
