@@ -9,15 +9,6 @@ const EachCoin = ({ setLoading, coinId }) => {
   const coinState = useSelector((state) => state.eachCoin);
   console.log(coinState);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://api.coingecko.com/api/v3/coins/${coinState}`)
-  //     .then((res) => {
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
-
   const { data, error } = useQuery("repoData", () =>
     fetch(`https://api.coingecko.com/api/v3/coins/bitcoin`).then((res) =>
       res.json()
