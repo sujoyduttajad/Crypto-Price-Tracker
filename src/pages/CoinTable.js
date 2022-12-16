@@ -17,7 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { update } from "../features/eachCoinSlice";
 // import axios from "axios";
 import { NavLink, useLocation } from "react-router-dom";
-import EachCoin from "../components/EachCoin";
+import EachCoin from "./EachCoin";
 import { theme } from "../materialUi/theme";
 import EnhancedTableHead from "../components/EnhancedTableHead";
 import EnhancedTableToolbar from "../components/EnhancedTollbar";
