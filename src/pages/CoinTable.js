@@ -58,7 +58,8 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   }
 
   const rows = filteredCoins;
-  rows.map((coin) => {
+  console.log(rows)
+  rows?.map((coin) => {
     return createData(
       coin.name,
       coin.current_price,
@@ -99,7 +100,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
   // <NavLink to={`${path}${coinState}`}>
 
   return (
-    <>
+    <section className="coin-app">
       <Navbar handleChange={handleChange} />
       <div className="crypto-container">
         <ThemeProvider theme={theme}>
@@ -244,6 +245,6 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
           </Paper>
         </ThemeProvider>
       </div>
-    </>
+    </section>
   );
 }
