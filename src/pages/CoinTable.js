@@ -22,13 +22,14 @@ import IconButton from "@mui/material/IconButton";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { makeStyles } from "@mui/styles";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import { useDispatch, useSelector } from "react-redux";
 import { update } from "../features/eachCoinSlice";
 // import axios from "axios";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import EachCoin from "../components/EachCoin";
+import { theme } from "../materialUi/theme";
 
 const useStyles = makeStyles({
   tableContent: {
@@ -46,55 +47,7 @@ const useStyles = makeStyles({
   },
 });
 
-const theme = createTheme({
-  palette: { mode: "dark" },
-  components: {
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          fontFamily: "Montserrat",
-          fontWeight: 600,
-          fontSize: "2.1em",
-          color: "#eee",
-        },
-      },
-    },
-    MuiTableCell: {
-      styleOverrides: {
-        root: {
-          fontFamily: "Montserrat",
-          fontWeight: 400,
-          cursor: "pointer",
-        },
-      },
-    },
-    MuiTableSortLabel: {
-      styleOverrides: {
-        root: {
-          fontFamily: "Montserrat",
-          fontWeight: 500,
-          fontSize: "1.2em",
-        },
-      },
-    },
-    MuiTablePagination: {
-      styleOverrides: {
-        root: {
-          fontFamily: "Montserrat",
-          fontWeight: 700,
-          color: "#fff",
-        },
-      },
-    },
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          border: "0.1px solid #333333",
-        },
-      },
-    },
-  },
-});
+
 
 const headCells = [
   {
@@ -360,7 +313,11 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                               // onClick={(e) => handleClick(e, row.id)}
                             >
                               <NavLink to={`${path}${coinState}`}>
-                                <Chip label={row.name} variant="outlined" />
+                                <Chip
+                                  label={row.name}
+                                  variant="outlined"
+                                  className={classes.coinChip}
+                                />
                               </NavLink>
                             </TableCell>
                             {/* --------- */}
