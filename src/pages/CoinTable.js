@@ -30,7 +30,7 @@ import { update } from "../features/eachCoinSlice";
 import { NavLink, useLocation } from "react-router-dom";
 import EachCoin from "../components/EachCoin";
 import { theme } from "../materialUi/theme";
-import { headCells } from "../utils/data";
+import EnhancedTableHead from "../components/TableHead";
 
 const useStyles = makeStyles({
   tableContent: {
@@ -52,38 +52,7 @@ const useStyles = makeStyles({
 
 
 
-function EnhancedTableHead(props) {
-  const { orderBy } = props;
 
-  return (
-    <TableHead>
-      <TableRow>
-        {headCells.map((headCell) => (
-          <ThemeProvider theme={theme} key={headCell.id}>
-            <TableCell
-              key={headCell.id}
-              align={headCell.numeric ? "right" : "left"}
-              padding={headCell.disablePadding ? "none" : "normal"}
-            >
-              <TableSortLabel>
-                {headCell.label}
-                {orderBy === headCell.id ? (
-                  <Box component="span" sx={visuallyHidden}></Box>
-                ) : null}
-              </TableSortLabel>
-            </TableCell>
-          </ThemeProvider>
-        ))}
-      </TableRow>
-    </TableHead>
-  );
-}
-
-EnhancedTableHead.propTypes = {
-  numSelected: PropTypes.number.isRequired,
-  onSelectAllClick: PropTypes.func.isRequired,
-  rowCount: PropTypes.number.isRequired,
-};
 
 const EnhancedTableToolbar = (props) => {
   const { numSelected } = props;
