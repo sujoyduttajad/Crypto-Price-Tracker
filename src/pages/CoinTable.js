@@ -19,7 +19,7 @@ import { update } from "../features/eachCoinSlice";
 import { NavLink, useLocation } from "react-router-dom";
 import EachCoin from "../components/EachCoin";
 import { theme } from "../materialUi/theme";
-import EnhancedTableHead from "../components/TableHead";
+import EnhancedTableHead from "../components/EnhancedTableHead";
 import EnhancedTableToolbar from "../components/EnhancedTollbar";
 import { useStyles } from "../materialUi/GlobalStyles";
 
@@ -176,6 +176,7 @@ export default function CoinTable({ filteredCoins, handleChange, setLoading }) {
                                 <Chip
                                   label={row.name}
                                   variant="outlined"
+                                  clickable
                                   className={classes.coinChip}
                                 />
                               </NavLink>
