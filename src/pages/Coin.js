@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import CoinCard from "../components/CoinCard";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Navbar from "../components/Navbar";
 
@@ -22,7 +23,7 @@ const EachCoin = ({ coinId }) => {
     <>
       <Navbar />
       <div>
-        <h3>{data.name}</h3>
+        <CoinCard data={data} />
       </div>
     </>
   );
