@@ -1,11 +1,6 @@
 
+@use "./mixins" as *;
 
-@mixin flex($direction, $align, $justify) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
-}
 
   /* --------   Logo styles --------- */
   .coin-logo-container {
@@ -44,7 +39,7 @@
     border: none;
     color: #e2e2e2;
     font-size: 1em;
-    background-image: linear-gradient(
+    background: linear-gradient(
       -225deg,
       #ac32e4 0%,
       #7918f2 48%,
