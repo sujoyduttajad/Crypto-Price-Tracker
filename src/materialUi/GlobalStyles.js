@@ -25,4 +25,20 @@ export const useStyles = makeStyles({
     cursor: "pointer",
     minWidth: "8rem"
   },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+    padding: "0.6em 0em"
+  },
+  card: {
+    maxWidth: "25rem",
+    width: "100%",
+  }
 });
