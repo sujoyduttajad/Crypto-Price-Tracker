@@ -1,10 +1,10 @@
 @use "./mixins" as *;
+@use "./variables" as *;
 
-@import "./navbar";
 @import "./loadingSpinner";
 @import "./coin";
 @import "./coinTable";
-@import "./variables";
+@import "./navbar";
 
 
 // Primary font family - Montserrat
