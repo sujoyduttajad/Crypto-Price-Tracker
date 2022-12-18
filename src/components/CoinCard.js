@@ -1,35 +1,28 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-} from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 import { useStyles } from "../materialUi/GlobalStyles";
 import Tilt from "react-parallax-tilt";
 
 const CoinCard = ({ data }) => {
-  const classNamees = useStyles();
+  const classes = useStyles();
   return (
     <Tilt scale={0.95} transitionSpeed={300} gyroscope={true}>
       <div className="card">
-        <Card classNameName={classNamees.card}>
+        <Card className={classes.card}>
           <CardContent>
             <div className="welcome">
-              <Typography variant="h5" component="h2">
-                {data.name}
-              </Typography>
+              {/* Image */}
+              <img src={data.image.small} alt={data.name} />
             </div>
             <div className="year">
-              <Typography classNameName={classNamees.pos} color="textSecondary">
-                Market Cap - {data.market_cap_rank}
+              <Typography className={classes.pos} color="textSecondary">
+                {data.name}
               </Typography>
-              <Typography classNameName={classNamees.pos} color="textSecondary">
-                Community Score - {data.community_score}
+              <Typography className={classes.pos} color="textSecondary">
+                {data.market_data.market_cap_change_24h}
               </Typography>
-              <Typography classNameName={classNamees.pos} color="textSecondary">
-                Coingecko Score - {data.coingecko_score}
+              <Typography className={classes.pos} color="textSecondary">
+                {data.symbol.toUpperCase()}
               </Typography>
             </div>
           </CardContent>
