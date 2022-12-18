@@ -38,7 +38,8 @@ export const useStyles = makeStyles({
     padding: "0.6em 0em"
   },
   card: {
-    maxWidth: "25rem",
     width: "100%",
+    fontFamily: 'inherit',
+    background: "transparent"
   }
 });
