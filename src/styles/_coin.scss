@@ -1,21 +1,23 @@
+@use "./variables" as *;
+
 .card {
     margin: auto;
+    font-family: $CardFont;
     padding: 2em;
     border-radius: 1em;
     border: 1px solid transparentize($whiteShade, 0.5);
-    text-shadow: 0 0 1em transparentize($PrimaryBlack, 0.5);
     background: transparentize($whiteShade, 0.8);
     backdrop-filter: blur(20px);
     transform: perspective(500px);
     transform-style: preserve-3d;
     
     .welcome {
-      font-family: $MainFont;
+      font-family: $CardFont;
       transform: translateZ(20px);
     }
     
     .year {
-      font-family: $MainFont;
+      font-family: $CardFont;
       font-size: 2.5em;
       
       span {
