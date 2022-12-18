@@ -39,7 +39,7 @@ export const useStyles = makeStyles({
   },
   card: {
     width: "100%",
-    fontFamily: 'inherit',
+    fontFamily: '',
     background: "transparent"
   }
 });
