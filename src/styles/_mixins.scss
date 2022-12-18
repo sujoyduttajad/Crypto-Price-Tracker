@@ -1,8 +1,23 @@
-
-
 @mixin flex($direction, $align, $justify) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin hc() {
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+@mixin vc() {
+  top: 50%;
+  transform: translatey(-50%);
+}
+
+@mixin cc() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
