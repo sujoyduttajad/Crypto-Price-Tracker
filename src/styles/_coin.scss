@@ -1,0 +1,36 @@
+.card {
+    margin: auto;
+    padding: 2em;
+    border-radius: 1em;
+    border: 1px solid transparentize($whiteShade, 0.5);
+    text-shadow: 0 0 1em transparentize($PrimaryBlack, 0.5);
+    background: transparentize($whiteShade, 0.8);
+    backdrop-filter: blur(20px);
+    transform: perspective(500px);
+    transform-style: preserve-3d;
+    
+    .welcome {
+      font-family: $MainFont;
+      transform: translateZ(20px);
+    }
+    
+    .year {
+      font-family: $MainFont;
+      font-size: 2.5em;
+      
+      span {
+        display: block;
+        transform: translateZ(40px);
+        &:nth-child(2){
+          padding-left: 1em;
+          transform: translateZ(60px);
+        }
+        &:nth-child(3){
+          padding-left: 2em;
+          transform: translateZ(80px);
+        }
+      }
+      
+    }
+    
+  }
