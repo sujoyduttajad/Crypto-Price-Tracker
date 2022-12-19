@@ -43,6 +43,7 @@ function App() {
   if (error) return "An error has occurred: " + error.message;
 
   return (
+    <section className="wrapper">
     <Routes>
       <Route
         path="/"
@@ -67,6 +68,7 @@ function App() {
       />
       <Route path="/:ID" element={<EachCoin coinId={coinId} />} />
     </Routes>
+    </section>
   );
 }
 
