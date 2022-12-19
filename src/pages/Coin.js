@@ -17,14 +17,14 @@ const EachCoin = ({ coinId }) => {
 
   if (error) return "An error has occurred: " + error.message;
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>
-      <Navbar />
-      <div>
+      <Navbar coinId={coinId} />
+      <section className="coin-info-container">
         <CoinCard data={data} />
-      </div>
+      </section>
     </>
   );
 };
