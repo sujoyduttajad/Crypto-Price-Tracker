@@ -2,10 +2,11 @@ import React from "react";
 import Logo from "../images/coinize2.svg";
 import { NavLink, useLocation } from "react-router-dom";
 
-const Navbar = ({ handleChange }) => {
+const Navbar = ({ handleChange, coinId }) => {
   let activeClassName = "nav-active";
   const location = useLocation();
   const isActive = location.pathname;
+  console.log(location, isActive);
 
   return (
     <nav className="coin-search">
@@ -43,15 +44,16 @@ const Navbar = ({ handleChange }) => {
           </div>
         </NavLink>
       </div>
-
-      <form className="coin-input-container">
-        <input
-          type="text"
-          placeholder="Search a currency"
-          className="coin-input"
-          onChange={handleChange}
-        />
-      </form>
+      {coinId ? null : (
+        <form className="coin-input-container">
+          <input
+            type="text"
+            placeholder="Search a currency"
+            className="coin-input"
+            onChange={handleChange}
+          />
+        </form>
+      )}
     </nav>
   );
 };
