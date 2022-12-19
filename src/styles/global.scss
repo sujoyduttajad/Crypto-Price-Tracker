@@ -54,6 +54,10 @@ body {
   width: 100%;
   font-family: $MainFont;
 }
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
 
 .nav-active {
   color: $whiteShade !important;
