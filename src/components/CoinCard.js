@@ -4,11 +4,15 @@ import Tilt from "react-parallax-tilt";
 const CoinCard = ({ data }) => {
  
   return (
+    <div className="card-container">
     <Tilt scale={0.95} transitionSpeed={300} gyroscope={true}>
       <div className="card">
         <div className="welcome">
           <div className="image-container">
             <img src={data.image.small} alt={data.name} />
+            <div>
+              Rank #{data.market_cap_rank}
+            </div>
           </div>
         </div>
         <div className="year">
@@ -24,6 +28,7 @@ const CoinCard = ({ data }) => {
         </div>
       </div>
     </Tilt>
+    </div>
   );
 };
 
