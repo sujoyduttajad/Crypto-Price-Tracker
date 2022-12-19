@@ -14,7 +14,7 @@
     #7918f2 48%,
     #4801ff 100%
   );
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
   transform: perspective(500px);
   transform-style: preserve-3d;
 
@@ -23,6 +23,9 @@
     .image-container {
       padding-bottom: 2em;
       img {
+        padding: 0.4em;
+        border-radius: 50%;
+        border: 1px solid $whiteShade;
       }
     }
   }
@@ -31,14 +34,15 @@
     font-family: $CardFont;
     font-size: 2.5em;
     .coin-title {
-      h4 {
+      p {
         font-weight: 200;
-        font-size: 0.8em;
+        font-size: 0.9em;
+        margin-bottom: 0.2em;
       }
     }
     .market-info {
       h2 {
-        font-weight: 400;
+        font-weight: 300;
         font-size: 1.2em;
       }
     }
