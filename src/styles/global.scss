@@ -66,6 +66,10 @@ body {
 .MuiTableCell-root {
   cursor: context-menu !important;
 }
+.MuiChip-root {
+  font-family: $MainFont !important;
+  background-color: #303030 !important;
+}
 
 /* ##############    Mobile screens     ############ */
 @media screen and (min-width: 320px) and (max-width: 767px) {
