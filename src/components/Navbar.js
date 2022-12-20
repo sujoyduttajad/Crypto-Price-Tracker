@@ -6,7 +6,6 @@ const Navbar = ({ handleChange, coinId }) => {
   let activeClassName = "nav-active";
   const location = useLocation();
   const isActive = location.pathname;
-  console.log(location, isActive);
 
   return (
     <nav className="coin-search">
