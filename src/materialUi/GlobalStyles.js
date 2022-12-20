@@ -41,5 +41,11 @@ export const useStyles = makeStyles({
     width: "100%",
     fontFamily: '',
     background: "transparent"
+  },
+  chipStyles: {
+    // border: "1px solid #fcfcfc",
+    borderRadius: "4px",
+    fontSize: "2rem",
+    fontWeight: 700
   }
 });
