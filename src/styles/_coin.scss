@@ -62,9 +62,16 @@
       }
     }
     .market-info {
+      @include flex(row, center, space-between);
       h2 {
         font-weight: 300;
         font-size: 1.2em;
+      }
+      .price-change {
+        p {
+          // font-size: 0.9em;
+          margin: 0;
+        }
       }
     }
     span {
