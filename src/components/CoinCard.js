@@ -1,7 +1,7 @@
 import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 import React from "react";
 import Tilt from "react-parallax-tilt";
-import Chip from "@mui/material/Chip";
+import { Chip } from '@mui/material';
 import { useStyles } from "../materialUi/GlobalStyles";
 
 const CoinCard = ({ data }) => {
