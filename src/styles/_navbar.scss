@@ -1,6 +1,12 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
+.navbar-container {
+  @include flex(row, center, space-between);
+  margin-bottom: 64px;
+  flex-wrap: wrap;
+  width: 100%;
+}
   /* --------   Logo styles --------- */
   .coin-logo-container {
     @include flex(row, center, flex-start);
@@ -21,14 +27,7 @@
     margin: 1rem 2rem;
     @include flex(row, center, flex-start);
   }
-  .coin-search {
-    // @include flex(row, center, space-between);
-    margin-bottom: 64px;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    width: 100%;
-  }
+
   .coin-input {
     padding-left: 16px;
     outline: none;
