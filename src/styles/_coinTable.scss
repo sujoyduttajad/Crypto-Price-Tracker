@@ -1,13 +1,18 @@
-@mixin flex($direction, $align, $justify) {
-  display: flex;
-  flex-direction: $direction;
-  align-items: $align;
-  justify-content: $justify;
+@use "./mixins" as *;
+@use "./variables" as *;
+
+
+.crypto-container {
+  max-width: 90vw;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  overflow-x: hidden;
 }
+
 .coin-refresh {
   margin: auto 1em;
 }
-
 /*     ######   MUI Override styles    ######     */
 .MuiAvatar-root {
   margin-left: 1.5em !important;
