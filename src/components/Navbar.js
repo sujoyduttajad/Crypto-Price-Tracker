@@ -8,7 +8,7 @@ const Navbar = ({ handleChange, coinId }) => {
   const isActive = location.pathname;
 
   return (
-    <nav className="coin-search">
+    <nav className="navbar-container">
       <div className="coin-logo-container">
         <NavLink to="/">
           <div className="coin-image-container" style={{ userSelect: "none" }}>
