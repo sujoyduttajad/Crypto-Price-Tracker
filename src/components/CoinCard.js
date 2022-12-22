@@ -1,11 +1,13 @@
 import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 import React from "react";
 import Tilt from "react-parallax-tilt";
-import { Chip } from '@mui/material';
+import { Chip } from "@mui/material";
 import { useStyles } from "../materialUi/GlobalStyles";
 
 const CoinCard = ({ data }) => {
   const classes = useStyles();
+
+  const priceChange = data.market_data.price_change_percentage_24h;
 
   return (
     <div className="card-container">
@@ -26,13 +28,13 @@ const CoinCard = ({ data }) => {
             <div className="market-info">
               <h2>${data.market_data.current_price.usd} </h2>
               <div className="price-change">
-                {data.market_data.price_change_percentage_24h > 0 ? (
+                {priceChange > 0 ? (
                   <Chip
                     className={classes.chipStyles}
                     variant="contained"
                     style={{ color: "#13A206", fontSize: ".55em" }}
                     icon={<ArrowDropUp style={{ color: "#13A206" }} />}
-                    label={data.market_data.price_change_percentage_24h}
+                    label={priceChange.toFixed(2)}
                   />
                 ) : (
                   <Chip
@@ -40,7 +42,7 @@ const CoinCard = ({ data }) => {
                     variant="contained"
                     style={{ color: "#BD1B1B", fontSize: ".55em" }}
                     icon={<ArrowDropDown style={{ color: "#BD1B1B" }} />}
-                    label={data.market_data.price_change_percentage_24h}
+                    label={Math.abs(priceChange.toFixed(2))}
                   />
                 )}
               </div>
