@@ -2,11 +2,15 @@
 @use "./mixins" as *;
 
 .coin-info-container {
-  @include flex(row, center, space-evenly);
+  @include flex(row, center, center);
+  flex-wrap: wrap;
   width: 100vw;
 }
 .card-container {
-  max-width: 90vw;
+  max-width: 32rem;
+  min-width: 20rem;
+  width: 100%;
+  margin: 0 auto;
 }
 .card {
   margin: auto;
@@ -87,5 +91,24 @@
         transform: translateZ(80px);
       }
     }
+  }
+}
+
+.info-container {
+  @include flex(column, flex-start, flex-start);
+  max-width: 40rem;
+  min-width: 25rem;
+  width: 100%;
+  height: max-content;
+  border: 2.5px solid $NavbarWhite;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 0 auto;
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .info-row {
+
   }
 }
