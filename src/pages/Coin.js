@@ -26,7 +26,7 @@ const EachCoin = ({ coinId }) => {
       <Navbar coinId={coinId} />
       <section className="coin-info-container">
         <CoinCard data={data} />
-        <Info />
+        <Info data={data} />
       </section>
     </Suspense>
   );
