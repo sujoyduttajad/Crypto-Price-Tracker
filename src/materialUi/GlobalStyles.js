@@ -43,7 +43,6 @@ export const useStyles = makeStyles({
     background: "transparent"
   },
   chipStyles: {
-    // border: "1px solid #fcfcfc",
     borderRadius: "4px",
     fontSize: "2rem",
     fontWeight: 700,
