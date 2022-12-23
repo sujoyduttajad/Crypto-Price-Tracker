@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { useQuery } from "react-query";
+import Info from "../components/Info";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Navbar from "../components/Navbar";
 
@@ -25,6 +26,7 @@ const EachCoin = ({ coinId }) => {
       <Navbar coinId={coinId} />
       <section className="coin-info-container">
         <CoinCard data={data} />
+        <Info />
       </section>
     </Suspense>
   );
