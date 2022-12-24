@@ -1,7 +1,8 @@
 import React from "react";
-import { ContentCopyOutlined, MoreVert } from "@mui/icons-material";
+import { ContentCopyOutlined, GitHub, MoreVert } from "@mui/icons-material";
 import { Chip, IconButton, Menu, MenuItem } from "@mui/material";
 import { useStyles } from "../materialUi/GlobalStyles";
+import TooltipComp from "../materialUi/Tooltip";
 
 const Info = ({ data }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -12,6 +13,12 @@ const Info = ({ data }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleCopyContent = () => {
+    navigator.clipboard
+      .readText()
+     ;
+  };
+
   const classes = useStyles();
   return (
     <div className="info-container">
@@ -31,7 +38,7 @@ const Info = ({ data }) => {
             <a href={data.links.blockchain_site[0]} target="_blank">
               {data.links.blockchain_site[0]
                 .replace(/[https://|http://]/gi, "")
-                .substring(0, 10)}
+                .substring(0, 20)}
             </a>
           </div>
           <IconButton
@@ -80,7 +87,7 @@ const Info = ({ data }) => {
                     <a href={site} target="_blank">
                       {site
                         .replace(/[https://|http://]/gi, "")
-                        .substring(0, 10)}
+                        .substring(0, 20)}
                     </a>
                   </MenuItem>
                 );
@@ -109,22 +116,24 @@ const Info = ({ data }) => {
       <div className="info-row">
         <p>Source Code</p>
         <div className="chip">
-          <a href={data.links.homepage[0]}>
-            {data.links.homepage[0].replace(/[http://www.]/gi, "")}
+        <GitHub style={{ fontSize: "1.2rem"}} />
+          <a href={data.links.repos_url.github[0]} target="_blank">
+            {data.links.repos_url.github[0].replace(/\https:\/\//, "")}
           </a>
         </div>
       </div>
       <div className="info-row">
         <p>ApI id</p>
         <Chip
+          className="cliptext"
           style={{
             fontSize: "1rem",
             fontWeight: 500,
             borderRadius: "5px",
-            backgroundColor: "#A0A0A0",
+            backgroundColor: "#F1F1F1",
           }}
           deleteIcon={<ContentCopyOutlined />}
-          // onDelete={handleDelete}
+          onDelete={handleCopyContent}
           label={data.id}
         />
       </div>
