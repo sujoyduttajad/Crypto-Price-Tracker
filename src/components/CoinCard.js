@@ -32,7 +32,11 @@ const CoinCard = ({ data }) => {
                   <Chip
                     className={classes.chipStyles}
                     variant="contained"
-                    style={{ color: "#13A206", fontSize: ".55em" }}
+                    style={{
+                      color: "#13A206",
+                      backgroundColor: "#e2e2e2",
+                      fontSize: ".55em",
+                    }}
                     icon={<ArrowDropUp style={{ color: "#13A206" }} />}
                     label={priceChange.toFixed(2)}
                   />
@@ -40,7 +44,11 @@ const CoinCard = ({ data }) => {
                   <Chip
                     className={classes.chipStyles}
                     variant="contained"
-                    style={{ color: "#BD1B1B", fontSize: ".55em" }}
+                    style={{
+                      color: "#BD1B1B",
+                      backgroundColor: "#e2e2e2",
+                      fontSize: ".55em",
+                    }}
                     icon={<ArrowDropDown style={{ color: "#BD1B1B" }} />}
                     label={Math.abs(priceChange.toFixed(2))}
                   />
