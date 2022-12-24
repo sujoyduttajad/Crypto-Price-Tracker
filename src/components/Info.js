@@ -9,23 +9,29 @@ const Info = ({ data }) => {
         <div className="chip">
           <a href={data.links.homepage[0]}>
             {data.links.homepage[0].replace(/[http://www.]/gi, "")}
-            </a>
+          </a>
         </div>
       </div>
       <div className="info-row">
-        <p>Website</p>
-        <div className="chip">
-          <a href={data.links.homepage[0]}>
-            {data.links.homepage[0].replace(/[http://www.]/gi, "")}
-            </a>
-        </div>
+        <p>Explorers</p>
+        {data.links.blockchain_site?.map((site) => {
+          if (site !== "") {
+            return (
+              <div className="chip">
+                <a href={data.links.homepage[0]}>
+                  {data.links.homepage[0].replace(/[https://|http://]/gi, "")}
+                </a>
+              </div>
+            );
+          }
+        })}
       </div>
       <div className="info-row">
-        <p>Website</p>
+        <p>Wallets</p>
         <div className="chip">
           <a href={data.links.homepage[0]}>
             {data.links.homepage[0].replace(/[http://www.]/gi, "")}
-            </a>
+          </a>
         </div>
       </div>
     </div>
