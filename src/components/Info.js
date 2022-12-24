@@ -35,7 +35,7 @@ const Info = ({ data }) => {
         </div>
       </div>
       <div className="info-row">
-        <p>Wallets</p>
+        <p>Community</p>
         <div className="chip">
           <a href={data.links.homepage[0]}>
             {data.links.homepage[0].replace(/[http://www.]/gi, "")}
@@ -43,7 +43,7 @@ const Info = ({ data }) => {
         </div>
       </div>
       <div className="info-row">
-        <p>Wallets</p>
+        <p>Source Code</p>
         <div className="chip">
           <a href={data.links.homepage[0]}>
             {data.links.homepage[0].replace(/[http://www.]/gi, "")}
@@ -51,7 +51,15 @@ const Info = ({ data }) => {
         </div>
       </div>
       <div className="info-row">
-        <p>Wallets</p>
+        <p>ApI id</p>
+        <div className="chip">
+          <a href={data.links.homepage[0]}>
+            {data.links.homepage[0].replace(/[http://www.]/gi, "")}
+          </a>
+        </div>
+      </div>
+      <div className="info-row">
+        <p>Tags</p>
         <div className="chip">
           <a href={data.links.homepage[0]}>
             {data.links.homepage[0].replace(/[http://www.]/gi, "")}
