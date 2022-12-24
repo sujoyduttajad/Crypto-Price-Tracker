@@ -100,9 +100,10 @@
   min-width: 25rem;
   width: 100%;
   height: max-content;
-  border: 2.5px solid $NavbarWhite;
-  border-radius: 5px;
+  border: 2.5px solid $QuickSilver2;
+  border-radius: 10px;
   padding: 1rem;
+  padding-left: 2rem;
   margin: 0 auto;
   h3 {
     font-size: 2rem;
@@ -136,7 +137,7 @@
       &:first-of-type {
         margin-left: 0;
       }
-      a {
+      a, p {
         font-weight: 500;
       }
     }
