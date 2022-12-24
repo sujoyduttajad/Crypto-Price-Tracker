@@ -14,24 +14,27 @@ const Info = ({ data }) => {
       </div>
       <div className="info-row">
         <p>Explorers</p>
-        {data.links.blockchain_site?.map((site) => {
-          if (site !== "") {
-            return (
-              <div className="chip">
-                <a href={site} target="_blank">
-                  {site.replace(/[https://|http://]/gi, "")}
-                </a>
-              </div>
-            );
-          }
-        })}
+        <div className="chips-wrapper">
+          {data.links.blockchain_site?.map((site) => {
+            if (site !== "") {
+              return (
+                <div className="chip">
+                  <a href={site} target="_blank">
+                    {site.replace(/[https://|http://]/gi, "").substring(0, 10)}
+                  </a>
+                </div>
+              );
+            }
+          })}
+        </div>
       </div>
       <div className="info-row">
         <p>Wallets</p>
         <div className="chip">
-          <a href={data.links.homepage[0]}>
-            {data.links.homepage[0].replace(/[http://www.]/gi, "")}
-          </a>
+          <a href="https://gcko.io/ledger">Ledger</a>
+        </div>
+        <div className="chip">
+          <a href="https://coin98.com/wallet">Coin98</a>
         </div>
       </div>
       <div className="info-row">
