@@ -1,13 +1,17 @@
+import { ContentCopyOutlined } from "@mui/icons-material";
+import { Chip } from "@mui/material";
 import React from "react";
+import { useStyles } from "../materialUi/GlobalStyles";
 
 const Info = ({ data }) => {
+  const classes = useStyles();
   return (
     <div className="info-container">
       <h3>General Info</h3>
       <div className="info-row">
         <p>Website</p>
         <div className="chip">
-          <a href={data.links.homepage[0]}>
+          <a href={data.links.homepage[0]} target="_blank">
             {data.links.homepage[0].replace(/[http://www]/gi, "")}
           </a>
         </div>
@@ -55,11 +59,17 @@ const Info = ({ data }) => {
       </div>
       <div className="info-row">
         <p>ApI id</p>
-        <div className="chip">
-          <a href={data.links.homepage[0]}>
-            {data.links.homepage[0].replace(/[http://www.]/gi, "")}
-          </a>
-        </div>
+        <Chip
+          style={{
+            borderRadius: "4px",
+            fontSize: "1rem",
+            fontWeight: 500,
+            borderRadius: "5px",
+            backgroundColor: "#A0A0A0",
+          }}
+          deleteIcon={<ContentCopyOutlined />}
+          label={data.id}
+        />
       </div>
       <div className="info-row">
         <p>Tags</p>
