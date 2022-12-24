@@ -2,7 +2,7 @@
 @use "./mixins" as *;
 
 .coin-info-container {
-  @include flex(row, center, center);
+  @include flex(row, flex-start, center);
   flex-wrap: wrap;
   width: 100vw;
 }
@@ -117,14 +117,19 @@
     p {
       margin: 0;
       margin-right: 1rem;
+      width: 5rem;
     }
     .chip {
       padding: 0.2rem 0.4rem;
+      margin: 0 0.2rem;
       border: none;
       outline: none;
-      border-radius: 5px;
+      border-radius: 4.2255px;
       background-color: $QuickSilver;
       color: $PrimaryBlack;
+      &:first-of-type {
+        margin-left: 0;
+      }
       a {
         font-weight: 500;
       }
