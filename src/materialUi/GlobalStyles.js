@@ -46,5 +46,12 @@ export const useStyles = makeStyles({
     borderRadius: "4px",
     fontSize: "2rem",
     fontWeight: 700,
+  },
+  infoChip: {
+    borderRadius: "4px",
+    fontSize: "3rem",
+    fontWeight: 700,
+    borderRadius: "5px",
+    backgroundColor: "#fff"
   }
 });
