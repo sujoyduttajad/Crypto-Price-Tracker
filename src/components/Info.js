@@ -1,8 +1,7 @@
 import React from "react";
-import { ContentCopyOutlined, GitHub, MoreVert } from "@mui/icons-material";
+import { ContentCopyOutlined, FacebookRounded, GitHub, MoreVert, Twitter } from "@mui/icons-material";
 import { Chip, IconButton, Menu, MenuItem } from "@mui/material";
 import { useStyles } from "../materialUi/GlobalStyles";
-import TooltipComp from "../materialUi/Tooltip";
 
 const Info = ({ data }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -14,9 +13,7 @@ const Info = ({ data }) => {
     setAnchorEl(null);
   };
   const handleCopyContent = () => {
-    navigator.clipboard
-      .readText()
-     ;
+    navigator.clipboard.readText();
   };
 
   const classes = useStyles();
@@ -107,18 +104,27 @@ const Info = ({ data }) => {
       </div>
       <div className="info-row">
         <p>Community</p>
+        {/* Twitter */}
         <div className="chip">
-          <a href={data.links.homepage[0]}>
-            {data.links.homepage[0].replace(/[http://www.]/gi, "")}
+          <Twitter style={{ fontSize: "1.2rem" }} />
+          <a href={`https://twitter.com/${data.links.twitter_screen_name}`}>
+            {data.links.twitter_screen_name}
+          </a>
+        </div>
+        {/* Facebook */}
+        <div className="chip">
+          <FacebookRounded style={{ fontSize: "1.2rem" }} />
+          <a href={`https://www.facebook.com/${data.links.facebook_username}`}>
+            {data.links.facebook_username}
           </a>
         </div>
       </div>
       <div className="info-row">
         <p>Source Code</p>
         <div className="chip">
-        <GitHub style={{ fontSize: "1.2rem"}} />
+          <GitHub style={{ fontSize: "1.2rem" }} />
           <a href={data.links.repos_url.github[0]} target="_blank">
-            {data.links.repos_url.github[0].replace(/\https:\/\//, "")}
+            {data.links.repos_url.github[0]?.replace(/\https:\/\//, "")}
           </a>
         </div>
       </div>
