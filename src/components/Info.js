@@ -1,7 +1,38 @@
 import React from "react";
-import { ContentCopyOutlined, FacebookRounded, GitHub, MoreVert, Twitter } from "@mui/icons-material";
-import { Chip, IconButton, Menu, MenuItem } from "@mui/material";
+import {
+  ContentCopyOutlined,
+  FacebookRounded,
+  GitHub,
+  MoreVert,
+  Twitter,
+} from "@mui/icons-material";
+import {
+  Alert,
+  Chip,
+  IconButton,
+  Menu,
+  MenuItem,
+  Snackbar,
+} from "@mui/material";
 import { useStyles } from "../materialUi/GlobalStyles";
+
+const Notifications = ({ openSnackbar, handleSnackbarClose }) => {
+  return (
+    // <Snackbar
+    //   open={openSnackbar}
+    //   autoHideDuration={1000}
+    //   onClose={handleSnackbarClose}
+    // >
+      <Alert
+        // onClose={handleSnackbarClose}
+        severity="info"
+        sx={{ width: "20rem" }}
+      >
+        Copied to clipboard
+      </Alert>
+    
+  );
+};
 
 const Info = ({ data }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -12,8 +43,57 @@ const Info = ({ data }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleCopyContent = () => {
-    navigator.clipboard.readText();
+
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
+
+  // const handleSnackbarClick = () => {
+  //   setOpenSnackbar(true);
+  // };
+
+  const handleSnackbarClose = (reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnackbar(false);
+  };
+
+  const handleCopyContent = async (text) => {
+    if ("clipboard" in navigator) {
+      setOpenSnackbar(true);
+      <Notifications
+        openSnackbar={openSnackbar}
+        handleSnackbarClose={handleSnackbarClose}
+      />
+      return await navigator.clipboard.writeText(text);
+    } else {
+      return document.execCommand("copy", true, text);
+    }
+    // try {
+    //   await navigator.clipboard
+    //     .readText()
+    //     .then(
+    //       (clipText) =>
+    //         (document.getElementsByClassName("cliptext").innerText =
+    //           console.log(clipText))
+    //     );
+    //   return (
+    //     <Snackbar
+    //       open={setOpenSnackbar}
+    //       autoHideDuration={6000}
+    //       onClose={handleSnackbarClose}
+    //     >
+    //       <Alert
+    //         onClose={handleSnackbarClose}
+    //         severity="info"
+    //         sx={{ width: "20rem" }}
+    //       >
+    //         Copied to clipboard
+    //       </Alert>
+    //     </Snackbar>
+    //   );
+    // } catch (err) {
+    //   alert("failed to copy", err);
+    // }
   };
 
   const classes = useStyles();
@@ -24,7 +104,7 @@ const Info = ({ data }) => {
         <p>Website</p>
         <div className="chip">
           <a href={data.links.homepage[0]} target="_blank">
-            {data.links.homepage[0].replace(/[http://www]/gi, "")}
+            {data.links.homepage[0]?.replace(/[http://www]/gi, "")}
           </a>
         </div>
       </div>
@@ -34,7 +114,7 @@ const Info = ({ data }) => {
           <div className="chip" style={{ borderRadius: "4.55px 0 0 4.55px" }}>
             <a href={data.links.blockchain_site[0]} target="_blank">
               {data.links.blockchain_site[0]
-                .replace(/[https://|http://]/gi, "")
+                ?.replace(/[https://|http://]/gi, "")
                 .substring(0, 20)}
             </a>
           </div>
@@ -83,7 +163,7 @@ const Info = ({ data }) => {
                   >
                     <a href={site} target="_blank">
                       {site
-                        .replace(/[https://|http://]/gi, "")
+                        ?.replace(/[https://|http://]/gi, "")
                         .substring(0, 20)}
                     </a>
                   </MenuItem>
@@ -107,14 +187,20 @@ const Info = ({ data }) => {
         {/* Twitter */}
         <div className="chip">
           <Twitter style={{ fontSize: "1.2rem" }} />
-          <a href={`https://twitter.com/${data.links.twitter_screen_name}`}>
+          <a
+            href={`https://twitter.com/${data.links.twitter_screen_name}`}
+            target="_blank"
+          >
             {data.links.twitter_screen_name}
           </a>
         </div>
         {/* Facebook */}
         <div className="chip">
           <FacebookRounded style={{ fontSize: "1.2rem" }} />
-          <a href={`https://www.facebook.com/${data.links.facebook_username}`}>
+          <a
+            href={`https://www.facebook.com/${data.links.facebook_username}`}
+            target="_blank"
+          >
             {data.links.facebook_username}
           </a>
         </div>
@@ -130,18 +216,22 @@ const Info = ({ data }) => {
       </div>
       <div className="info-row">
         <p>ApI id</p>
-        <Chip
-          className="cliptext"
-          style={{
-            fontSize: "1rem",
-            fontWeight: 500,
-            borderRadius: "5px",
-            backgroundColor: "#F1F1F1",
-          }}
-          deleteIcon={<ContentCopyOutlined />}
-          onDelete={handleCopyContent}
-          label={data.id}
-        />
+        <div className="chip">
+          <input
+            className="cliptext"
+            onClick={() => handleCopyContent(data.id)}
+            style={{
+              fontSize: "1rem",
+              fontWeight: 500,
+              borderRadius: "5px",
+              cursor: "pointer",
+              backgroundColor: "#F1F1F1",
+            }}
+            value={data.id} readOnly
+          />
+            
+          <ContentCopyOutlined />
+        </div>
       </div>
       <div className="info-row">
         <p>Tags</p>
