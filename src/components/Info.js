@@ -34,7 +34,7 @@ const Info = ({ data }) => {
       <div className="info-row">
         <p>Explorers</p>
         <div className="chips-wrapper">
-          <div className="chip" style={{ borderRadius: "5.95px 0 0 5.95px" }}>
+          <div className="chip" style={{ borderRadius: "4.55px 0 0 4.55px" }}>
             <a href={data.links.blockchain_site[0]} target="_blank">
               {data.links.blockchain_site[0]
                 .replace(/[https://|http://]/gi, "")
@@ -48,7 +48,7 @@ const Info = ({ data }) => {
               fontSize: "1rem",
               fontWeight: 500,
               padding: "0.04em 0.2em",
-              borderRadius: "0 5.95px 5.95px 0",
+              borderRadius: "0 4.55px 4.55px 0",
               backgroundColor: "#A0A0A0",
             }}
             aria-controls={open ? "long-menu" : undefined}
