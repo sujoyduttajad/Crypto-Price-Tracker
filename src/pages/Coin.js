@@ -19,7 +19,7 @@ const EachCoin = ({ coinId }) => {
 
   if (error) return "An error has occurred: " + error.message;
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <Suspense fallback={<LoadingSpinner />}>
