@@ -51,7 +51,7 @@ export const useStyles = makeStyles({
     borderRadius: "4px",
     fontSize: "3rem",
     fontWeight: 700,
-    borderRadius: "5px",
+    borderRadius: "5.56px",
     backgroundColor: "#fff"
   }
 });
