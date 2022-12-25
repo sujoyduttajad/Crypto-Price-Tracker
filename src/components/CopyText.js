@@ -56,16 +56,16 @@ const CopyText = ({ data }) => {
         console.log(err);
       });
   };
+
   return (
-    <form 
-        className="copy-form" 
-        onSubmit={() => handleCopyContent(data.id)}
+    <div
+      className="copy-form"
+      onClick={() => handleCopyContent(data.id)}
     >
       <input
         className="cliptext"
         value={data.id}
         readOnly
-        // onClick={() => handleCopyContent(data.id)}
         style={{
           fontSize: "1rem",
           fontWeight: 500,
@@ -75,9 +75,13 @@ const CopyText = ({ data }) => {
         }}
       />
       <button onClick={handleCopyClick} className="submit-button" type="submit">
-        { isCopied ? <TaskAlt /> : <ContentCopyOutlined />}
+        {isCopied ? (
+          <TaskAlt style={{ color: "#13A206" }} />
+        ) : (
+          <ContentCopyOutlined />
+        )}
       </button>
-    </form>
+    </div>
   );
 };
 
