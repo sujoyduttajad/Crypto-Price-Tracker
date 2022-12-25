@@ -146,7 +146,7 @@ const Info = ({ data }) => {
         </div>
       </div>
       <div className="info-row">
-        <p>ApI id</p>
+        <p>API id</p>
         <div className="chip">
           <CopyText data={data} />
         </div>
