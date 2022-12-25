@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { theme } from "../materialUi/theme";
 import EnhancedTableHead from "../components/EnhancedTableHead";
 import EnhancedTableToolbar from "../components/EnhancedTollbar";
@@ -27,10 +27,6 @@ export default function CoinTable({ filteredCoins, handleChange, setCoinId }) {
   const [selected, setSelected] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-
-  // React-router and other utilities
-  const location = useLocation();
-  const path = location.pathname;
   const classes = useStyles();
 
   function createData(name, price, volume, coinPercent, mktCap) {
