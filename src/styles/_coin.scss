@@ -100,7 +100,7 @@
   min-width: 25rem;
   width: 100%;
   height: max-content;
-  border: 2.5px solid $QuickSilver2;
+  border: 2px solid $GreyBorderColor;
   border-radius: 10px;
   padding: 1rem;
   padding-left: 2rem;
@@ -132,7 +132,7 @@
       margin: 0 0.2rem;
       border: none;
       outline: none;
-      border-radius: 4.2255px;
+      border-radius: 4.55px;
       background-color: $Cultured;
       color: $PrimaryBlack;
       &:first-of-type {
