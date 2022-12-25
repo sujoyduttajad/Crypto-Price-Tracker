@@ -15,24 +15,7 @@ import {
   Snackbar,
 } from "@mui/material";
 import { useStyles } from "../materialUi/GlobalStyles";
-
-const Notifications = ({ openSnackbar, handleSnackbarClose }) => {
-  return (
-    // <Snackbar
-    //   open={openSnackbar}
-    //   autoHideDuration={1000}
-    //   onClose={handleSnackbarClose}
-    // >
-      <Alert
-        // onClose={handleSnackbarClose}
-        severity="info"
-        sx={{ width: "20rem" }}
-      >
-        Copied to clipboard
-      </Alert>
-    
-  );
-};
+import CopyText from "./CopyText";
 
 const Info = ({ data }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -42,58 +25,6 @@ const Info = ({ data }) => {
   };
   const handleClose = () => {
     setAnchorEl(null);
-  };
-
-  const [openSnackbar, setOpenSnackbar] = React.useState(false);
-
-  // const handleSnackbarClick = () => {
-  //   setOpenSnackbar(true);
-  // };
-
-  const handleSnackbarClose = (reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpenSnackbar(false);
-  };
-
-  const handleCopyContent = async (text) => {
-    if ("clipboard" in navigator) {
-      setOpenSnackbar(true);
-      <Notifications
-        openSnackbar={openSnackbar}
-        handleSnackbarClose={handleSnackbarClose}
-      />
-      return await navigator.clipboard.writeText(text);
-    } else {
-      return document.execCommand("copy", true, text);
-    }
-    // try {
-    //   await navigator.clipboard
-    //     .readText()
-    //     .then(
-    //       (clipText) =>
-    //         (document.getElementsByClassName("cliptext").innerText =
-    //           console.log(clipText))
-    //     );
-    //   return (
-    //     <Snackbar
-    //       open={setOpenSnackbar}
-    //       autoHideDuration={6000}
-    //       onClose={handleSnackbarClose}
-    //     >
-    //       <Alert
-    //         onClose={handleSnackbarClose}
-    //         severity="info"
-    //         sx={{ width: "20rem" }}
-    //       >
-    //         Copied to clipboard
-    //       </Alert>
-    //     </Snackbar>
-    //   );
-    // } catch (err) {
-    //   alert("failed to copy", err);
-    // }
   };
 
   const classes = useStyles();
@@ -217,20 +148,7 @@ const Info = ({ data }) => {
       <div className="info-row">
         <p>ApI id</p>
         <div className="chip">
-          <input
-            className="cliptext"
-            onClick={() => handleCopyContent(data.id)}
-            style={{
-              fontSize: "1rem",
-              fontWeight: 500,
-              borderRadius: "5px",
-              cursor: "pointer",
-              backgroundColor: "#F1F1F1",
-            }}
-            value={data.id} readOnly
-          />
-            
-          <ContentCopyOutlined />
+          <CopyText data={data} />
         </div>
       </div>
       <div className="info-row">
