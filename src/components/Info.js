@@ -4,7 +4,7 @@ import CopyText from "./CopyText";
 import Dropdown from "./Dropdown";
 
 const Info = ({ data }) => {
-
+  const regexSite = /^(https?:\/\/www.)/;
   return (
     <div className="info-container">
       <h3>General Info</h3>
@@ -12,7 +12,7 @@ const Info = ({ data }) => {
         <p>Website</p>
         <div className="chip">
           <a href={data.links.homepage[0]} target="_blank" rel="noreferrer">
-            {data.links.homepage[0]?.replace(/[http://www]/gi, "")}
+            {data.links.homepage[0]?.replace(regexSite, "")}
           </a>
         </div>
       </div>
@@ -57,24 +57,20 @@ const Info = ({ data }) => {
         <div className="chip">
           <GitHub style={{ fontSize: "1.2rem" }} />
           <a href={data.links.repos_url.github[0]} target="_blank" rel="noreferrer">
-            {data.links.repos_url.github[0]?.replace(/https:\//, "")}
+            {data.links.repos_url.github[0]?.replace(/^https:\//, "")}
           </a>
         </div>
+      </div>
+      <div className="info-row">
+        <p>Tags</p>
+        <Dropdown content={data.categories} />
       </div>
       <div className="info-row">
         <p>API id</p>
         <div className="chip">
           <CopyText data={data} />
         </div>
-      </div>
-      <div className="info-row">
-        <p>Tags</p>
-        <div className="chip">
-          <a href={data.links.homepage[0]}>
-            {data.links.homepage[0].replace(/[http://www.]/gi, "")}
-          </a>
-        </div>
-      </div>
+      </div>      
     </div>
   );
 };
