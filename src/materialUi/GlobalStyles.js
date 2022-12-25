@@ -48,7 +48,6 @@ export const useStyles = makeStyles({
     fontWeight: 700,
   },
   infoChip: {
-    borderRadius: "4px",
     fontSize: "3rem",
     fontWeight: 700,
     borderRadius: "5.56px",
