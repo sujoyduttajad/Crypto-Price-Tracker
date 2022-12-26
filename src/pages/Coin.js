@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { useQuery } from "react-query";
 import Info from "../components/Info";
 import LoadingSpinner from "../components/LoadingSpinner";
+import MarketInfo from "../components/MarketInfo";
 import Navbar from "../components/Navbar";
 
 const CoinCard = lazy(() => import("../components/CoinCard"));
@@ -27,6 +28,9 @@ const EachCoin = ({ coinId }) => {
       <section className="coin-info-container">
         <CoinCard data={data} />
         <Info data={data} />
+      </section>
+      <section className="coin-info-container">
+        <MarketInfo data={data} />
       </section>
     </Suspense>
   );
