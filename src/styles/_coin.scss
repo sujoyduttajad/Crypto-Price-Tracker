@@ -59,6 +59,7 @@
     font-family: $CardFont;
     font-size: 2.5em;
     .coin-title {
+      @include flex(row, center, space-between);
       p {
         font-weight: 200;
         font-size: 0.9em;
@@ -73,7 +74,6 @@
       }
       .price-change {
         p {
-          // font-size: 0.9em;
           margin: 0;
         }
       }
@@ -136,7 +136,8 @@
       &:first-of-type {
         margin-left: 0;
       }
-      a, p {
+      a,
+      p {
         font-weight: 500;
         padding-left: 0.5rem;
         width: fit-content;
@@ -148,7 +149,8 @@
 .copy-form {
   @include flex(row, center, space-between);
   width: fit-content;
-  .cliptext, .submit-button {
+  .cliptext,
+  .submit-button {
     border: none;
     outline: none;
     padding: 0;
