@@ -60,10 +60,22 @@
     font-size: 2.5em;
     .coin-title {
       @include flex(row, center, space-between);
-      p {
+      p, div {
+        @include flex(row, center, center);
         font-weight: 200;
         font-size: 0.9em;
-        margin-bottom: 0.2em;
+        margin: 0;
+        &:last-of-type {
+          width: fit-content;
+        }
+        .followers {
+          font-size: 0.7em;
+          margin: 0;
+          padding-top: 0.5rem;
+          padding-left: 0.5rem;
+          text-align: center;
+          vertical-align: center;
+        }
       }
     }
     .market-info {
