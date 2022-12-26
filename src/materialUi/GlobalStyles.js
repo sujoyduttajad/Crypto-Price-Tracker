@@ -47,10 +47,8 @@ export const useStyles = makeStyles({
     fontSize: "2rem",
     fontWeight: 700,
   },
-  infoChip: {
-    fontSize: "3rem",
-    fontWeight: 700,
-    borderRadius: "5.56px",
-    backgroundColor: "#fff"
+  tooltip: {
+    fontFamily: '"Montserrat", sans-serif',
+    fontSize: "1rem"
   }
 });
