@@ -2,9 +2,13 @@ import React from "react";
 import { FacebookRounded, GitHub, Twitter } from "@mui/icons-material";
 import CopyText from "./CopyText";
 import Dropdown from "./Dropdown";
+import { Tooltip } from "@mui/material";
+import { useStyles } from "../materialUi/GlobalStyles";
 
 const Info = ({ data }) => {
   const regexSite = /^(https?:\/\/www.)/;
+  const classes = useStyles();
+  
   return (
     <div className="info-container">
       <h3>General Info</h3>
@@ -32,21 +36,29 @@ const Info = ({ data }) => {
       <div className="info-row">
         <p>Community</p>
         {/* Twitter */}
-        <div className="chip">
-          <Twitter style={{ fontSize: "1.2rem" }} />
-          <a
-            href={`https://twitter.com/${data.links.twitter_screen_name}`}
-            target="_blank" rel="noreferrer"
-          >
-            {data.links.twitter_screen_name}
-          </a>
-        </div>
+        <Tooltip
+          title={`${data.community_data.twitter_followers} followers`}
+          placement="top"
+          className={classes.tooltip}
+        >
+          <div className="chip">
+            <Twitter style={{ fontSize: "1.2rem" }} />
+            <a
+              href={`https://twitter.com/${data.links.twitter_screen_name}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {data.links.twitter_screen_name}
+            </a>
+          </div>
+        </Tooltip>
         {/* Facebook */}
         <div className="chip">
           <FacebookRounded style={{ fontSize: "1.2rem" }} />
           <a
             href={`https://www.facebook.com/${data.links.facebook_username}`}
-            target="_blank" rel="noreferrer"
+            target="_blank"
+            rel="noreferrer"
           >
             {data.links.facebook_username}
           </a>
@@ -56,7 +68,11 @@ const Info = ({ data }) => {
         <p>Source Code</p>
         <div className="chip">
           <GitHub style={{ fontSize: "1.2rem" }} />
-          <a href={data.links.repos_url.github[0]} target="_blank" rel="noreferrer">
+          <a
+            href={data.links.repos_url.github[0]}
+            target="_blank"
+            rel="noreferrer"
+          >
             {data.links.repos_url.github[0]?.replace(/^https:\//, "")}
           </a>
         </div>
@@ -70,7 +86,7 @@ const Info = ({ data }) => {
         <div className="chip">
           <CopyText data={data} />
         </div>
-      </div>      
+      </div>
     </div>
   );
 };
