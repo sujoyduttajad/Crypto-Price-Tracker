@@ -1,4 +1,4 @@
-import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
+import { ArrowDropDown, ArrowDropUp, Star } from "@mui/icons-material";
 import React from "react";
 import Tilt from "react-parallax-tilt";
 import { Chip } from "@mui/material";
@@ -24,9 +24,10 @@ const CoinCard = ({ data }) => {
               <p>
                 {data.name} ({data.symbol.toUpperCase()})
               </p>
+              <p><Star /></p>
             </div>
             <div className="market-info">
-              <h2>${data.market_data.current_price.usd} </h2>
+              <h2>${data.market_data.current_price.usd.toFixed(2)} </h2>
               <div className="price-change">
                 {priceChange > 0 ? (
                   <Chip
@@ -38,7 +39,7 @@ const CoinCard = ({ data }) => {
                       fontSize: ".55em",
                     }}
                     icon={<ArrowDropUp style={{ color: "#13A206" }} />}
-                    label={priceChange.toFixed(2)}
+                    label={`${priceChange.toFixed(2)}%`}
                   />
                 ) : (
                   <Chip
@@ -50,7 +51,7 @@ const CoinCard = ({ data }) => {
                       fontSize: ".55em",
                     }}
                     icon={<ArrowDropDown style={{ color: "#BD1B1B" }} />}
-                    label={Math.abs(priceChange.toFixed(2))}
+                    label={`${Math.abs(priceChange.toFixed(2))}%`}
                   />
                 )}
               </div>
