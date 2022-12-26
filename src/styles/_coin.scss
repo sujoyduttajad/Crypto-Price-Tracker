@@ -1,10 +1,12 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+// Root level class for the section that wraps all other components
 .coin-info-container {
   @include flex(row, flex-start, center);
   flex-wrap: wrap;
   width: 100vw;
+  margin-bottom: 2rem;
 }
 .card-container {
   max-width: 32rem;
@@ -122,8 +124,7 @@
   }
   .info-row {
     @include flex(row, center, flex-start);
-
-    margin: 0.8rem 0;
+    margin: 0.5rem 0;
     &:first-of-type {
       margin-top: 2rem;
     }
