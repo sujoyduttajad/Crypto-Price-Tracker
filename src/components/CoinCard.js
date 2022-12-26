@@ -7,11 +7,14 @@ import { useStyles } from "../materialUi/GlobalStyles";
 export const extractDigits = (num) => {
   let extrNum;
   if (num >= 1000) {
-    let numString = num.toString().slice(0, 1);
-    if (num >= 10000) {
-      numString = num.toString().slice(0, 2);
+    let numString = parseInt(num.toString().slice(0, 1))+"k";
+    if (num >= 1000000) {
+      numString = parseInt(num.toString().slice(0, 2))+"M";
     }
-    extrNum = parseInt(numString) + "k";
+    if (num >= 1000000000) {
+      numString = parseInt(num.toString().slice(0, 2))+"B";
+    }
+    extrNum = numString
   } else {
     extrNum = num;
   }
@@ -26,6 +29,8 @@ const CoinCard = ({ data }) => {
     data.community_data.reddit_subscribers +
       data.community_data.twitter_followers
   );
+  console.log(data.community_data.reddit_subscribers +
+    data.community_data.twitter_followers)
 
   return (
     <div className="card-container">
