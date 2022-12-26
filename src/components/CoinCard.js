@@ -4,10 +4,28 @@ import Tilt from "react-parallax-tilt";
 import { Chip } from "@mui/material";
 import { useStyles } from "../materialUi/GlobalStyles";
 
+export const extractDigits = (num) => {
+  let extrNum;
+  if (num >= 1000) {
+    let numString = num.toString().slice(0, 1);
+    if (num >= 10000) {
+      numString = num.toString().slice(0, 2);
+    }
+    extrNum = parseInt(numString) + "k";
+  } else {
+    extrNum = num;
+  }
+  return extrNum;
+};
+
 const CoinCard = ({ data }) => {
   const classes = useStyles();
 
   const priceChange = data.market_data.price_change_percentage_24h;
+  const followers = extractDigits(
+    data.community_data.reddit_subscribers +
+      data.community_data.twitter_followers
+  );
 
   return (
     <div className="card-container">
@@ -24,7 +42,10 @@ const CoinCard = ({ data }) => {
               <p>
                 {data.name} ({data.symbol.toUpperCase()})
               </p>
-              <p><Star /></p>
+              <div>
+                <Star style={{ fontSize: "2rem" }} />{" "}
+                <p className="followers">{followers}</p>
+              </div>
             </div>
             <div className="market-info">
               <h2>${data.market_data.current_price.usd.toFixed(2)} </h2>
