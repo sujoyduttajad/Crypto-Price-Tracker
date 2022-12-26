@@ -52,10 +52,11 @@ const Dropdown = ({ content }) => {
           horizontal: "left",
         }}
       >
-        {content?.map((site) => {
+        {content?.map((site, index) => {
           if (site !== "") {
             return (
               <MenuItem
+                key={index}
                 style={{
                   fontSize: "1rem",
                   fontWeight: 500,
