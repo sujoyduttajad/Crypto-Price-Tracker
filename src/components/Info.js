@@ -6,7 +6,7 @@ import { Tooltip } from "@mui/material";
 import { useStyles } from "../materialUi/GlobalStyles";
 
 const Info = ({ data }) => {
-  const regexSite = /^(https:\/\/www.)(?= )|(http:\/\/)/;
+  const regexSite = /.+\/\/|www.|\..+/g;
   const classes = useStyles();
   
   return (
@@ -14,7 +14,7 @@ const Info = ({ data }) => {
       <h3>General Info</h3>
       <div className="info-row">
         <p>Website</p>
-        <div className="chip">
+        <div className="website-chip" >
           <a href={data.links.homepage[0]} target="_blank" rel="noreferrer">
             {data.links.homepage[0]?.replace(regexSite, "").replace("/", "")}
           </a>
