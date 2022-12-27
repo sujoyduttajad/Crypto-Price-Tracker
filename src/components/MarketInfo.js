@@ -1,14 +1,32 @@
 import { HelpOutline } from "@mui/icons-material";
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import React from "react";
+import { cryptoData } from "../utils/data";
+import { styled } from '@mui/material/styles';
 
-const formatter = new Intl.NumberFormat("en-US", {
+export const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
 });
 
-const regexFormat = (param) => {
-  return (param).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-}
+export const regexFormat = (param) => {
+  return param.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+};
+
+const BootstrapTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.arrow}`]: {
+    color: theme.palette.common.black,
+  },
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.black,
+    fontFamily: '"Montserrat", sans-serif',
+    fontSize: "0.8rem",
+    fontWeight: 300,
+    whiteSpace: "pre-line"
+  },
+}));
 
 const MarketInfo = ({ data }) => {
   return (
@@ -17,9 +35,15 @@ const MarketInfo = ({ data }) => {
       <div className="market-row">
         <p>
           Market Cap{" "}
-          <span>
-            <HelpOutline />
-          </span>
+          <BootstrapTooltip
+            title={cryptoData[0].para}
+            placement="right"
+            style={{ whiteSpace: "pre-line" }}
+          >
+            <span>
+              <HelpOutline />
+            </span>
+          </BootstrapTooltip>
         </p>
         <div className="chip">
           <p>{formatter.format(data.market_data.market_cap.usd)}</p>
@@ -28,9 +52,15 @@ const MarketInfo = ({ data }) => {
       <div className="market-row">
         <p>
           24 Hour Trading Vol{" "}
-          <span>
-            <HelpOutline />
-          </span>
+          <BootstrapTooltip
+            title={cryptoData[1].para}
+            placement="right"
+            style={{ whiteSpace: "pre-line" }}
+          >
+            <span>
+              <HelpOutline />
+            </span>
+          </BootstrapTooltip>
         </p>
         <div className="chip">
           <p>{formatter.format(data.market_data.total_volume.usd)}</p>
@@ -39,9 +69,15 @@ const MarketInfo = ({ data }) => {
       <div className="market-row">
         <p>
           Fully Diluted Valuation{" "}
-          <span>
-            <HelpOutline />
-          </span>
+          <BootstrapTooltip
+            title={cryptoData[2].para}
+            placement="right"
+            style={{ whiteSpace: "pre-line" }}
+          >
+            <span>
+              <HelpOutline />
+            </span>
+          </BootstrapTooltip>
         </p>
         <div className="chip">
           <p>
@@ -52,9 +88,15 @@ const MarketInfo = ({ data }) => {
       <div className="market-row">
         <p>
           Circulating Supply{" "}
-          <span>
-            <HelpOutline />
-          </span>
+          <BootstrapTooltip
+            title={cryptoData[3].para}
+            placement="right"
+            style={{ whiteSpace: "pre-line" }}
+          >
+            <span>
+              <HelpOutline />
+            </span>
+          </BootstrapTooltip>
         </p>
         <div className="chip">
           <p>{regexFormat(data.market_data.circulating_supply)}</p>
@@ -63,9 +105,15 @@ const MarketInfo = ({ data }) => {
       <div className="market-row">
         <p>
           Total Supply{" "}
-          <span>
-            <HelpOutline />
-          </span>
+          <BootstrapTooltip
+            title={cryptoData[4].para}
+            placement="right"
+            style={{ whiteSpace: "pre-line" }}
+          >
+            <span>
+              <HelpOutline />
+            </span>
+          </BootstrapTooltip>
         </p>
         <div className="chip">
           <p>{regexFormat(data.market_data.total_supply)}</p>
@@ -74,9 +122,15 @@ const MarketInfo = ({ data }) => {
       <div className="market-row">
         <p>
           Max Supply{" "}
-          <span>
-            <HelpOutline />
-          </span>
+          <BootstrapTooltip
+            title={cryptoData[5].para}
+            placement="right"
+            style={{ whiteSpace: "pre-line" }}
+          >
+            <span>
+              <HelpOutline />
+            </span>
+          </BootstrapTooltip>
         </p>
         <div className="chip">
           <p>
