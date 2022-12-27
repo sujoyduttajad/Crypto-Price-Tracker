@@ -157,11 +157,9 @@
       }
     }
   }
-  .market-row {
-    @include flex(row, center, space-between);
-    width: 100%;
-  }
 }
+
+
 
 .copy-form {
   @include flex(row, center, space-between);
