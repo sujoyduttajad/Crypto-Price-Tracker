@@ -6,8 +6,11 @@ const formatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
 });
 
-const MarketInfo = ({ data }) => {
+const regexFormat = (param) => {
+  return (param).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
 
+const MarketInfo = ({ data }) => {
   return (
     <div className="market-container">
       <h3>Price Stats</h3>
@@ -54,7 +57,7 @@ const MarketInfo = ({ data }) => {
           </span>
         </p>
         <div className="chip">
-          <p>{formatter.format(data.market_data.circulating_supply)}</p>
+          <p>{regexFormat(data.market_data.circulating_supply)}</p>
         </div>
       </div>
       <div className="market-row">
@@ -65,7 +68,7 @@ const MarketInfo = ({ data }) => {
           </span>
         </p>
         <div className="chip">
-          <p>{formatter.format(data.market_data.total_supply)}</p>
+          <p>{regexFormat(data.market_data.total_supply)}</p>
         </div>
       </div>
       <div className="market-row">
@@ -78,7 +81,7 @@ const MarketInfo = ({ data }) => {
         <div className="chip">
           <p>
             {data.market_data.max_supply
-              ? formatter.format(data.market_data.max_supply)
+              ? regexFormat(data.market_data.max_supply)
               : "NA"}
           </p>
         </div>
