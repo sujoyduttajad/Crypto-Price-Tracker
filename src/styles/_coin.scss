@@ -62,7 +62,8 @@
     font-size: 2.5em;
     .coin-title {
       @include flex(row, center, space-between);
-      p, div {
+      p,
+      div {
         @include flex(row, center, center);
         font-weight: 200;
         font-size: 0.9em;
@@ -122,7 +123,7 @@
     font-size: 2rem;
     font-weight: 600;
   }
-  .info-row, .market-row {
+  .info-row {
     @include flex(row, center, flex-start);
     margin: 0.5rem 0;
     &:first-of-type {
@@ -137,7 +138,7 @@
       @include flex(row, center, flex-start);
       flex-wrap: wrap;
     }
-    .chip {
+    .chip, .website-chip {
       @include flex(row, center, space-between);
       padding: 0.2rem 0.4rem;
       margin: 0 0.2rem;
@@ -156,10 +157,14 @@
         width: fit-content;
       }
     }
+    .website-chip {
+      color: $pinkShade;
+      padding-right: 1rem;
+      background: $GreyBorderColor;
+      border: 1px solid $QuickSilver
+    }
   }
 }
-
-
 
 .copy-form {
   @include flex(row, center, space-between);
