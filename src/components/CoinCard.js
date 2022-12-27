@@ -29,8 +29,6 @@ const CoinCard = ({ data }) => {
     data.community_data.reddit_subscribers +
       data.community_data.twitter_followers
   );
-  console.log(data.community_data.reddit_subscribers +
-    data.community_data.twitter_followers)
 
   return (
     <div className="card-container">
