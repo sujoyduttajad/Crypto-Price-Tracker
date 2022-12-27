@@ -2,7 +2,7 @@ import { MoreVert } from "@mui/icons-material";
 import { IconButton, Menu, MenuItem } from "@mui/material";
 import React from "react";
 
-const Dropdown = ({ content }) => {
+const Dropdown = ({ content, regexSite }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -12,12 +12,11 @@ const Dropdown = ({ content }) => {
     setAnchorEl(null);
   };
 
-  const regex = /^https:\//gi;
   return (
     <div className="chips-wrapper">
       <div className="chip" style={{ borderRadius: "4.55px 0 0 4.55px" }}>
         <a href={content[0]} target="_blank" rel="noreferrer">
-          {content[0]?.replace(regex, "").substring(0, 20)}
+          {content[0]?.replace(regexSite, "").substring(0, 20)}
         </a>
       </div>
       <IconButton
@@ -65,7 +64,7 @@ const Dropdown = ({ content }) => {
                 onClick={handleClose}
               >
                 <a href={site} target="_blank" rel="noreferrer">
-                  {site?.replace(regex, "").substring(0, 30)}
+                  {site?.replace(regexSite, "").substring(0, 30)}
                 </a>
               </MenuItem>
             );
