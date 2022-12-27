@@ -4,6 +4,7 @@ import Info from "../components/Info";
 import LoadingSpinner from "../components/LoadingSpinner";
 import MarketInfo from "../components/MarketInfo";
 import Navbar from "../components/Navbar";
+import PriceStatistics from "../components/PriceStatistics";
 
 const CoinCard = lazy(() => import("../components/CoinCard"));
 
@@ -31,6 +32,9 @@ const EachCoin = ({ coinId }) => {
       </section>
       <section className="coin-info-container">
         <MarketInfo data={data} />
+      </section>
+      <section className="coin-info-container">
+        <PriceStatistics data={data} />
       </section>
     </Suspense>
   );
