@@ -16,13 +16,13 @@ const Info = ({ data }) => {
         <p>Website</p>
         <div className="website-chip" >
           <a href={data.links.homepage[0]} target="_blank" rel="noreferrer">
-            {data.links.homepage[0]?.replace(regexSite, "").replace("/", "")}
+            {data.links.homepage[0]?.replace(regexSite, "")}
           </a>
         </div>
       </div>
       <div className="info-row">
         <p>Explorers</p>
-        <Dropdown content={data.links.blockchain_site} />
+        <Dropdown content={data.links.blockchain_site} regexSite={regexSite} />
       </div>
       <div className="info-row">
         <p>Wallets</p>
