@@ -3,15 +3,9 @@ import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import React from "react";
 import { cryptoData } from "../utils/data";
 import { styled } from '@mui/material/styles';
+import { formatter, regexFormat } from "../utils/functions";
 
-export const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
 
-export const regexFormat = (param) => {
-  return param.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-};
 
 const BootstrapTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} arrow classes={{ popper: className }} />
