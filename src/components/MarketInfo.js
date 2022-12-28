@@ -25,7 +25,7 @@ const BootstrapTooltip = styled(({ className, ...props }) => (
 const MarketInfo = ({ data }) => {
   return (
     <div className="market-container">
-      <h3>Price Stats</h3>
+      <h3>Market Stats</h3>
       <div className="market-row">
         <p>
           Market Cap{" "}
