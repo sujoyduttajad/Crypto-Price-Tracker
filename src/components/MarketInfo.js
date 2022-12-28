@@ -1,11 +1,9 @@
 import { HelpOutline } from "@mui/icons-material";
-import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import React from "react";
 import { cryptoData } from "../utils/data";
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 import { formatter, regexFormat } from "../utils/functions";
-
-
 
 const BootstrapTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} arrow classes={{ popper: className }} />
@@ -18,7 +16,7 @@ const BootstrapTooltip = styled(({ className, ...props }) => (
     fontFamily: '"Montserrat", sans-serif',
     fontSize: "0.8rem",
     fontWeight: 300,
-    whiteSpace: "pre-line"
+    whiteSpace: "pre-line",
   },
 }));
 
