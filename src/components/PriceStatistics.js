@@ -11,6 +11,24 @@ const PriceStatistics = ({ data }) => {
           <p>{formatter.format(data.market_data.current_price.usd)}</p>
         </div>
       </div>
+      <div className="market-row">
+        <p>24h Low / 24h High</p>
+        <div className="chip">
+          <p>
+            ${data.market_data.high_24h.usd.toFixed(4)} /{" "}
+            ${data.market_data.low_24h.usd.toFixed(4)}
+          </p>
+        </div>
+      </div>
+      <div className="market-row">
+        <p>7day Low / 7day High</p>
+        <div className="chip">
+          <p>
+            ${data.market_data.high_24h.usd.toFixed(4)} /{" "}
+            ${data.market_data.low_24h.usd.toFixed(4)}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
