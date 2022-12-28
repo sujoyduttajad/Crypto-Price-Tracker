@@ -17,6 +17,7 @@ import { theme } from "../materialUi/theme";
 import EnhancedTableHead from "../components/EnhancedTableHead";
 import EnhancedTableToolbar from "../components/EnhancedTollbar";
 import { useStyles } from "../materialUi/GlobalStyles";
+import Footer from "../components/Footer";
 
 export default function CoinTable({ filteredCoins, handleChange, setCoinId }) {
   /* 
@@ -215,6 +216,7 @@ export default function CoinTable({ filteredCoins, handleChange, setCoinId }) {
           </Paper>
         </ThemeProvider>
       </div>
+      <Footer />
     </>
   );
 }
