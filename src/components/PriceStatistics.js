@@ -6,9 +6,9 @@ const PriceStatistics = ({ data }) => {
     <div className="info-container">
       <h3>USDT Price Statistics</h3>
       <div className="market-row">
-        <p>Market Cap</p>
+        <p>{data.name} Price</p>
         <div className="chip">
-          <p>{formatter.format(data.market_data.market_cap.usd)}</p>
+          <p>{formatter.format(data.market_data.current_price.usd)}</p>
         </div>
       </div>
     </div>
