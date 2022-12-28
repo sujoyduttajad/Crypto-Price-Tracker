@@ -21,21 +21,21 @@ const Footer = () => {
           <div></div>
         </Grid>
         <Grid item xs={2}>
-          <ul>
-            <li>Market</li>
-            <li>Exchange</li>
-            <li>Categories</li>
+          <ul> <h4>Explore</h4>
+          <NavLink to="/"><li>Market</li></NavLink>
+          <NavLink to="/exchange"><li>Exchange</li></NavLink>
+          <NavLink to="/categories"><li>Categories</li></NavLink>
           </ul>
         </Grid>
         <Grid item xs={2}>
-          <ul>
+          <ul> <h4>About coinize</h4>
             <li>About Us</li>
             <li>Blog</li>
             <li>FAQ</li>
           </ul>
         </Grid>
         <Grid item xs={2}>
-          <ul>
+          <ul> <h4>Community</h4>
             <li>Twitter</li>
             <li>Facebook</li>
             <li>Reddit</li>
