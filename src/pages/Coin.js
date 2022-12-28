@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { useQuery } from "react-query";
+import Footer from "../components/Footer";
 import Info from "../components/Info";
 import LoadingSpinner from "../components/LoadingSpinner";
 import MarketInfo from "../components/MarketInfo";
@@ -36,6 +37,7 @@ const EachCoin = ({ coinId }) => {
       <section className="coin-info-container">
         <PriceStatistics data={data} />
       </section>
+      <Footer />
     </Suspense>
   );
 };
