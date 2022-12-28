@@ -8,8 +8,12 @@ footer {
     background-color: $TableBlack;
     margin-top: 4rem;
     ul {
+        padding: 0;
+        padding-top: 3rem;
         li {
             list-style: none;
+            padding: 0.8rem 0;
+            width: fit-content;
         }
     }
 }
