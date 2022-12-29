@@ -6,7 +6,7 @@
 .market-container {
   @include flex(column, flex-start, flex-start);
   max-width: 80rem;
-  width: 100%;
+  width: 95%;
   height: max-content;
   border: 2px solid $GreyBorderColor;
   border-radius: 10px;
