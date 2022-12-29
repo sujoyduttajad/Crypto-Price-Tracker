@@ -64,5 +64,12 @@
 }
 
 .price-chip-row {
-    @include flex(row, center, space-between);
+    @include flex(column, center, flex-start);
+    width: fit-content;
+    span {
+        @include flex(row, center, space-between);
+        p {
+            padding-left: 0.5rem;
+        }
+    }
 }
