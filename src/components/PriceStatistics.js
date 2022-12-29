@@ -57,16 +57,20 @@ const PriceStatistics = ({ data }) => {
       </div>
       <div className="market-row">
         <p>All-Time High</p>
-        <div className="chip">
-          <p>{formatter.format(data.market_data.ath.usd)}</p>{" "} 
-          <p>{data.market_data.ath_change_percentage.usd}</p>
+        <div className="price-chip-row">
+          <span>
+            <p>{formatter.format(data.market_data.ath.usd)}</p>{" "}
+            <p>{data.market_data.ath_change_percentage.usd}</p>
+          </span>
         </div>
       </div>
       <div className="market-row">
         <p>All-Time Low</p>
-        <div className="chip">
-          <p>{formatter.format(data.market_data.atl.usd)}</p>
-          <p>{data.market_data.atl_change_percentage.usd}</p>
+        <div className="price-chip-row">
+          <span>
+            <p>{formatter.format(data.market_data.atl.usd)}</p>
+            <p>{data.market_data.atl_change_percentage.usd}</p>
+          </span>
         </div>
       </div>
     </div>
