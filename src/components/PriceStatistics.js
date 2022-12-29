@@ -4,6 +4,10 @@ import { formatter } from "../utils/functions";
 const PriceStatistics = ({ data }) => {
   const ratio =
     data.market_data.total_volume.usd / data.market_data.market_cap.usd;
+
+  const ATHPercent = data.market_data.ath_change_percentage.usd;
+  const ATLPercent = data.market_data.atl_change_percentage.usd;
+  
   return (
     <div className="info-container">
       <h3>USDT Price Statistics</h3>
@@ -60,7 +64,9 @@ const PriceStatistics = ({ data }) => {
         <div className="price-chip-row">
           <span>
             <p>{formatter.format(data.market_data.ath.usd)}</p>{" "}
-            <p>{data.market_data.ath_change_percentage.usd}</p>
+            <p style={{ color: "#13A206", fontWeight: 600 }}>
+              {ATHPercent.toFixed(1)}%
+            </p>
           </span>
         </div>
       </div>
@@ -69,7 +75,9 @@ const PriceStatistics = ({ data }) => {
         <div className="price-chip-row">
           <span>
             <p>{formatter.format(data.market_data.atl.usd)}</p>
-            <p>{data.market_data.atl_change_percentage.usd}</p>
+            <p style={{ color: "#BD1B1B", fontWeight: 600 }}>
+              {ATLPercent.toFixed(1)}%
+            </p>
           </span>
         </div>
       </div>
