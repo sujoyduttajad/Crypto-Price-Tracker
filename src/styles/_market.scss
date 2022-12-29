@@ -1,7 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-// Root level class for the section that wraps all other components
+// All the Market and USDT Price statistics styles are in this file
 
 .market-container {
   @include flex(column, flex-start, flex-start);
@@ -61,4 +61,8 @@
       padding-top: 0.2rem;
     }
   }
+}
+
+.price-chip-row {
+    @include flex(row, center, space-between);
 }
