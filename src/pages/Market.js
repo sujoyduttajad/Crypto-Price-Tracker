@@ -202,7 +202,7 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                 </TableBody>
               </Table>
             </TableContainer>
-            <ThemeProvider theme={theme}>
+            {/* <ThemeProvider theme={theme}> */}
               <TablePagination
                 rowsPerPageOptions={[10, 25, 50]}
                 component="div"
@@ -212,7 +212,7 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                 onPageChange={handleChangePage}
                 onRowsPerPageChange={handleChangeRowsPerPage}
               />
-            </ThemeProvider>
+            {/* </ThemeProvider> */}
           </Paper>
         </ThemeProvider>
       </div>
