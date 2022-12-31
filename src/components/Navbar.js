@@ -15,10 +15,10 @@ const Navbar = ({ handleChange, coinId }) => {
             <img className="coin-logo" src={Logo} alt="logo" />
           </div>
         </NavLink>
-        <NavLink to="/">
+        <NavLink to="/market">
           <div
             className={`coin-pages-container ${
-              isActive === "/" ? activeClassName : undefined
+              isActive === "/market" ? activeClassName : undefined
             }`}
           >
             <h3>Market</h3>
