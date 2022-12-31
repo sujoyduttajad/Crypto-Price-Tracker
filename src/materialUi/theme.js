@@ -18,7 +18,6 @@ export const theme = createTheme({
           root: {
             fontFamily: "Montserrat",
             fontWeight: 400,
-            cursor: "pointer",
           },
         },
       },
