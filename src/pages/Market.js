@@ -19,7 +19,7 @@ import EnhancedTableToolbar from "../components/EnhancedTollbar";
 import { useStyles } from "../materialUi/GlobalStyles";
 import Footer from "../components/Footer";
 
-export default function CoinTable({ filteredCoins, handleChange, setCoinId }) {
+export default function Market({ filteredCoins, handleChange, setCoinId }) {
   /* 
   const classes = useStyles(props); 
   --------- If you need to use props use 👆  -----------
