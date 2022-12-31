@@ -1,0 +1,31 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.home-banner {
+  @include flex(column, center, center);
+
+  .image-container {
+    position: absolute;
+    top: 15vh;
+    height: 65vh;
+    z-index: -1;
+    img {
+      width: 100vw;
+    }
+  }
+
+  .home-typograph {
+    @include flex(column, center, center);
+    width: 70vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    h1 {
+      font-size: 4rem;
+      width: 100%;
+      text-align: center;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
