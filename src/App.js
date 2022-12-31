@@ -7,6 +7,7 @@ import CoinCategories from "./pages/CoinCategories";
 import { useQuery } from "react-query";
 import LoadingSpinner from "./components/LoadingSpinner";
 import Market from "./pages/Market";
+import Home from "./pages/Home";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -47,6 +48,10 @@ function App() {
     <Routes>
       <Route
         path="/"
+        element={<Home handleChange={handleChange} />}
+      />
+      <Route
+        path="/market"
         exact
         element={
           <Market
