@@ -103,7 +103,6 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                           <TableRow
                             hover
                             tabIndex={-1}
-                            key={row.id}
                             value={row.id}
                             className={classes.tableContent}
                           >
@@ -125,7 +124,7 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                               </Avatar>
                             </TableCell>
                             <TableCell
-                              component="th"
+                              component="td"
                               id={labelId}
                               scope="row"
                               padding="none"
@@ -138,7 +137,7 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                               />
                             </TableCell>
                             <TableCell
-                              component="th"
+                              component="td"
                               id={labelId}
                               scope="row"
                               padding="none"
@@ -202,7 +201,6 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                 </TableBody>
               </Table>
             </TableContainer>
-            </Paper>
             {/* <ThemeProvider theme={theme}> */}
               <TablePagination
                 rowsPerPageOptions={[10, 25, 50]}
@@ -214,7 +212,7 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                 onRowsPerPageChange={handleChangeRowsPerPage}
               />
             {/* </ThemeProvider> */}
-          
+          </Paper>
         </ThemeProvider>
       </div>
       <Footer />
