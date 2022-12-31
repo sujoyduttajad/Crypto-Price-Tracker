@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./styles/global.scss";
-import CoinTable from "./pages/CoinTable";
 import { Routes, Route } from "react-router-dom";
 import EachCoin from "./pages/Coin";
 import Exchange from "./pages/Exchange";
 import CoinCategories from "./pages/CoinCategories";
 import { useQuery } from "react-query";
 import LoadingSpinner from "./components/LoadingSpinner";
+import Market from "./pages/Market";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -49,7 +49,7 @@ function App() {
         path="/"
         exact
         element={
-          <CoinTable
+          <Market
             filteredCoins={filteredCoins()}
             handleChange={handleChange}
             setCoinId={setCoinId}
