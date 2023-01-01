@@ -1,5 +1,6 @@
 import React from "react";
 import { formatter } from "../utils/functions";
+import { format as dateFormat, formatDistance } from "date-fns";
 
 const PriceStatistics = ({ data }) => {
   const ratio =
@@ -7,7 +8,10 @@ const PriceStatistics = ({ data }) => {
 
   const ATHPercent = data.market_data.ath_change_percentage.usd;
   const ATLPercent = data.market_data.atl_change_percentage.usd;
-  
+
+  const ATL_date = data.market_data.atl_date.usd;
+  const ATH_date = data.market_data.ath_date.usd;
+
   return (
     <div className="info-container">
       <h3>USDT Price Statistics</h3>
@@ -68,6 +72,10 @@ const PriceStatistics = ({ data }) => {
               {ATHPercent.toFixed(1)}%
             </p>
           </span>
+          <p className="subtext">
+            {dateFormat(new Date(ATH_date), "MMM dd, y")}{" "}
+            ({formatDistance(new Date(ATH_date), new Date())})
+          </p>
         </div>
       </div>
       <div className="market-row">
@@ -79,6 +87,10 @@ const PriceStatistics = ({ data }) => {
               {ATLPercent.toFixed(1)}%
             </p>
           </span>
+          <p className="subtext">
+            {dateFormat(new Date(ATL_date), "MMM dd, y")}{" "}
+            ({formatDistance(new Date(ATL_date), new Date())})
+          </p>
         </div>
       </div>
     </div>
