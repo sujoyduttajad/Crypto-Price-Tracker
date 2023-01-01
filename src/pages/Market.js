@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import {
   Table,
@@ -39,7 +39,8 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
       mktCap,
     };
   }
-
+const rows = filteredCoins;
+useEffect(() => {
   const rows = filteredCoins;
   rows?.map((coin) => {
     return createData(
@@ -50,6 +51,7 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
       coin.market_cap
     );
   });
+}, []);
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
