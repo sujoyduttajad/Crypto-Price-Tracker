@@ -13,6 +13,10 @@
   padding: 1rem;
   margin: 0 auto;
   padding-left: 2rem;
+  a {
+    text-decoration: underline;
+    color: $LightPink;
+  }
   h3 {
     font-size: 2rem;
     font-weight: 600;
