@@ -102,11 +102,11 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                         <ThemeProvider theme={theme} key={row.id}>
                           <TableRow
                             hover
-                            tabIndex={-1}
+                            // tabIndex={-1}
                             value={row.id}
                             className={classes.tableContent}
                           >
-                            <TableCell padding="checkbox">
+                            <TableCell padding="checkbox" component="td">
                               <Avatar
                                 className={classes.avatar}
                                 sx={{ width: 30, height: 30 }}
@@ -155,18 +155,21 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                             </TableCell>
                             <TableCell
                               align="right"
+                              component="td"
                               className={classes.tableRows}
                             >
                               ${row.current_price}
                             </TableCell>
                             <TableCell
                               align="right"
+                              component="td"
                               className={classes.tableRows}
                             >
                               ${row.total_volume}
                             </TableCell>
                             <TableCell
                               align="right"
+                              component="td"
                               className={classes.tableRows}
                             >
                               <span
@@ -190,6 +193,7 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                             </TableCell>
                             <TableCell
                               align="right"
+                              component="td"
                               className={classes.tableRows}
                             >
                               ${row.market_cap}
