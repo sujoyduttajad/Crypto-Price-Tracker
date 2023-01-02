@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from "../images/coinize2.svg";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -7,8 +7,25 @@ const Navbar = ({ handleChange, coinId }) => {
   const location = useLocation();
   const isActive = location.pathname;
 
+  useEffect(() => {
+    const handleScroll = (event) => {
+      console.log("window.scrollY", window.scrollY);
+      event.currentTarget.style.backgroundColor = "#282828";
+      event.currentTarget.style.transition = "0.3s";
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar-container">
+    <nav
+      className="navbar-container"
+      style={{ backgroundColor: "transparent" }}
+    >
       <div className="coin-logo-container">
         <NavLink to="/">
           <div className="coin-image-container" style={{ userSelect: "none" }}>
