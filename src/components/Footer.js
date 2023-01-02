@@ -22,9 +22,9 @@ const Footer = () => {
         </Grid>
         <Grid item xs={2}>
           <ul> <h4>Explore</h4>
-          <NavLink to="/"><li>Market</li></NavLink>
-          <NavLink to="/exchange"><li>Exchange</li></NavLink>
-          <NavLink to="/categories"><li>Categories</li></NavLink>
+          <NavLink className="styled-link" to="/"><li>Market</li></NavLink>
+          <NavLink className="styled-link" to="/exchange"><li>Exchange</li></NavLink>
+          <NavLink className="styled-link" to="/categories"><li>Categories</li></NavLink>
           </ul>
         </Grid>
         <Grid item xs={2}>
