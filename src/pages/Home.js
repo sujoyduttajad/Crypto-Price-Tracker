@@ -12,8 +12,8 @@ const Home = ({ handleChange }) => {
           <img src={banner} alt="banner" />
         </div>
         <div className="home-typograph">
-        <h1>Keep track of your favorite Crypto Coins</h1>
-        <p>Here you can learn, and track your favourite Cryptocurrencies</p>
+          <h1>Keep track of your favorite Crypto Coins</h1>
+          <p>Here you can learn, and track your favourite Cryptocurrencies</p>
         </div>
       </section>
       <Footer />
