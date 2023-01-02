@@ -1,31 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../images/coinize2.svg";
 import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = ({ handleChange, coinId }) => {
+  const [scrolled, setScrolled] = useState();
+
   let activeClassName = "nav-active";
   const location = useLocation();
   const isActive = location.pathname;
 
   useEffect(() => {
-    const handleScroll = (event) => {
-      console.log("window.scrollY", window.scrollY);
-      event.currentTarget.style.backgroundColor = "#282828";
-      event.currentTarget.style.transition = "0.3s";
+    const handleScroll = () => {
+      if (window.pageYOffset > 1) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
-
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <nav
-      className="navbar-container"
-      style={{ backgroundColor: "transparent" }}
-    >
+    <nav className={`navbar-container ${scrolled ? "header-scroll" : ""}`}>
       <div className="coin-logo-container">
         <NavLink to="/">
           <div className="coin-image-container" style={{ userSelect: "none" }}>
