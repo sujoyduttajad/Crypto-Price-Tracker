@@ -1,4 +1,5 @@
 import React from "react";
+import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import banner from "../images/home-banner.jpg";
@@ -21,6 +22,9 @@ const Home = ({ handleChange }) => {
         <div>
             <img src={market} alt="market table" />
         </div>
+      </section>
+      <section className="home-banner" style={{ paddingTop: "12rem"}}>
+        <Feature />
       </section>
       <Footer />
     </>
