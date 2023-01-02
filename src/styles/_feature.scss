@@ -1,0 +1,12 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.feature {
+    @include flex(row, center, center);
+    .left-container {
+        width: 40%;
+    }
+    .right-container {
+        width: 60%;
+    }
+}
