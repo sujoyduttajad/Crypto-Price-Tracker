@@ -6,12 +6,12 @@
 
   .image-container {
     position: absolute;
-    top: 15vh;
+    top: 0;
     height: 65vh;
     z-index: -1;
     img {
       width: 100vw;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 
