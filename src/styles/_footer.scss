@@ -1,6 +1,7 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
+// @include flex(column, flex-start, flex-start);
 footer {
     min-height: 30vh;
     height: fit-content;
