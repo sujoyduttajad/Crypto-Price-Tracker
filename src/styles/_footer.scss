@@ -9,6 +9,18 @@ footer {
     background-color: $TableBlack;
     margin-top: 4rem;
     padding-bottom: 6rem;
+    .logo-container {
+        @include flex(column, center, center);
+        padding: 1rem;
+        margin: 3rem;
+        width: fit-content;
+        background-color: $PrimaryBlack;
+        border-radius: 20px;
+        img {
+            width: 12rem;
+
+        }
+    }
     ul {
         padding: 0;
         padding-top: 3rem;
