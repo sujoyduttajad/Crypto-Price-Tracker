@@ -1,3 +1,8 @@
+import piggyBank from "../images/piggy-bank.svg";
+import playButton from "../images/play-button.svg";
+import shield from "../images/shield.svg";
+import env from "../images/environment.svg";
+
 export const headCells = [
   {
     id: "rank",
@@ -69,5 +74,32 @@ export const cryptoData = [
     para: `The maximum number of coins coded to exist in the lifetime of the cryptocurrency. It is comparable to the maximum number of issuable shares in the stock market.
     
     Max Supply = Theoretical maximum as coded`,
+  },
+];
+
+export const features = [
+  {
+    id: 1,
+    imgSrc: piggyBank,
+    heading: "Integrated platform",
+    desc: "We are a trusted service provider with high quality information that users can rely on",
+  },
+  {
+    id: 2,
+    imgSrc: playButton,
+    heading: "Tutorial video",
+    desc: "Here you can learn crypto assets easily. There are many tutorial for you to learn while investing",
+  },
+  {
+    id: 3,
+    imgSrc: shield,
+    heading: "Guaranteed safety",
+    desc: "In terms of security we guarantee user security and we have been supervised by OJK",
+  },
+  {
+    id: 4,
+    imgSrc: env,
+    heading: "User friendly ecosystem",
+    desc: "You can enjoy our ecosystem which is very user friendly and we are always improving our ecosystem",
   },
 ];
