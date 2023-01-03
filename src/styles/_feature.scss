@@ -2,11 +2,46 @@
 @use "./variables" as *;
 
 .feature {
+  @include flex(row, center, center);
+  width: 60rem;
+  .left-container {
+    width: 40%;
+    padding-right: 4rem;
+    h3 {
+      font-size: 2.5rem;
+      padding-bottom: 1rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+  .right-container {
     @include flex(row, center, center);
-    .left-container {
-        width: 40%;
+    flex-wrap: wrap;
+    width: 60%;
+    .grid-container {
+      display: block;
+      width: 50%;
+      height: 16rem;
+      padding: 0.5rem;
+      .image-box {
+        @include flex(row, center, center);
+        padding: 1.6rem;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 20px;
+        background-image: $myGradient;
+      }
+      .content-box {
+        h4 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 1rem 0;
+        }
+        p {
+            color: $QuickSilver;
+        }
+      }
     }
-    .right-container {
-        width: 60%;
-    }
+  }
 }
