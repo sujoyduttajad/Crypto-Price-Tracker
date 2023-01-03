@@ -23,7 +23,7 @@ const Home = ({ handleChange }) => {
             <img src={market} alt="market table" />
         </div>
       </section>
-      <section className="home-banner" style={{ paddingTop: "12rem"}}>
+      <section className="home-banner" style={{ padding: "5rem 0"}}>
         <Feature />
       </section>
       <Footer />
