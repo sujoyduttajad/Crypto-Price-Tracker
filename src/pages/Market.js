@@ -18,6 +18,7 @@ import EnhancedTableHead from "../components/EnhancedTableHead";
 import EnhancedTableToolbar from "../components/EnhancedTollbar";
 import { useStyles } from "../materialUi/GlobalStyles";
 import Footer from "../components/Footer";
+import { formatter } from "../utils/functions";
 
 export default function Market({ filteredCoins, handleChange, setCoinId }) {
   /* 
@@ -51,7 +52,7 @@ useEffect(() => {
       coin.market_cap
     );
   });
-}, []);
+}, [filteredCoins]);
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
@@ -160,14 +161,14 @@ useEffect(() => {
                               component="td"
                               className={classes.tableRows}
                             >
-                              ${row.current_price}
+                              {formatter.format(row.current_price)}
                             </TableCell>
                             <TableCell
                               align="right"
                               component="td"
                               className={classes.tableRows}
                             >
-                              ${row.total_volume}
+                              {formatter.format(row.total_volume)}
                             </TableCell>
                             <TableCell
                               align="right"
@@ -198,7 +199,7 @@ useEffect(() => {
                               component="td"
                               className={classes.tableRows}
                             >
-                              ${row.market_cap}
+                              {formatter.format(row.market_cap)}
                             </TableCell>
                           </TableRow>
                         </ThemeProvider>
