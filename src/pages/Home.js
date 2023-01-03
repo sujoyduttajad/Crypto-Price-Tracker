@@ -19,7 +19,7 @@ const Home = ({ handleChange }) => {
         </div>
       </section>
       <section className="home-banner" style={{ paddingTop: "12rem"}}>
-        <div>
+        <div className="market-snip">
             <img src={market} alt="market table" />
         </div>
       </section>
