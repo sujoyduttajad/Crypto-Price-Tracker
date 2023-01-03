@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { theme } from "../materialUi/theme";
 import EnhancedTableHead from "../components/EnhancedTableHead";
 import EnhancedTableToolbar from "../components/EnhancedTollbar";
@@ -30,6 +30,8 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const classes = useStyles();
+  const path = useLocation();
+  console.log(path.pathname)
 
   function createData(name, price, volume, coinPercent, mktCap) {
     return {
@@ -40,19 +42,19 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
       mktCap,
     };
   }
-const rows = filteredCoins;
-useEffect(() => {
   const rows = filteredCoins;
-  rows?.map((coin) => {
-    return createData(
-      coin.name,
-      coin.current_price,
-      coin.total_volume,
-      coin.price_change_percentage_24h,
-      coin.market_cap
-    );
-  });
-}, [filteredCoins]);
+  useEffect(() => {
+    const rows = filteredCoins;
+    rows?.map((coin) => {
+      return createData(
+        coin.name,
+        coin.current_price,
+        coin.total_volume,
+        coin.price_change_percentage_24h,
+        coin.market_cap
+      );
+    });
+  }, [filteredCoins, handleChange, path.pathname]);
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
@@ -209,15 +211,15 @@ useEffect(() => {
               </Table>
             </TableContainer>
             {/* <ThemeProvider theme={theme}> */}
-              <TablePagination
-                rowsPerPageOptions={[10, 25, 50]}
-                component="div"
-                count={rows.length}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                onPageChange={handleChangePage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
-              />
+            <TablePagination
+              rowsPerPageOptions={[10, 25, 50]}
+              component="div"
+              count={rows.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
             {/* </ThemeProvider> */}
           </Paper>
         </ThemeProvider>
