@@ -3,7 +3,13 @@
 
 .home-banner {
   @include flex(column, center, center);
-
+    .market-snip {
+        max-width: 95vw;
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
   .image-container {
     position: absolute;
     top: 0;
