@@ -51,9 +51,9 @@ const Dropdown = ({ content, regexSite }) => {
           horizontal: "left",
         }}
       >
-        {content?.map((site, index) => {
-          if (site !== "") {
-            return (
+        {content?.map(
+          (site, index) =>
+            site !== "" && (
               <MenuItem
                 key={index}
                 style={{
@@ -67,9 +67,8 @@ const Dropdown = ({ content, regexSite }) => {
                   {site?.replace(regexSite, "").substring(0, 30)}
                 </a>
               </MenuItem>
-            );
-          }
-        })}
+            )
+        )}
       </Menu>
     </div>
   );
