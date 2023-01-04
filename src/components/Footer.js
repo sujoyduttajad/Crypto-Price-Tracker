@@ -12,9 +12,13 @@ const Footer = () => {
             <NavLink to="/">
               <img src={Logo} alt="logo" />
             </NavLink>
+            <p>
+              Coinize a Crypto tracker web app that allows you to monitor and
+              track your Cryptocurrencies while learning about them. Come join
+              us, and head for the unexpected miracle{" "}
+            </p>
           </div>
 
-          <p></p>
           <div></div>
         </Grid>
         <Grid item xs={2}>
