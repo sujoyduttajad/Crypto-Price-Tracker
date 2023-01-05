@@ -26,38 +26,41 @@ const Navbar = ({ handleChange, coinId }) => {
   return (
     <nav className={`navbar-container ${scrolled ? "header-scroll" : ""}`}>
       <div className="coin-logo-container">
-        <NavLink to="/">
-          <div className="coin-image-container" style={{ userSelect: "none" }}>
+        <div className="coin-image-container" style={{ userSelect: "none" }}>
+          <NavLink to="/">
             <img className="coin-logo" src={Logo} alt="logo" />
-          </div>
-        </NavLink>
-        <NavLink to="/market">
-          <div
-            className={`coin-pages-container ${
-              isActive === "/market" ? activeClassName : undefined
-            }`}
-          >
+          </NavLink>
+        </div>
+
+        <div
+          className={`coin-pages-container ${
+            isActive === "/market" ? activeClassName : undefined
+          }`}
+        >
+          <NavLink to="/market">
             <h3>Market</h3>
-          </div>
-        </NavLink>
-        <NavLink to="/exchange">
-          <div
-            className={`coin-pages-container ${
-              isActive === "/exchange" ? activeClassName : undefined
-            }`}
-          >
+          </NavLink>
+        </div>
+
+        <div
+          className={`coin-pages-container ${
+            isActive === "/exchange" ? activeClassName : undefined
+          }`}
+        >
+          <NavLink to="/exchange">
             <h3>Exchange</h3>
-          </div>
-        </NavLink>
-        <NavLink to="/categories">
-          <div
-            className={`coin-pages-container ${
-              isActive === "/categories" ? activeClassName : undefined
-            }`}
-          >
+          </NavLink>
+        </div>
+
+        <div
+          className={`coin-pages-container ${
+            isActive === "/categories" ? activeClassName : undefined
+          }`}
+        >
+          <NavLink to="/categories">
             <h3>Categories</h3>
-          </div>
-        </NavLink>
+          </NavLink>
+        </div>
       </div>
       {coinId ? null : (
         <form className="coin-input-container">
