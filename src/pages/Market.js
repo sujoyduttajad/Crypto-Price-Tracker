@@ -45,6 +45,8 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
   const rows = filteredCoins;
   useEffect(() => {
     const rows = filteredCoins;
+    console.log("UseEffect running!!");
+    // Might need to think about using useMemo
     rows?.map((coin) => {
       return createData(
         coin.name,
@@ -148,7 +150,7 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                               padding="none"
                               className={classes.tableRows}
                             >
-                              <NavLink to={`/${row.id}`}>
+                              <NavLink to={`/market/${row.id}`}>
                                 <Chip
                                   label={row.name}
                                   variant="outlined"
