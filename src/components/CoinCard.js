@@ -3,6 +3,7 @@ import React from "react";
 import Tilt from "react-parallax-tilt";
 import { Chip } from "@mui/material";
 import { useStyles } from "../materialUi/GlobalStyles";
+import { formatter } from "../utils/functions";
 
 export const extractDigits = (num) => {
   let extrNum;
@@ -51,7 +52,7 @@ const CoinCard = ({ data }) => {
               </div>
             </div>
             <div className="market-info">
-              <h2>${data.market_data.current_price.usd.toFixed(2)} </h2>
+              <h2>{formatter.format(data.market_data.current_price.usd)} </h2>
               <div className="price-change">
                 {priceChange > 0 ? (
                   <Chip
