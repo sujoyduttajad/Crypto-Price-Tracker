@@ -71,7 +71,7 @@ function App() {
         exact
         element={<CoinCategories handleChange={handleChange} />}
       />
-      <Route path="/:ID" element={<EachCoin coinId={coinId} />} />
+      <Route path="/market/:ID" element={<EachCoin coinId={coinId} />} />
     </Routes>
     </section>
   );
