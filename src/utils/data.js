@@ -1,7 +1,7 @@
 import piggyBank from "../images/piggy-bank.svg";
 import playButton from "../images/play-button.svg";
-import shield from "../images/shield.svg";
-import env from "../images/environment.svg";
+import env from "../images/shield.svg";
+import shield from "../images/environment.svg";
 
 export const headCells = [
   {
