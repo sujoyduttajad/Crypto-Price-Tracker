@@ -45,7 +45,11 @@
   border: none;
   color: $NavbarWhite;
   font-size: 1em;
+  font-family: $MainFont;
   background-image: $myGradient;
+  &::placeholder {
+    color: #333;
+  }
 }
 .coin-input:hover,
 .coin-input:focus {
