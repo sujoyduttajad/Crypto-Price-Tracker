@@ -16,6 +16,7 @@ const Home = ({ handleChange }) => {
         <div className="home-typograph">
           <h1>Keep track of your favorite Crypto Coins</h1>
           <p>Here you can learn, and track your favourite Cryptocurrencies</p>
+          <button className="coin-button">Let's get started</button>
         </div>
       </section>
       <section className="home-banner" style={{ paddingTop: "12rem"}}>
