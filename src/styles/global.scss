@@ -101,6 +101,24 @@ a {
   width: 100%;
 }
 
+.coin-button {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 4.5px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: $NavbarWhite;
+  background-image: $myGradient;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 1px 8px 3px rgba(48, 48, 48, 1);
+  -moz-box-shadow: 0px 1px 8px 3px rgba(48, 48, 48, 1);
+  box-shadow: 0px 1px 8px 3px rgba(48, 48, 48, 1);
+}
+
+// MUI override styles
 .MuiTableCell-root {
   cursor: context-menu !important;
 }
