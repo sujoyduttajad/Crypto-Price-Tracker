@@ -8,14 +8,14 @@ import { formatter } from "../utils/functions";
 export const extractDigits = (num) => {
   let extrNum;
   if (num >= 1000) {
-    let numString = parseInt(num.toString().slice(0, 1))+"k";
+    let numString = parseInt(num.toString().slice(0, 1)) + "k";
     if (num >= 1000000) {
-      numString = parseInt(num.toString().slice(0, 2))+"M";
+      numString = parseInt(num.toString().slice(0, 2)) + "M";
     }
     if (num >= 1000000000) {
-      numString = parseInt(num.toString().slice(0, 2))+"B";
+      numString = parseInt(num.toString().slice(0, 2)) + "B";
     }
-    extrNum = numString
+    extrNum = numString;
   } else {
     extrNum = num;
   }
