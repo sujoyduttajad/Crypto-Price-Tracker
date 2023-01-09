@@ -31,7 +31,6 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const classes = useStyles();
   const path = useLocation();
-  console.log(path.pathname)
 
   function createData(name, price, volume, coinPercent, mktCap) {
     return {
