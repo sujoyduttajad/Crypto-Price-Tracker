@@ -1,0 +1,32 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+// w-[200%] h-20 border-t border-b border-gray-600 overflow-hidden relative
+.content-wrapper {
+  @include flex(row, center, center);
+  .second-wrapper {
+    width: 200%;
+    height: 20;
+    border: 1px solid $QuickSilver;
+    overflow: hidden;
+    position: relative;
+    // w-[200%] flex items-center h-20 justify-around absolute left-0 animate gap-20 animate
+    .third-wrapper {
+      @include flex(row, center, space-around);
+      width: 200%;
+      height: 20;
+      border: 1px solid $QuickSilver;
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+.thumbnails {
+    @include flex(row, flex-start, center);
+    width: 20rem;
+    height: 20rem;
+    h2 {
+        font-size: 2rem;
+    }
+}
