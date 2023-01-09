@@ -48,7 +48,7 @@ function App() {
     <Routes>
       <Route
         path="/"
-        element={<Home handleChange={handleChange} />}
+        element={<Home handleChange={handleChange} filteredCoins={filteredCoins()} />}
       />
       <Route
         path="/market"
