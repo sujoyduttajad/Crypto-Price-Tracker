@@ -1,11 +1,16 @@
 import React from "react";
+import Carousel from "../components/Carousel";
 import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import banner from "../images/home-banner.jpg";
-import market from "../images/market-image.png"
+import market from "../images/market-image.png";
 
-const Home = ({ handleChange }) => {
+const Home = ({ handleChange, filteredCoins }) => {
+  const stockContent = filteredCoins?.filter(
+    (item) => item.market_cap_rank < 11
+  );
+  console.log(stockContent);
   return (
     <>
       <Navbar handleChange={handleChange} />
@@ -19,12 +24,14 @@ const Home = ({ handleChange }) => {
           <button className="coin-button">Let's get started</button>
         </div>
       </section>
-      <section className="home-banner" style={{ paddingTop: "12rem"}}>
+      <section className="home-banner" style={{ paddingTop: "12rem" }}>
+        
         <div className="market-snip">
-            <img src={market} alt="market table" />
+        <Carousel content={stockContent} />
+          <img src={market} alt="market table" />
         </div>
       </section>
-      <section className="home-banner" style={{ padding: "5rem 0"}}>
+      <section className="home-banner" style={{ padding: "5rem 0" }}>
         <Feature />
       </section>
       <Footer />
