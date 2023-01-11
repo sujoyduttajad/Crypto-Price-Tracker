@@ -4,9 +4,11 @@
 // w-[200%] h-20 border-t border-b border-gray-600 overflow-hidden relative
 .content-wrapper {
   @include flex(row, center, center);
+  height: 20rem;
+  width: 100vw;
   .second-wrapper {
     width: 200%;
-    height: 20;
+    
     border: 1px solid $QuickSilver;
     overflow: hidden;
     position: relative;
@@ -14,7 +16,8 @@
     .third-wrapper {
       @include flex(row, center, space-around);
       width: 200%;
-      height: 20;
+      height: 20rem;
+      background-color: $QuickSilver;
       border: 1px solid $QuickSilver;
       position: absolute;
       left: 0;
