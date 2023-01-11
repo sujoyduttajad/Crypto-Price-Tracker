@@ -1,5 +1,4 @@
 import React from "react";
-import Carousel from "../components/Carousel";
 import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -10,7 +9,7 @@ const Home = ({ handleChange, filteredCoins }) => {
   const stockContent = filteredCoins?.filter(
     (item) => item.market_cap_rank < 11
   );
-  console.log(stockContent);
+
   return (
     <>
       <Navbar handleChange={handleChange} />
@@ -27,7 +26,6 @@ const Home = ({ handleChange, filteredCoins }) => {
       <section className="home-banner" style={{ paddingTop: "12rem" }}>
         
         <div className="market-snip">
-        <Carousel content={stockContent} />
           <img src={market} alt="market table" />
         </div>
       </section>
