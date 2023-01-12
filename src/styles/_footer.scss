@@ -3,50 +3,73 @@
 
 // @include flex(column, flex-start, flex-start);
 footer {
-    min-height: 30vh;
-    height: fit-content;
-    width: 100vw;
-    background-color: $TableBlack;
-    margin-top: 4rem;
+  height: fit-content;
+  width: 100vw;
+  background-color: $TableBlack;
+  margin-top: 4rem;
+  padding: 3rem 1rem 6rem 1rem;
+  .logo-container {
+    @include flex(column, flex-start, flex-start);
     padding: 1rem;
-    padding-bottom: 6rem;
-    .logo-container {
-        @include flex(column, flex-start, flex-start);
-        padding: 1rem;
-        margin: 3rem;
-        margin-left: 0;
-        width: fit-content;
-        background-color: $PrimaryBlack;
-        border-radius: 20px;
-        img {
-            width: 12rem;
-        }
-        p {
-            color: $Cultured;
-            line-height: 20px;
-            font-size: 0.8rem;
-        }
+    margin-bottom: 1rem;
+    max-width: 25rem;
+    width: 100%;
+    background-color: $PrimaryBlack;
+    border-radius: 20px;
+    img {
+      width: 12rem;
     }
-    ul {
-        padding: 0;
-        padding-top: 3rem;
-        li {
-            list-style: none;
-            padding: 0.8rem 0;
-            width: fit-content;
-        }
+    p {
+      color: $Cultured;
+      line-height: 20px;
+      font-size: 0.8rem;
     }
+  }
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding: 0.8rem 0;
+      width: fit-content;
+    }
+  }
 }
 
 .subscribe-container {
-    @include flex(column, flex-start, flex-start);
-    padding-top: 3rem;
-    p {
-        color: $Cultured;
+  @include flex(column, flex-start, flex-start);
+  p {
+    color: $Cultured;
+  }
+  .footer-form {
+    input {
+      min-width: 12rem;
+      width: 100%;
+      margin-top: 2rem;
+      padding: 0.6rem;
+      border-radius: 4.5px;
+      font-weight: 500;
+      font-family: $MainFont;
+      outline: none;
+      border: none;
+      margin-bottom: 0.5rem;
+      &::placeholder {
+        color: $QuickSilver;
+      }
     }
-    .footer-form {
-        input {
-            width: 10rem;
-        }
+    button {
+      min-width: 12rem;
+      width: 100%;
+      background-image: $myGradient;
+      font-family: $MainFont;
+      color: $Cultured;
+      padding: 0.6rem;
+      border-radius: 4.5px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      outline: none;
+      border: none;
+      cursor: pointer;
     }
+  }
 }
