@@ -6,8 +6,8 @@ import Logo from "../images/coinize2.svg";
 const Footer = () => {
   return (
     <footer>
-      <Grid container spacing={2}>
-        <Grid item xs={3}>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 6 }}>
+        <Grid item lg={3} md={4} sm={12}>
           <div className="logo-container" style={{ userSelect: "none" }}>
             <NavLink to="/">
               <img src={Logo} alt="logo" />
@@ -21,7 +21,7 @@ const Footer = () => {
 
           <div></div>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item lg={2} md={2} sm={4}>
           <ul>
             {" "}
             <h4>Explore</h4>
@@ -36,16 +36,16 @@ const Footer = () => {
             </NavLink>
           </ul>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item lg={2} md={2} sm={4}>
           <ul>
             {" "}
-            <h4>About coinize</h4>
+            <h4>Info</h4>
             <li>About Us</li>
             <li>Blog</li>
             <li>FAQ</li>
           </ul>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item lg={2} md={2} sm={4}>
           <ul>
             {" "}
             <h4>Community</h4>
@@ -54,15 +54,15 @@ const Footer = () => {
             <li>Reddit</li>
           </ul>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item lg={3} md={4} sm={4}>
           <div className="subscribe-container">
             <p>
-              Get the latest crypto news, updates, and reports by subscribing to
+              Subscribe to get the latest crypto news, updates, and reports by subscribing to
               our free newsletter.
             </p>
             <form className="footer-form">
               <input type="text" placeholder="Email" />
-              <button className="coin-button">Subscribe</button>
+              <button>Subscribe</button>
             </form>
           </div>
         </Grid>
