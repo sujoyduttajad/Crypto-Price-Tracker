@@ -5,7 +5,7 @@ import { features } from "../utils/data";
 const Feature = () => {
   return (
     <div className="feature">
-      <Grid container spacing={1}>
+      <Grid container rowSpacing={2} columnSpacing={1}>
         <Grid item lg={6} md={6} sm={12}>
           <div className="left-container" aria-label="left-content">
             <h3>Our advantages, which you can enjoy</h3>
