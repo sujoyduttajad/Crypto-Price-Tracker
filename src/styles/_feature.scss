@@ -3,9 +3,11 @@
 
 .feature {
   @include flex(row, center, center);
-  width: 60rem;
+  max-width: 60rem;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 2rem;
   .left-container {
-    width: 40%;
     padding-right: 4rem;
     h3 {
       font-size: 2.5rem;
@@ -19,7 +21,6 @@
   .right-container {
     @include flex(row, center, center);
     flex-wrap: wrap;
-    width: 60%;
     .grid-container {
       display: block;
       width: 50%;
