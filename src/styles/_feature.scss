@@ -21,10 +21,11 @@
   .right-container {
     @include flex(row, center, center);
     flex-wrap: wrap;
+    height: fit-content;
     .grid-container {
       display: block;
       width: 50%;
-      height: 16rem;
+      height: 18rem;
       padding: 0.5rem;
       .image-box {
         @include flex(row, center, center);
@@ -35,14 +36,13 @@
         background-image: $myGradient;
       }
       .content-box {
-        height: fit-content;
         h4 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin: 1rem 0;
+          font-size: 1.4rem;
+          font-weight: 500;
+          margin: 1rem 0;
         }
         p {
-            color: $QuickSilver;
+          color: $QuickSilver;
         }
       }
     }
