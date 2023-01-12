@@ -15,7 +15,7 @@ const Footer = () => {
             <p>
               Coinize a Crypto tracker web app that allows you to monitor and
               track your Cryptocurrencies while learning about them. Come join
-              us, and head for the unexpected miracle{" "}
+              us, and head for the unexpected miracle with Coinize.
             </p>
           </div>
 
