@@ -8,11 +8,13 @@ footer {
     width: 100vw;
     background-color: $TableBlack;
     margin-top: 4rem;
+    padding: 1rem;
     padding-bottom: 6rem;
     .logo-container {
         @include flex(column, flex-start, flex-start);
         padding: 1rem;
         margin: 3rem;
+        margin-left: 0;
         width: fit-content;
         background-color: $PrimaryBlack;
         border-radius: 20px;
@@ -32,6 +34,19 @@ footer {
             list-style: none;
             padding: 0.8rem 0;
             width: fit-content;
+        }
+    }
+}
+
+.subscribe-container {
+    @include flex(column, flex-start, flex-start);
+    padding-top: 3rem;
+    p {
+        color: $Cultured;
+    }
+    .footer-form {
+        input {
+            width: 10rem;
         }
     }
 }
