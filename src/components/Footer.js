@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <Grid container spacing={2}>
-        <Grid item xs={6}>
+        <Grid item xs={3}>
           <div className="logo-container" style={{ userSelect: "none" }}>
             <NavLink to="/">
               <img src={Logo} alt="logo" />
@@ -53,6 +53,18 @@ const Footer = () => {
             <li>Facebook</li>
             <li>Reddit</li>
           </ul>
+        </Grid>
+        <Grid item xs={3}>
+          <div className="subscribe-container">
+            <p>
+              Get the latest crypto news, updates, and reports by subscribing to
+              our free newsletter.
+            </p>
+            <form className="footer-form">
+              <input type="text" placeholder="Email" />
+              <button className="coin-button">Subscribe</button>
+            </form>
+          </div>
         </Grid>
       </Grid>
     </footer>
