@@ -1,4 +1,5 @@
 import { Grid } from "@mui/material";
+import { format } from "date-fns";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../images/coinize2.svg";
@@ -57,8 +58,8 @@ const Footer = () => {
         <Grid item lg={3} md={4} sm={4}>
           <div className="subscribe-container">
             <p>
-              Subscribe to get the latest crypto news, updates, and reports by subscribing to
-              our free newsletter.
+              Subscribe to get the latest crypto news, updates, and reports by
+              subscribing to our free newsletter.
             </p>
             <form className="footer-form">
               <input type="text" placeholder="Email" />
@@ -67,9 +68,11 @@ const Footer = () => {
           </div>
         </Grid>
       </Grid>
+      <hr />
       <div className="copywright-section">
-        <hr />
-        <p>CopyWright Sujoy Dutta</p>
+        <p>©Coinize {format(new Date(), "yyyy")}</p>
+        <p>Made with 💙 by Sujoy Dutta</p>
+        <p>All rights reserved</p>
       </div>
     </footer>
   );
