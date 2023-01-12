@@ -24,7 +24,6 @@ const Home = ({ handleChange, filteredCoins }) => {
         </div>
       </section>
       <section className="home-banner" style={{ paddingTop: "12rem" }}>
-        
         <div className="market-snip">
           <img src={market} alt="market table" />
         </div>
