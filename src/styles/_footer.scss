@@ -7,7 +7,7 @@ footer {
   width: 100vw;
   background-color: $TableBlack;
   margin-top: 4rem;
-  padding: 3rem 1rem 6rem 1rem;
+  padding: 3rem 1rem 4rem 1rem;
   .logo-container {
     @include flex(column, flex-start, flex-start);
     padding: 1rem;
@@ -74,6 +74,18 @@ footer {
   }
 }
 
+hr {
+  background-color: $DavysGrey;
+  border: none;
+  height: 1px;
+  margin-top: 5rem;
+}
+
 .copywright-section {
-    margin-top: 5rem;
+  @include flex(row, center, space-between);
+    padding: 2rem;
+  p {
+    color: $QuickSilver;
+
+  }
 }
