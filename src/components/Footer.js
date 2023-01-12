@@ -67,6 +67,10 @@ const Footer = () => {
           </div>
         </Grid>
       </Grid>
+      <div className="copywright-section">
+        <hr />
+        <p>CopyWright Sujoy Dutta</p>
+      </div>
     </footer>
   );
 };
