@@ -39,7 +39,8 @@
 .coin-input {
   padding-left: 16px;
   outline: none;
-  width: 30em;
+  max-width: 30em;
+  width: fit-content;
   height: 42px;
   border-radius: 4px;
   border: none;
