@@ -1,0 +1,15 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.testimonial {
+    @include flex(column, center, center);
+    .testimonial-header {
+        @include flex(row, center, space-evenly);
+        h2 {
+            
+        }
+        p {
+
+        }
+    }
+}
