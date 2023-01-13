@@ -32,7 +32,7 @@ const Home = ({ handleChange, filteredCoins }) => {
       <section className="home-banner" style={{ padding: "5rem 0" }}>
         <Feature />
       </section>
-      <section className="home-banner" style={{ padding: "5rem 0" }}>
+      <section className="home-banner" >
         <Testimonial />
       </section>
       <Footer />
