@@ -87,7 +87,7 @@ export const features = [
   {
     id: 2,
     imgSrc: playButton,
-    heading: "Tutorial video",
+    heading: "Step-by-step Tutorial video",
     desc: "Here you can learn crypto assets easily. There are many tutorial for you to learn while investing",
   },
   {
