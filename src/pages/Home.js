@@ -2,6 +2,7 @@ import React from "react";
 import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Testimonial from "../components/Testimonial";
 import banner from "../images/home-banner.jpg";
 import market from "../images/market-image.png";
 
@@ -30,6 +31,9 @@ const Home = ({ handleChange, filteredCoins }) => {
       </section>
       <section className="home-banner" style={{ padding: "5rem 0" }}>
         <Feature />
+      </section>
+      <section className="home-banner" style={{ padding: "5rem 0" }}>
+        <Testimonial />
       </section>
       <Footer />
     </>
