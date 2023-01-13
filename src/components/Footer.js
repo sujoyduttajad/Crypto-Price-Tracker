@@ -70,9 +70,9 @@ const Footer = () => {
       </Grid>
       <hr />
       <div className="copywright-section">
-        <p>©Coinize {format(new Date(), "yyyy")}</p>
+        <p>Coinize {format(new Date(), "yyyy")}® </p>
         <p>Made with 💙 by Sujoy Dutta</p>
-        <p>All rights reserved</p>
+        <p>© All rights reserved</p>
       </div>
     </footer>
   );
