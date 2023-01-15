@@ -1,4 +1,5 @@
 import React from "react";
+import BrandStrip from "../components/BrandStrip";
 import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -34,6 +35,9 @@ const Home = ({ handleChange, filteredCoins }) => {
       </section>
       <section className="home-banner">
         <Testimonial />
+      </section>
+      <section className="home-banner">
+        <BrandStrip />
       </section>
       <Footer />
     </>
