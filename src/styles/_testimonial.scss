@@ -6,12 +6,42 @@
     padding: 2rem;
     .testimonial-header {
         @include flex(row, center, space-evenly);
+        padding-bottom: 4rem;
         h2, p {
             padding: 0 2rem;
             color: $whiteShade;
+            max-width: 25rem;
         }
         p {
             color: $QuickSilver;
+        }
+    }
+    .testimonial-container {
+        @include flex(row, center, space-evenly);
+        padding: 5rem;
+        background-color: $TableBlack;
+        border-radius: 20px;
+        .overall {
+            border-radius: 20px;
+            padding: 2rem;
+            margin-right: 2rem;
+            h3 {
+                font-size: 1.7em;
+            }
+        }
+        .testimonial-slider {
+            @include flex(row, center, space-evenly);
+            background-color: $violetShade;
+            border-radius: 20px;
+            padding: 2rem ;
+            .cards {
+                padding: 0 1rem;
+            }
+            p {
+                font-size: 0.8rem;
+                color: $Cultured;
+                padding: 0.5rem 0;
+            }
         }
     }
 }
