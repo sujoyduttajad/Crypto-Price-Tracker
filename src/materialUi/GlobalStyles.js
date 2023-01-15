@@ -6,7 +6,6 @@ export const useStyles = makeStyles({
   },
   tableContent: {
     fontFamily: "Montserrat",
-    
   },
   tablehHead: {
     cursor: "context-menu",
@@ -23,7 +22,7 @@ export const useStyles = makeStyles({
   },
   coinChip: {
     cursor: "pointer",
-    minWidth: "8rem"
+    minWidth: "8rem",
   },
   bullet: {
     display: "inline-block",
@@ -35,12 +34,12 @@ export const useStyles = makeStyles({
   },
   pos: {
     marginBottom: 12,
-    padding: "0.6em 0em"
+    padding: "0.6em 0em",
   },
   card: {
     width: "100%",
-    fontFamily: '',
-    background: "transparent"
+    fontFamily: "",
+    background: "transparent",
   },
   chipStyles: {
     borderRadius: "4px",
@@ -49,6 +48,20 @@ export const useStyles = makeStyles({
   },
   tooltip: {
     fontFamily: '"Montserrat", sans-serif',
-    fontSize: "1rem"
-  }
+    fontSize: "1rem",
+  },
+  textfield: {
+    backgroundColor: "#fff",
+    paddingLeft: "16px",
+    outline: "none",
+    maxWidth: "30em",
+    width: "fit-content",
+    height: "42px",
+    borderRadius: "4px",
+    border: "none",
+    // color: $NavbarWhite;
+    fontSize: "1em",
+    outline: "none",
+    // fontFamily: $MainFont;
+  },
 });
