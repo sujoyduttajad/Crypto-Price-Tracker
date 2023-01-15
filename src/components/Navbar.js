@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../images/coinize2.svg";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useStyles } from "../materialUi/GlobalStyles";
-import { TextField } from "@mui/material";
 
 const Navbar = ({ handleChange, coinId }) => {
   const [scrolled, setScrolled] = useState();
@@ -41,9 +40,9 @@ const Navbar = ({ handleChange, coinId }) => {
             isActive === "/market" ? activeClassName : undefined
           }`}
         >
-          <NavLink to="/market">
+          <Link to="/market">
             <h3>Market</h3>
-          </NavLink>
+          </Link>
         </div>
 
         <div
