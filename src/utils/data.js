@@ -103,3 +103,30 @@ export const features = [
     desc: "You can enjoy our ecosystem which is very user friendly and we are always improving our ecosystem",
   },
 ];
+
+export const cardContent = [
+  {
+    id: 1,
+    stars: 4.5,
+    feedback: "I as a trader really enjoy trading here, it's fun and very easy in terms of user experience",
+    name: "Adam Quitrao"
+  },
+  {
+    id: 2,
+    stars: 4.5,
+    feedback: "I can enjoy investing in crypto easily and comfortably, from the side to trading I'm happy with Coinize",
+    name: "Lucas Adriano"
+  },
+  {
+    id: 3,
+    stars: 4,
+    feedback: "I really like investing in Crypto and Coinize helps me to learn and track my favorite currencies easily and in one place",
+    name: "Maria Vanrova"
+  },
+  // {
+  //   id: 1,
+  //   stars: 4.5,
+  //   feedback: "",
+  //   name: "Lucas"
+  // },
+]
