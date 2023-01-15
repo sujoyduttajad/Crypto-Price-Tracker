@@ -1,4 +1,4 @@
-import { Rating } from "@mui/material";
+import { Grid, Rating } from "@mui/material";
 import React from "react";
 import { cardContent } from "../utils/data";
 
@@ -33,11 +33,13 @@ const Testimonial = () => {
           <p>Based on 1k+ review</p>
         </div>
         <div className="testimonial-slider">
-          {
-            cardContent.map((item) => (
-              <Cards key={item.id} item={item} />
-            ))
-          }
+          <Grid container rowSpacing={2} columnSpacing={1}>
+            {cardContent.map((item) => (
+              <Grid item lg={4} md={4} sm={12}>
+                <Cards key={item.id} item={item} />
+              </Grid>
+            ))}
+          </Grid>
         </div>
       </div>
     </section>
