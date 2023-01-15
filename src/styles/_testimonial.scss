@@ -4,8 +4,10 @@
 .testimonial {
     @include flex(column, center, center);
     padding: 2rem;
+    background-color: $TableHeader;
+    padding-bottom: 8rem;
     .testimonial-header {
-        @include flex(row, center, space-evenly);
+        @include flex(row, center, space-between);
         padding-bottom: 4rem;
         h2, p {
             padding: 0 2rem;
@@ -23,7 +25,7 @@
         border-radius: 20px;
         .overall {
             border-radius: 20px;
-            padding: 2rem;
+            padding: 2rem 0;
             margin-right: 2rem;
             h3 {
                 font-size: 1.7em;
