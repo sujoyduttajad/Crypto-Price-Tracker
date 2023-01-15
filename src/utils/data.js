@@ -2,6 +2,12 @@ import piggyBank from "../images/piggy-bank.svg";
 import playButton from "../images/play-button.svg";
 import env from "../images/shield.svg";
 import shield from "../images/environment.svg";
+import coinbase from "../images/coinbase.svg";
+import xrp from "../images/xrp.svg";
+import solana from "../images/solana.svg";
+import binance from "../images/binance.svg";
+import diehl from "../images/diehl.svg";
+import coincheck from "../images/coincheck.svg"
 
 export const headCells = [
   {
@@ -129,4 +135,31 @@ export const cardContent = [
   //   feedback: "",
   //   name: "Lucas"
   // },
-]
+];
+
+export const brands = [
+  {
+    name: "XRP",
+    image: xrp
+  },
+  {
+    name: "Binance",
+    image: binance
+  },
+  {
+    name: "Coinbase",
+    image: coinbase
+  },
+  {
+    name: "Solana",
+    image: solana
+  },
+  {
+    name: "DIEHL",
+    image: diehl
+  },
+  {
+    name: "Coincheck",
+    image: coincheck
+  }
+];
