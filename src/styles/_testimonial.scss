@@ -2,48 +2,64 @@
 @use "./mixins" as *;
 
 .testimonial {
-    @include flex(column, center, center);
-    padding: 2rem;
-    background-color: $TableHeader;
-    padding-bottom: 8rem;
-    .testimonial-header {
-        @include flex(row, center, space-between);
-        padding-bottom: 4rem;
-        h2, p {
-            padding: 0 2rem;
-            color: $whiteShade;
-            max-width: 25rem;
-        }
-        p {
-            color: $QuickSilver;
-        }
+  @include flex(column, center, center);
+  padding: 2rem;
+  background-color: $TableHeader;
+  padding-bottom: 8rem;
+  .testimonial-header {
+    @include flex(row, center, space-between);
+    padding-bottom: 4rem;
+    h2,
+    p {
+      padding: 0 2rem;
+      color: $whiteShade;
+      max-width: 25rem;
     }
-    .testimonial-container {
-        @include flex(row, center, space-evenly);
-        padding: 5rem;
-        background-color: $TableBlack;
-        border-radius: 20px;
-        .overall {
-            border-radius: 20px;
-            padding: 2rem 0;
-            margin-right: 2rem;
-            h3 {
-                font-size: 1.7em;
-            }
-        }
-        .testimonial-slider {
-            @include flex(row, center, space-evenly);
-            background-color: $violetShade;
-            border-radius: 20px;
-            padding: 2rem ;
-            .cards {
-                padding: 0 1rem;
-            }
-            p {
-                font-size: 0.8rem;
-                color: $Cultured;
-                padding: 0.5rem 0;
-            }
-        }
+    p {
+      color: $QuickSilver;
     }
+  }
+  .testimonial-container {
+    @include flex(row, center, space-evenly);
+    padding: 5rem;
+    background-color: $TableBlack;
+    border-radius: 20px;
+    .overall {
+      border-radius: 20px;
+      padding: 2rem 0;
+      margin-right: 2rem;
+      h3 {
+        font-size: 1.7em;
+      }
+    }
+    .testimonial-slider {
+      @include flex(row, center, space-evenly);
+      background-color: $violetShade;
+      border-radius: 20px;
+      padding: 2rem;
+      .cards {
+        padding: 0 1rem;
+      }
+      p {
+        font-size: 0.8rem;
+        color: $Cultured;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}
+
+// Brandstrip
+.brandstrip {
+  @include flex(row, center, space-evenly);
+  width: 100vw;
+  min-height: 30vh;
+  padding-bottom: 8rem;
+  background-color: $TableHeader;
+  img {
+    width: 8rem;
+    height: 2rem;
+    filter: invert(26%) sepia(12%) saturate(10%) hue-rotate(50deg)
+      brightness(104%) contrast(86%);
+  }
 }
