@@ -17,7 +17,7 @@ const Home = ({ handleChange, filteredCoins }) => {
       <Navbar handleChange={handleChange} />
       <section className="home-banner">
         <div className="image-container">
-          <img src={banner} alt="banner" />
+          <img src={banner} alt="banner" loading="lazy" />
         </div>
         <div className="home-typograph">
           <h1>Keep track of your favorite Crypto Coins</h1>
