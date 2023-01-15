@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../images/coinize2.svg";
 import { NavLink, useLocation } from "react-router-dom";
+import { useStyles } from "../materialUi/GlobalStyles";
+import { TextField } from "@mui/material";
 
 const Navbar = ({ handleChange, coinId }) => {
   const [scrolled, setScrolled] = useState();
@@ -22,6 +24,8 @@ const Navbar = ({ handleChange, coinId }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const classes = useStyles();
 
   return (
     <nav className={`navbar-container ${scrolled ? "header-scroll" : ""}`}>
@@ -69,7 +73,9 @@ const Navbar = ({ handleChange, coinId }) => {
             placeholder="Search a currency"
             className="coin-input"
             onChange={handleChange}
+            contenteditable="true"
           />
+          {/* <TextField className={classes.textfield} id="outlined-basic" variant="outlined" /> */}
         </form>
       )}
     </nav>
