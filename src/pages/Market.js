@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { theme } from "../materialUi/theme";
 import EnhancedTableHead from "../components/EnhancedTableHead";
 import EnhancedTableToolbar from "../components/EnhancedTollbar";
@@ -149,7 +149,7 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                               padding="none"
                               className={classes.tableRows}
                             >
-                              <NavLink to={`/market/${row.id}`}>
+                              <Link to={`/market/${row.id}`}>
                                 <Chip
                                   label={row.name}
                                   variant="outlined"
@@ -157,7 +157,7 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
                                   onClick={() => handleClick(row.id)}
                                   className={classes.coinChip}
                                 />
-                              </NavLink>
+                              </Link>
                             </TableCell>
                             <TableCell
                               align="right"
