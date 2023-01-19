@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { theme } from "../materialUi/theme";
 import EnhancedTableHead from "../components/EnhancedTableHead";
 import EnhancedTableToolbar from "../components/EnhancedTollbar";
@@ -30,7 +30,6 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const classes = useStyles();
-  const path = useLocation();
 
   function createData(name, price, volume, coinPercent, mktCap) {
     return {
@@ -42,20 +41,15 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
     };
   }
   const rows = filteredCoins;
-  useEffect(() => {
-    const rows = filteredCoins;
-    console.log("UseEffect running!!");
-    // Might need to think about using useMemo
-    rows?.map((coin) => {
-      return createData(
-        coin.name,
-        coin.current_price,
-        coin.total_volume,
-        coin.price_change_percentage_24h,
-        coin.market_cap
-      );
-    });
-  }, [filteredCoins, handleChange, path.pathname]);
+  rows?.map((coin) => {
+    return createData(
+      coin.name,
+      coin.current_price,
+      coin.total_volume,
+      coin.price_change_percentage_24h,
+      coin.market_cap
+    );
+  });
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
