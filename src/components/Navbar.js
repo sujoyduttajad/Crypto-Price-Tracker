@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../images/coinize2.svg";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useStyles } from "../materialUi/GlobalStyles";
 
 const Navbar = ({ handleChange, coinId }) => {
@@ -30,9 +30,9 @@ const Navbar = ({ handleChange, coinId }) => {
     <nav className={`navbar-container ${scrolled ? "header-scroll" : ""}`}>
       <div className="coin-logo-container">
         <div className="coin-image-container" style={{ userSelect: "none" }}>
-          <NavLink to="/">
+          <Link to="/">
             <img className="coin-logo" src={Logo} alt="logo" />
-          </NavLink>
+          </Link>
         </div>
 
         <div
@@ -50,9 +50,9 @@ const Navbar = ({ handleChange, coinId }) => {
             isActive === "/exchange" ? activeClassName : undefined
           }`}
         >
-          <NavLink to="/exchange">
+          <Link to="/exchange">
             <h3>Exchange</h3>
-          </NavLink>
+          </Link>
         </div>
 
         <div
@@ -60,9 +60,9 @@ const Navbar = ({ handleChange, coinId }) => {
             isActive === "/categories" ? activeClassName : undefined
           }`}
         >
-          <NavLink to="/categories">
+          <Link to="/categories">
             <h3>Categories</h3>
-          </NavLink>
+          </Link>
         </div>
       </div>
       {coinId ? null : (
