@@ -18,6 +18,10 @@
     p {
       color: $QuickSilver;
     }
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
   }
   .testimonial-container {
     @include flex(row, center, space-evenly);
@@ -37,6 +41,8 @@
       background-color: $violetShade;
       border-radius: 20px;
       padding: 2rem;
+      box-shadow: rgba(71, 71, 71, 1) 0px 8px 24px,
+        rgba(71, 71, 71, 1) 0px 16px 56px, rgba(71, 71, 71, 1) 0px 24px 80px;
       .cards {
         padding: 0 1rem;
       }
