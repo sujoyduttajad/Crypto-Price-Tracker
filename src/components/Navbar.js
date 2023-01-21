@@ -72,7 +72,6 @@ const Navbar = ({ handleChange, coinId }) => {
             placeholder="Search a currency"
             className="coin-input"
             onChange={handleChange}
-            contenteditable="true"
           />
           {/* <TextField className={classes.textfield} id="outlined-basic" variant="outlined" /> */}
         </form>
