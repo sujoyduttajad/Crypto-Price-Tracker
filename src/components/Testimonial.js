@@ -21,7 +21,7 @@ const Testimonial = () => {
   return (
     <section className="testimonial">
       <div className="testimonial-header">
-        <h2>They can prove it themselves about us</h2>
+        <h2>Our customers can prove it themselves about us</h2>
         <p>
           Some of the people below have felt the quality of our platform, you
           can give your testiminial below.
@@ -35,7 +35,7 @@ const Testimonial = () => {
         <div className="testimonial-slider">
           <Grid container rowSpacing={2} columnSpacing={1}>
             {cardContent.map((item) => (
-              <Grid item lg={4} md={4} sm={12}>
+              <Grid key={item.id} item lg={4} md={4} sm={12}>
                 <Cards key={item.id} item={item} />
               </Grid>
             ))}
