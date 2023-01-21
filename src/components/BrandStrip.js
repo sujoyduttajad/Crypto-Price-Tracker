@@ -5,7 +5,7 @@ const BrandStrip = () => {
   return (
     <section className="brandstrip">
       {brands.map((brand) => (
-        <img src={brand.image} alt={brand.name} />
+        <img key={brand.name} src={brand.image} alt={brand.name} />
       ))}
     </section>
   );
