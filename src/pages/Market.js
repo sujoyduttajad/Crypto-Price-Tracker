@@ -79,7 +79,10 @@ export default function Market({ filteredCoins, handleChange, setCoinId }) {
       <div className="crypto-container">
         <ThemeProvider theme={theme}>
           <Paper sx={{ width: "100%", mb: 2 }} elevation={1}>
-            <EnhancedTableToolbar numSelected={selected.length} />
+            <EnhancedTableToolbar
+              numSelected={selected.length}
+              headerName={"Market Report"}
+            />
             <TableContainer>
               <Table
                 stickyHeader
