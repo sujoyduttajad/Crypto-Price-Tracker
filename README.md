@@ -20,5 +20,5 @@ This app is build with React, React-hooks like useState and useEffect and for co
 Using D3.js to create a line graph or bar chart or both based on the data from the API
 
 # Resources
-The api used for tracking crypto can be found here - [https://www.coingecko.com/en/api/documentation](https://www.coingecko.com/en/api/documentation)
+The api used for tracking crypto can be found here - [coingecko docs](https://www.coingecko.com/en/api/documentation)
 
