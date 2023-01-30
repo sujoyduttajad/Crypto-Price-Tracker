@@ -50,6 +50,9 @@ export const useStyles = makeStyles({
     fontFamily: '"Montserrat", sans-serif',
     fontSize: "1rem",
   },
+  rating: {
+    color: "#FFAE00"
+  },
   textfield: {
     backgroundColor: "#fff",
     paddingLeft: "16px",
