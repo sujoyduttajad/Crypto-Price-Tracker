@@ -28,6 +28,9 @@ function App() {
 
   const handleChange = (e) => {
     setSearch(e.target.value);
+    e.currentTarget.style.width = "90rem";
+    e.currentTarget.style.transition =
+      "all 1.2s cubic-bezier(0.5, 0, 0.5, 1)";
   };
 
   const filteredCoins = () =>
