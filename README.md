@@ -2,15 +2,11 @@
 
 A Cryptocurrency Price Tracker shows the current prices, market cap, 24h change, and volume for all the cryptocurrencies in the world. The price is USD, and all the relevant details are shown in a custom-built Material-UI table.
 
-# Version 1.0.4
-
-<img src="./Screenshot (20).png" alt="the screenshot of the app large screen"/>
-
 # Version 2.0.0
 Full app is still In developement. Features like navigation to different pages and dynamic routes are build into this tracker. 
 
-<img src="./Coinize2.0.png" alt="the screenshot of the app large screen"/>
-https://crypto-price-tracker.pages.dev
+<img src="./Crypto-Tracker.png" alt="full home page"/>
+[Live app here](https://crypto-price-tracker.pages.dev)
 
 # Why I build this
 I build this app as cryptocurrency is booming in todays world and it's really important to monitor the real data before you start mining. The goal was to help data-miners to keep a track of the cryptocurrency prices, market cap, volumes and other parameters.
