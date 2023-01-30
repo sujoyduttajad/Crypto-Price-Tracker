@@ -1,16 +1,21 @@
+import { Star, StarBorder } from "@mui/icons-material";
 import { Grid, Rating } from "@mui/material";
 import React from "react";
 import { cardContent } from "../utils/data";
+import { useStyles } from "../materialUi/GlobalStyles";
 
 const Cards = ({ item }) => {
+  const classes = useStyles();
   return (
     <div className="cards">
       <Rating
         name="size-small"
-        readOnly
+        readOnly={true}
         defaultValue={item.stars}
         precision={0.5}
         size="small"
+        icon={<Star className={classes.rating} />}
+        emptyIcon={<StarBorder style={{ color: "#FFAE00" }} />}
       />
       <p>{item.feedback}</p>
       <h3>{item.name}</h3>
