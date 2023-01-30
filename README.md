@@ -6,7 +6,7 @@ A Cryptocurrency Price Tracker shows the current prices, market cap, 24h change,
 Full app is still In developement. Features like navigation to different pages and dynamic routes are build into this tracker. 
 
 <img src="./Crypto-Tracker.png" alt="full home page"/>
-[Live app here](https://crypto-price-tracker.pages.dev)
+(Live app here)[https://crypto-price-tracker.pages.dev]
 
 # Why I build this
 I build this app as cryptocurrency is booming in todays world and it's really important to monitor the real data before you start mining. The goal was to help data-miners to keep a track of the cryptocurrency prices, market cap, volumes and other parameters.
