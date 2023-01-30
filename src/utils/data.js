@@ -113,7 +113,7 @@ export const features = [
 export const cardContent = [
   {
     id: 1,
-    stars: 4.5,
+    stars: 4.0,
     feedback: "I as a trader really enjoy trading here, it's fun and very easy in terms of user experience",
     name: "Adam Quitrao"
   },
@@ -125,7 +125,7 @@ export const cardContent = [
   },
   {
     id: 3,
-    stars: 4,
+    stars: 5.0,
     feedback: "I really like investing in Crypto and Coinize helps me to learn and track my favorite currencies easily and in one place",
     name: "Maria Vanrova"
   },
