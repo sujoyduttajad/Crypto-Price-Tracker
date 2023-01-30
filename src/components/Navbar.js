@@ -24,6 +24,12 @@ const Navbar = ({ handleChange, coinId }) => {
     };
   }, []);
 
+  // const handleIncreaseSize = (e) => {
+  //   e.currentTarget.width = "34rem";
+  //   e.currentTarget.style.transition =
+  //     "transform 333ms cubic-bezier(.4,0,.22,1)";
+  // }
+
   const classes = useStyles();
 
   return (
@@ -72,6 +78,7 @@ const Navbar = ({ handleChange, coinId }) => {
             placeholder="Search a currency"
             className="coin-input"
             onChange={handleChange}
+            // onClick={handleIncreaseSize}
           />
           {/* <TextField className={classes.textfield} id="outlined-basic" variant="outlined" /> */}
         </form>
