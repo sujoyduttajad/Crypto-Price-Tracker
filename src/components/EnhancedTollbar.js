@@ -12,7 +12,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { theme } from "../materialUi/theme";
 
 const EnhancedTableToolbar = (props) => {
-  const { numSelected } = props;
+  const { numSelected, headerName } = props;
 
   return (
     <ThemeProvider theme={theme}>
@@ -28,7 +28,7 @@ const EnhancedTableToolbar = (props) => {
           id="tableTitle"
           component="div"
         >
-          Market Report
+          {headerName}
         </Typography>
         <IconButton
           style={{ marginRight: "1em" }}
