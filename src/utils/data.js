@@ -99,7 +99,7 @@ export const features = [
   {
     id: 3,
     imgSrc: shield,
-    heading: "Guaranteed safety",
+    heading: "Guaranteed security",
     desc: "In terms of security we guarantee user security and we have been supervised by OJK",
   },
   {
