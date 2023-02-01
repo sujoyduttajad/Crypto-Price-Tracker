@@ -3,11 +3,12 @@
 
 .feature {
   @include flex(row, center, center);
-  max-width: 60rem;
+  max-width: 62rem;
   width: 100%;
   flex-wrap: wrap;
   padding: 2rem;
   .left-container {
+    @include flex(column, flex-start, center);
     padding-right: 4rem;
     h3 {
       font-size: 2.5rem;
